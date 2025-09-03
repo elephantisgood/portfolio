@@ -1,13 +1,16 @@
 :root {
   --typewriterSpeed: 4s;
   --typewriterChracters: 17;
+
+
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Kaisei Decol", serif;
+  // font-family: "Kaisei Decol", serif;
+  font-family: "Roboto Mono", monospace;
     
 
   P {
@@ -82,6 +85,10 @@ header {
     }
   }
 }
+
+
+
+
 header::after {
   content: "";
   clear: both;
@@ -100,6 +107,8 @@ section {
 .bg-active {
   background-color: #f3ede9;
 }
+
+
 // 首頁
 
 section.index {
