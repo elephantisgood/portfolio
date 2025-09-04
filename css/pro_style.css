@@ -20,10 +20,10 @@ html {
 
 body {
   position: relative;
-  transition: all 0.5s ease-out;
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  transition: all 0.5s ease-out;
 }
 
 header {
@@ -37,48 +37,46 @@ header {
   flex-wrap: wrap;
   z-index: 2;
 }
-header div.container {
+header .container {
   width: 95%;
   margin: 0 auto;
 }
-header h1.logo {
+header .container .logo {
   float: left;
   font-size: 1rem;
   margin: 0;
   font-weight: 700;
   text-transform: uppercase;
 }
-header h1.logo span {
+header .container .logo span {
   font-weight: 200;
   font-size: 1rem;
 }
-header nav.site-nav {
+header .container .site-nav {
   position: absolute;
   right: 0;
 }
-header nav.site-nav ul {
+header .container .site-nav ul {
   margin: 0;
-  padding: 0;
   display: flex;
   list-style: none;
 }
-header nav.site-nav ul li a {
-  color: rgb(0, 0, 0);
+header .container .site-nav ul li a {
+  color: black;
   padding: 1em 2em;
   text-transform: uppercase;
   text-decoration: none;
   transition: all ease-in 150ms;
+}
+header .container .site-nav ul li a:hover,
+header .container .site-nav ul li a:focus {
+  color: #8f7a6a;
 }
 
 header::after {
   content: "";
   clear: both;
   display: block;
-}
-
-.site-nav a:hover,
-.site-nav a:focus {
-  color: #8f7a6a;
 }
 
 section {
@@ -89,10 +87,10 @@ section {
   background-color: #f3ede9;
 }
 
-section.index {
+.index {
   max-height: 900px;
 }
-section.index .halfbg {
+.index .half-bg {
   position: relative;
   top: -30rem;
   background-color: rgb(213, 213, 213);
@@ -101,7 +99,7 @@ section.index .halfbg {
   z-index: -10;
   transition: all 0.5s ease-out;
 }
-section.index .container {
+.index .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -110,7 +108,7 @@ section.index .container {
   position: relative;
   top: 10rem;
 }
-section.index .container .resumeCard {
+.index .container .resumeCard {
   background-color: #f3ede9;
   width: 23rem;
   height: 30em;
@@ -118,11 +116,11 @@ section.index .container .resumeCard {
   align-content: center;
   box-shadow: rgba(0, 0, 0, 0.5) -5px 9px 25px -6px;
 }
-section.index .container .resumeCard h2 {
+.index .container .resumeCard h2 {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 100;
 }
-section.index .container .resumeCard .pic {
+.index .container .resumeCard .pic {
   overflow: hidden;
   width: 15rem;
   height: 15rem;
@@ -130,24 +128,24 @@ section.index .container .resumeCard .pic {
   margin: 2rem auto;
   border-radius: 50%;
 }
-section.index .container .resumeCard .pic img {
+.index .container .resumeCard .pic img {
   border-radius: 50%;
   transition: 0.2s ease-in-out;
 }
-section.index .container .resumeCard img:hover {
+.index .container .resumeCard img:hover {
   transform: scale(1.2);
 }
-section.index .container .resumeCard .btt {
+.index .container .resumeCard .btt {
   flex-direction: row;
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
-section.index .container .resumeCard .btt .link {
+.index .container .resumeCard .btt .link {
   align-items: center;
   width: 8rem;
 }
-section.index .container .resumeCard .btt .link a {
+.index .container .resumeCard .btt .link a {
   text-decoration: none;
   border-radius: 2rem;
   border: 1px solid rgb(133, 133, 133);
@@ -156,38 +154,38 @@ section.index .container .resumeCard .btt .link a {
   text-transform: uppercase;
   transition: all ease-in 150ms;
 }
-section.index .container .resumeCard .btt .link .short {
+.index .container .resumeCard .btt .link .short {
   padding: 0.2rem 1.5rem;
 }
-section.index .container .resumeCard p {
+.index .container .resumeCard p {
   margin-top: 0.5rem;
   padding: 1rem 1rem;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   text-align: center;
 }
-section.index .container .resumeCard a:hover,
-section.index .container .resumeCard a:focus {
+.index .container .resumeCard a:hover,
+.index .container .resumeCard a:focus {
   background-color: #8f7a6a;
   color: white;
   border-color: transparent;
 }
-section.index .container .CV {
+.index .container .CV {
   margin: 2rem 2rem;
   width: 30rem;
 }
-section.index .container .CV p {
+.index .container .CV p {
   text-align: justify;
 }
-section.index .container .CV .text {
+.index .container .CV .text {
   position: relative;
   color: rgb(133, 133, 133);
   font-size: 3.5rem;
   width: -moz-max-content;
   width: max-content;
 }
-section.index .container .CV .text::before,
-section.index .container .CV .text::after {
+.index .container .CV .text::before,
+.index .container .CV .text::after {
   content: "";
   position: absolute;
   top: 0;
@@ -195,16 +193,16 @@ section.index .container .CV .text::after {
   bottom: 0;
   left: 0;
 }
-section.index .container .CV .text::before {
+.index .container .CV .text::before {
   background: #fff;
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 1s forwards;
 }
-section.index .container .CV .text::after {
+.index .container .CV .text::after {
   width: 0.1em;
   background: rgb(133, 133, 133);
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 1s forwards, blink 750ms steps(17) infinite;
 }
-section.index .container .CV .subtitle {
+.index .container .CV .subtitle {
   opacity: 0;
   transform: translateY(3rem);
   animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
@@ -568,7 +566,8 @@ section.pro .modal.open {
   opacity: 1;
   pointer-events: all;
 }
-section.pro .scrolltop {
+
+.scrolltop {
   z-index: 1;
   position: fixed;
   bottom: 20px;
@@ -581,7 +580,7 @@ section.pro .scrolltop {
   border-radius: 35px;
   transition: all 0.3s ease;
 }
-section.pro .scrolltop i {
+.scrolltop i {
   color: rgb(255, 255, 255);
   margin: 0;
   position: relative;
@@ -590,10 +589,12 @@ section.pro .scrolltop i {
   font-size: 20px;
   transition: all 0.3s ease;
 }
-section.pro .scrolltop:hover {
+
+.scrolltop:hover {
   background: rgba(129, 75, 0, 0.7);
 }
-section.pro .scrolltop:hover i {
+
+.scrolltop:hover i {
   color: #fff;
   top: 5px;
 }
@@ -621,40 +622,40 @@ footer .contacts p {
 }
 
 @media screen and (max-width: 790px) {
-  main section.index {
+  .index {
     min-height: 1200px;
     margin-top: -5rem;
   }
-  main section.index div.halfbg {
+  .index .halfbg {
     background-color: rgba(213, 213, 213, 0.8);
   }
-  main section.index .CV {
+  .index .CV {
     background: #fff;
     padding: 1rem;
   }
-  main section.index .CV .text {
+  .index .CV .text {
     display: none;
   }
-  main section.index .CV .subtitle {
+  .index .CV .subtitle {
     animation: fadeInUp 2s ease forwards;
   }
-  main section.resume {
+  .resume {
     margin-top: 5rem;
   }
-  main section.resume .threecard {
+  .resume .threecard {
     flex-wrap: wrap;
     justify-content: center;
   }
   header {
     padding: 1rem;
   }
-  header h1.logo {
+  header .container .logo {
     float: left;
     font-size: 1rem;
     margin: 0;
     text-transform: uppercase;
   }
-  header nav.site-nav {
+  header .container .site-nav {
     top: 100%;
     width: 100%;
     text-align: center;
@@ -664,12 +665,13 @@ footer .contacts p {
     overflow: hidden;
     z-index: 99;
   }
-  header nav.site-nav ul {
+  header .container .site-nav ul {
     width: 100%;
     display: inline-block;
     padding-top: 5rem;
   }
-  header nav.site-nav ul li a {
+  header .container .site-nav ul li a {
+    width: 100%;
     color: #858585;
     display: block;
     text-transform: uppercase;
@@ -678,22 +680,45 @@ footer .contacts p {
     font-size: 1.5rem;
     font-weight: 100;
   }
-  header nav.site-nav.open {
+  header .container .site-nav ul li a:hover,
+  header .container .site-nav ul li a:focus {
+    background: #8f7a6a;
+    color: white;
+  }
+  header .container .site-nav ul li:last-child {
+    border-bottom: none;
+  }
+  header .container .line::before {
+    transform: translateY(-6px);
+  }
+  header .container .line::after {
+    transform: translateY(3px);
+  }
+  header .container .line.trans {
+    transform: rotate(45deg);
+  }
+  header .container .line.trans::before {
+    opacity: 0;
+  }
+  header .container .line.trans::after {
+    transform: translateY(-3px) rotate(-90deg);
+  }
+  header .container .site-nav.open {
     height: 100vh;
   }
-  header .landing {
+  header .container .landing {
     flex-direction: column;
   }
-  header div.menu {
+  header .container .menu {
     padding: 1em;
     position: absolute;
     top: 0.5em;
     right: 0.5em;
     cursor: pointer;
   }
-  header div.menu .line,
-  header div.menu .line::before,
-  header div.menu .line::after {
+  header .container .menu .line,
+  header .container .menu .line::before,
+  header .container .menu .line::after {
     content: "";
     display: block;
     background: #858585;
@@ -706,29 +731,6 @@ footer .contacts p {
     content: "";
     clear: both;
     display: block;
-  }
-  .site-nav li:last-child {
-    border-bottom: none;
-  }
-  .site-nav a:hover,
-  .site-nav a:focus {
-    background: #8f7a6a;
-    color: white;
-  }
-  .line::before {
-    transform: translateY(-6px);
-  }
-  .line::after {
-    transform: translateY(3px);
-  }
-  .line.trans {
-    transform: rotate(45deg);
-  }
-  .line.trans::before {
-    opacity: 0;
-  }
-  .line.trans::after {
-    transform: translateY(-3px) rotate(-90deg);
   }
 }
 @keyframes transitionIn {
