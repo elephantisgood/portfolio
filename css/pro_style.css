@@ -29,7 +29,7 @@ body {
 header {
   background: #ffffff;
   color: #30281d;
-  padding: 3em 0;
+  padding: 2rem 0;
   position: sticky;
   top: 0;
   display: flex;
@@ -195,17 +195,17 @@ section {
 }
 .index .container .CV .text::before {
   background: #fff;
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 1s forwards;
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 0.5s forwards;
 }
 .index .container .CV .text::after {
   width: 0.1em;
   background: rgb(133, 133, 133);
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 1s forwards, blink 750ms steps(17) infinite;
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 0.5s forwards, blink 750ms steps(17) infinite;
 }
 .index .container .CV .subtitle {
   opacity: 0;
   transform: translateY(3rem);
-  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
+  animation: fadeInUp 1s ease-in-out calc(var(--typewriterSpeed) + 0.5s) forwards;
 }
 @keyframes typewriter {
   to {
