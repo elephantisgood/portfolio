@@ -29,7 +29,7 @@ body {
 header {
   background: #ffffff;
   color: #30281d;
-  padding: 2rem 0;
+  padding: em 0;
   position: sticky;
   top: 0;
   display: flex;
@@ -529,7 +529,7 @@ section.pro .gallery .img-container img:hover {
   transform: scale(1.2);
 }
 section.pro .modal {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   position: fixed;
   top: 0;

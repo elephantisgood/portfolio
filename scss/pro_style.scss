@@ -37,7 +37,7 @@ body {
 header {
   background: #ffffff;
   color: #30281d;
-  padding: 2rem 0;
+  padding: em 0;
   // position: relative;
   position: sticky;
   top: 0;
@@ -638,7 +638,7 @@ section.pro {
   }
 
   .modal {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     position: fixed;
     top: 0;
@@ -679,6 +679,7 @@ section.pro {
   }
 
 }
+
 .scrolltop {
   z-index: 1;
   position: fixed;

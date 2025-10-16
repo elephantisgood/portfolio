@@ -26,6 +26,10 @@ window.addEventListener("scroll", bgChanger);
 
 
 
+
+
+
+
 //pop up image
 const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img");
@@ -50,6 +54,9 @@ modal.addEventListener("click",(e) => {
         original.classList.remove("open");
     }
 });
+
+
+
 
 
 //lazy load images
