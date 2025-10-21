@@ -6,63 +6,10 @@
   font-family: "Noto Sans TC", sans-serif;
 }
 * P {
+  font-family: "Cactus Classical Serif", serif;
   text-align: justify;
-}
-
-header {
-  background: #ffffff;
-  color: #30281d;
-  padding: 3em 0;
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  z-index: 2;
-}
-header div.container {
-  width: 95%;
-  margin: 0 auto;
-}
-header h1.logo {
-  float: left;
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-header h1.logo span {
-  font-weight: 100;
-  font-size: 1rem;
-}
-header nav.site-nav {
-  position: absolute;
-  right: 0;
-}
-header nav.site-nav ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-}
-header nav.site-nav ul li a {
-  color: rgb(0, 0, 0);
-  padding: 1em 2em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all ease-in 150ms;
-  font-weight: 100;
-}
-
-header::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-.site-nav a:hover,
-.site-nav a:focus {
-  color: #8f7a6a;
+  font-size: 1.2rem;
+  color: #59505e;
 }
 
 section {
@@ -73,203 +20,116 @@ main {
   background-image: url(../images/CDG/CDG_dessert_bg.png);
   background-repeat: repeat-y;
 }
-main div.copy {
+main .copy {
   margin: 1rem;
 }
-main div.copy p {
+main .copy p {
   text-align: center;
   color: tan;
 }
-main section div.container div.headed {
+main section .container .headed {
   display: flex;
   justify-content: center;
 }
-main section div.container div.headed img {
+main section .container .headed img {
   z-index: 1;
   max-width: 100%;
 }
-main section div.container div.headed img.wave {
+main section .container .headed .wave {
   position: absolute;
+  width: 100vw;
 }
-main section div.container img.fullImg {
-  max-width: 100%;
+main section .container .fullImg {
+  width: 100%;
 }
-main section div.container div.fruit {
+main section .container .fruit {
   min-width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-main section div.container div.fruit img {
+main section .container .fruit .fruit-pic {
+  display: flex;
+  margin: 1rem;
+}
+main section .container .fruit .fruit-pic img {
   max-width: 100%;
 }
-main section div.container div.fruit div.word {
-  max-width: 50%;
+main section .container .fruit .word {
+  width: 30rem;
+  margin: 1rem;
 }
 
-div.puffs {
-  position: relative;
-  align-items: center;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-}
-div.puffs img {
-  max-width: 100%;
-  padding: 1rem 1rem;
-}
-
-.madel {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
+.re {
   flex-direction: row-reverse;
-  align-items: center;
-  justify-content: center;
-}
-.madel img {
-  max-width: 100%;
-  padding: 1rem 1rem;
 }
 
-.titlepic {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.row .product_pic {
+  display: flex;
+  padding: 0.5rem;
+  width: 40rem;
+}
+.row .product_pic img {
+  max-width: 100%;
+}
+.row .title_box {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 0;
-}
-.titlepic img {
-  max-width: 100%;
-}
-.titlepic p {
-  margin: auto;
-  text-align: justify;
   padding: 1rem;
+  margin-bottom: 1rem;
+}
+.row .title_box .title_pic {
+  display: flex;
+}
+.row .title_box .title_pic img {
   max-width: 100%;
 }
 
-div.tree {
+.tree {
   display: flex;
-  margin: 0 1rem;
-  padding: 2rem 2rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
-div.tree .push .cube {
-  margin: 0 1rem;
+.tree .push {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-div.tree .push .cube img {
+.tree .push .cube {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  padding: 1rem 0;
+}
+.tree .push .cube img {
   max-width: 100%;
 }
-div.tree .push .cube p {
+.tree .push .cube p {
   margin: 0 1rem;
 }
 
 @media screen and (max-width: 790px) {
-  main section {
-    margin-top: -5rem;
-  }
-  main section div.halfbg {
-    width: 100vw;
-  }
-  main section .titlepic,
-  main section .puffs {
-    margin: 0 2rem;
-  }
-  header {
-    padding: 1rem;
-  }
-  header h1.logo {
-    float: left;
-    font-size: 1rem;
-    margin: 0;
-    text-transform: uppercase;
-  }
-  header nav.site-nav {
-    top: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: #f3ede9;
-    transition: all ease-out 0.3s;
-    height: 0px;
-    overflow: hidden;
-    z-index: 99;
-  }
-  header nav.site-nav ul {
-    width: 100%;
-    display: inline-block;
-    padding-top: 5rem;
-  }
-  header nav.site-nav ul li a {
-    color: #858585;
-    display: block;
-    text-transform: uppercase;
-    transition: all ease-in 150ms;
-    font-family: "PT Sans", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 100;
-  }
-  header nav.site-nav.open {
-    height: 100vh;
-  }
-  header .landing {
+  .tree {
     flex-direction: column;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
-  header div.menu {
-    padding: 1em;
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    cursor: pointer;
-  }
-  header div.menu .line,
-  header div.menu .line::before,
-  header div.menu .line::after {
-    content: "";
-    display: block;
-    background: #858585;
-    height: 3px;
-    width: 1.75em;
-    border-radius: 3px;
-    transition: all ease-in-out 200ms;
-  }
-  header::after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  .site-nav li:last-child {
-    border-bottom: none;
-  }
-  .site-nav a:hover,
-  .site-nav a:focus {
-    background: #8f7a6a;
-    color: white;
-  }
-  .line::before {
-    transform: translateY(-6px);
-  }
-  .line::after {
-    transform: translateY(3px);
-  }
-  .line.trans {
-    transform: rotate(45deg);
-  }
-  .line.trans::before {
-    opacity: 0;
-  }
-  .line.trans::after {
-    transform: translateY(-3px) rotate(-90deg);
-  }
-}
-@media screen and (max-width: 800px) {
-  div.tree {
-    flex-direction: column;
-  }
-  div.tree .push {
+  .tree .push {
     padding: 1rem 0;
-  }
-  div.tree .push p {
-    margin: auto;
+    max-width: 100%;
   }
 }
 @keyframes transitionIn {
