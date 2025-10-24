@@ -1,0 +1,225 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/6aec3157ec.js" crossorigin="anonymous"></script>
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="css/dad2022_style.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="direction">
+    <div class="heading">
+      <div class="sm-side left" data-aos="fade-right">
+        <img src="./Images/dad2022/88web_01.png" alt="">
+      </div>
+      <div class="main-center">
+        <img src="./Images/dad2022/88web_02.png" alt="">
+      </div>
+      <div class="sm-side right" data-aos="fade-left">
+        <img src="./Images/dad2022/88web_03.png" alt="">
+      </div>
+    </div>
+
+
+
+
+
+
+  </section>
+
+  <section class="score-panel" id="game-start">
+    <div class="story-content">
+      <div class="top">
+        <h2>玩法說明</h2>
+      </div>
+      <div class="text-content " contenteditable="true" data-aos="fade-right">
+        <p>30秒記憶大考驗，在遊戲時間內，正確翻出6組相同的圖案，即闖關成功！闖關成功即可獲得小禮物唷！ </p>
+
+      </div>
+    </div>
+
+
+    <div class="timer-container">
+      <span class="timer"><i class="fa-solid fa-clock-rotate-left"></i>
+        Timer:
+        00:00</span>
+    </div>
+    <p>你還有<span class="">1</span>次機會</p>
+
+
+  </section>
+
+
+
+
+  <!-- Modal -->
+  <section class="win-game-modal hide">
+    <div id="modal" class="modal">
+
+      <div class="modal-content ">
+
+        <h2>過關成功</h2>
+
+        <div class="discount-img">
+          <img class="modal-img" src="./Images/dad2022/discount_75.png" alt="">
+        </div>
+
+        <p class="bigword">恭喜成功過關！
+        </p>
+
+        <p>
+          獲得<span class="">好蓮陀茶、敵糖茶75折券</span>
+        </p>
+
+        <div class="btn-content">
+          <button class="button-74">再玩一次</button>
+          <button class="button-74">來去逛逛</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fail-game-modal hide">
+    <div id="modal" class="modal">
+
+      <div class="modal-content">
+
+        <h2>過關失敗</h2>
+
+        <div class="discount-img">
+          <img class="modal-img" src="./Images/dad2022/discount_sad.png" alt="">
+        </div>
+
+        <p>好可惜喔～請再接再厲
+        </p>
+
+        <div class="btn-content">
+          <button class="button-74">再玩一次</button>
+          <button class="button-74">玩刮刮樂</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scratch-game-modal hide">
+    <div id="modal" class="modal">
+
+      <div class="modal-content">
+
+        <h2>好運刮刮樂</h2>
+        <div class="discount-img">
+          <canvas id="c1" width="300" height="100"></canvas>
+          <canvas id="c2" width="300" height="100"></canvas>
+        </div>
+
+
+        <!-- <p>獲得 刮刮樂獎 <span class="">100元折抵券</span> -->
+        </p>
+
+        <div class="btn-content">
+          <button class="button-74">再玩一次</button>
+          <button class="button-74">來去逛逛</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="memory-game">
+
+    <div class="memory-card" data-framework="healthy">
+      <img class="front-face" src="./Images/dad2022/card_healthy.svg" alt="healthy" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="healthy">
+      <img class="front-face" src="./Images/dad2022/card_healthy.svg" alt="healthy" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="body">
+      <img class="front-face" src="./Images/dad2022/card_body.svg" alt="body" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="body">
+      <img class="front-face" src="./Images/dad2022/card_body.svg" alt="body" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="ginseng">
+      <img class="front-face" src="./Images/dad2022/card_ginseng.svg" alt="ginseng" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="ginseng">
+      <img class="front-face" src="./Images/dad2022/card_ginseng.svg" alt="ginseng" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="colego">
+      <img class="front-face" src="./Images/dad2022/card_colego.svg" alt="colego" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="colego">
+      <img class="front-face" src="./Images/dad2022/card_colego.svg" alt="colego" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="guava">
+      <img class="front-face" src="./Images/dad2022/card_guava.svg" alt="guava" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="guava">
+      <img class="front-face" src="./Images/dad2022/card_guava.svg" alt="guava" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="detox">
+      <img class="front-face" src="./Images/dad2022/card_detox.svg" alt="detox" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+
+    <div class="memory-card" data-framework="detox">
+      <img class="front-face" src="./Images/dad2022/card_detox.svg" alt="detox" />
+      <img class="back-face" src="./Images/dad2022/card_back.svg" alt="Memory Card" />
+    </div>
+  </div>
+
+  <div class="memory-game start ">
+    <div class="btn-content">
+      <button class="button-74 ">開始遊戲</button>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <script src="dad2022_script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,591 @@
+$mainBlue:#1a5559;
+$yellow:#f8eed1;
+$red:#D47560;
+$paper-line: #94ACD4;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    scroll-behavior: smooth;
+    
+  }
+
+  .red{
+    color: $red;
+  }
+
+
+  body {
+    position: relative;
+    background-image: url(../Images/dad2022/BG_01.png);
+    background-repeat: repeat;
+    // height: 100vh;
+    // width: 100%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+  }
+
+  .direction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    .heading{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      img{
+        max-width: 100%;
+      }
+      .main-center{
+       animation:zoomInDown;
+       animation-duration:1.5s; 
+
+      }
+      .left{
+        animation:bounceInRight;
+        animation-duration:1s; 
+      }
+      .right{
+        animation:zoomInLeft;
+        animation-duration:1.2s; 
+      }
+    }
+    
+ 
+  }
+.story-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: Space-evenly;
+    // overflow: hidden;
+    .top {
+      width: 100%;
+      height: 50px;
+      background: #333;
+      border-radius: 5px 5px 0 0;
+      h2{
+        color: white;
+        text-align: center;
+        padding-top: 0.5rem;
+      }
+      
+    }
+    .text-content{  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem ;
+      margin: 0em auto;
+      max-width: 50rem;
+      background: repeating-linear-gradient($yellow, $yellow 31px, $paper-line 31px, $paper-line 32px);
+      line-height: 32px;
+      outline: 0;  
+    }
+
+    .text-content::before,
+    .text-content::after{
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      width: 40%;
+      height: 10px;
+      box-shadow: 0 5px 14px rgba(0,0,0,1);
+      z-index: -1;
+      transition: all .3s ease-in-out;
+    }
+    
+    .text-content::before{
+      left: 15px;
+      transform: skew(-5deg) rotate(-5deg);
+    }
+    .text-content::after{
+      right: 15px;
+      transform: skew(5deg) rotate(5deg);
+    }
+  
+
+
+  /*以下、①背景色など*/
+  .line-bc {
+    padding: 20px 10px;
+    max-width: 50rem;
+    margin: 15px 1rem;
+    text-align: right;
+    font-size: 1.5rem;
+    .balloon6 {
+      width: 100%;
+      margin: 10px 0;
+      overflow: hidden;
+      display: flex;
+      
+      .faceicon {
+        float: left;
+        margin-right: -1rem;
+        // width: 40px;
+        img{
+          width: 7rem;
+          max-width: 80%;
+          height: auto;
+          border-radius: 50%;
+        }
+      }
+      .chatting {
+        width: 100%;
+        text-align: left;
+
+        .says {
+          display: inline-block;
+          position: relative; 
+          margin: 5px 0 0 30px;
+          padding: 10px;
+          max-width: 80%;
+          border-radius: 12px;
+          background: #ffffff;
+          p {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .says:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 3px; 
+          left: -19px;
+          border: 8px solid transparent;
+          border-right: 18px solid #ffffff;
+          -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+        }
+      }
+    }
+
+    .mycomment {
+      margin: 10px 0;
+      p {
+        display: inline-block;
+        position: relative; 
+        margin: 0 10px 0 0;
+        padding: 8px;
+        max-width: 250px;
+        border-radius: 12px;
+        background: #30e852;
+        font-size: 15px;
+      }
+      p:after {
+        content: "";
+        position: absolute;
+        top: 0px; 
+        right: -20px;
+        border: 8px solid transparent;
+        border-left: 18px solid #30e852;
+        -webkit-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+      }
+        
+    }
+  }
+}
+
+
+  .game-rule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      p{
+        padding: 0 1rem;
+        color: $mainBlue;
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+  }
+
+
+.score-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin: 1rem;
+
+  .timer-container {
+    border: 3px dashed $mainBlue;
+    font-size: 1.5rem;
+    background: $yellow;
+    // border-radius: 0.5em;
+    color: $mainBlue;
+    margin: 0.5em;
+    padding: 0.5em;
+    text-align: center;
+  }
+  
+  .timer {
+    font-size: 1em;
+  }
+
+}
+  
+
+  .modal {
+    /*Hidden by default */
+    
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Fallback color */
+    background-color: rgb(46, 61, 73);
+    /* With opacity */
+    background-color: rgba(46, 61, 73, 0.6);
+
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+      /* 5% from the top and centered */
+      margin: 5% auto;
+      border: 0.2rem solid $mainBlue;
+      // transition: all 0.2s;
+      width: 30rem;
+      max-width: 100%;
+      animation: zoomInDown; /* 引用動畫的 @keyframe 名稱 */
+      animation-duration: 1s; /* 別忘了設定持續時間 */
+      
+      h2{
+        margin: 0.5rem 0 0 0;
+        font-size: 2rem;
+        color: $mainBlue;
+      }
+      
+      .discount-img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        
+        .modal-img{
+          max-width: 100%;
+          // margin: 1rem;
+          border: 3px solid $mainBlue;
+        }
+      }
+
+      .bigword{
+        text-align: center;
+        font-weight: 900;    
+      }
+   
+
+      p{
+        color: $mainBlue;
+        font-size: 1.5rem;
+        padding: 0 1rem;
+      }
+      
+      .btn-content{
+        margin: 2rem 1rem;
+      }
+      .play-again-btn {
+        background: white;
+        margin: 1em;
+        padding: 1rem;
+        outline: none;
+
+        
+      }
+    }
+  }
+
+  .sc__wrapper {
+    display: block;
+    width: 100%;
+    height: 100px;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 5px solid white;
+
+    .sc__container {
+      position: relative;
+      overflow: hidden;
+      height: 100px;
+      max-width: 300px;
+
+      img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+
+     canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .sc__infos {
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+
+
+  .memory-game {
+    width: 640px;
+    height: 640px;
+    max-width: 90%;
+    max-height: 40%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 2px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    margin-top: 0;
+    background-color: white;
+
+
+    .memory-card {
+      width: calc(25% - 10px);
+      height: calc(33.333% - 10px);
+      margin:5px;
+      position: relative;
+      -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 0.2s;
+      transition: -webkit-transform 0.2s;
+      -o-transition: transform 0.2s;
+      transition: transform 0.2s;
+      transition: transform 0.2s, -webkit-transform 0.2s;
+      border-radius: 5px;
+      border:2px dashed $mainBlue;
+      cursor:pointer;
+
+      .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: $yellow;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+ 
+  }
+  
+  .front-face {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }  
+
+  }
+    .memory-card:active {
+      -webkit-transform: scale(0.97);
+      -ms-transform: scale(0.97);
+      transform: scale(0.97);
+      -webkit-transition: -webkit-transform 0.2s;
+      transition: -webkit-transform 0.2s;
+      -o-transition: transform 0.2s;
+      transition: transform 0.2s;
+      transition: transform 0.2s, -webkit-transform 0.2s;
+    }
+    
+    .memory-card.flip {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    
+    }
+  }
+
+  .matched{
+    .front-face{
+      transition: ease-in 0.2s;
+      background: $paper-line !important
+      
+    }
+  }
+
+  .no-game{
+    display: flex;
+    flex-direction: column;
+    background-color: $yellow;
+    justify-content: center;
+    .pic-content{
+      margin: 0 auto;
+      width: 10rem;
+      p{
+        font-size: 1rem;
+        text-align:center;
+        margin: 0.5rem auto;
+      }
+      img{
+        max-width: 100%;
+      }
+
+    }
+  }
+
+   //button style
+
+  .button-74 {
+    background-color: #fbeee0;
+    border: 2px solid $mainBlue;
+    border-radius: 30px;
+    box-shadow: $mainBlue 4px 4px 0 0;
+    color: $mainBlue;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 1.5rem 0.2rem;
+    transition: all 0.2s;
+  } 
+  .button-74:hover {
+    background-color: #fff;
+    box-shadow: 0.4rem 0.4rem 0 $mainBlue;
+    transform: translate(-0.4rem, -0.4rem);
+  }
+  
+  .button-74:active {
+    box-shadow: $mainBlue 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  //刮刮樂
+
+  #c1{
+    border: 3px dashed $mainBlue;
+    position: absolute;
+  }
+  
+  #c2{
+    border: 3px dashed $mainBlue;
+
+  }
+  
+
+
+
+
+
+  @media (min-width: 768px) {
+   
+    .button-74 {
+      min-width: 120px;
+      padding: 0 25px;
+ 
+    }
+  }
+
+  @media (max-width:768px) {
+    .direction{
+      .heading{
+        .sm-side{
+          display: none;
+        }
+      }
+    }
+    .story-content{
+      margin: 0 1rem;
+
+      .line-bc{
+        margin: 0;
+      }
+    }
+
+    .memory-game{
+      height: 25rem;
+      padding: 0.5rem;
+    }
+
+    .modal{
+      .modal-content{
+        max-width: 90%;
+      }
+    }
+
+    .btn-content{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      .button-74{
+        margin: 0.5rem auto;
+        width: 10rem;
+      }
+    }
+  }
+
+  .start{
+    background-color: #f8eed1;
+  }
+
+
+  
+
+
+  
+  
+  
+
+  
