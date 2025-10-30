@@ -1,5 +1,11 @@
 :root {
-  text-autospace: normal;
+  --main-color:#F9B360;
+  --dark-color:#0B1E1E;
+  --c: #1095c1; /* the color */
+  --s: 0.1em;
+  --border-weight: 0.15rem;
+  --border-radius: 0.5rem;
+  --text-autospace:normal;
   --typewriterSpeed: 4s;
   --typewriterChracters: 17;
 }
@@ -9,9 +15,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
+  font-family: "Noto Sans TC", sans-serif;
 }
 * P {
   text-align: justify;
+  font-weight: 400;
 }
 
 html {
@@ -63,15 +71,20 @@ header .container .site-nav ul {
   list-style: none;
 }
 header .container .site-nav ul li a {
-  color: black;
   padding: 1em 2em;
   text-transform: uppercase;
   text-decoration: none;
   transition: all ease-in 150ms;
+  line-height: 1.1em;
+  padding-bottom: calc(2.1 * var(--s));
+  background: conic-gradient(from 135deg at top, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left 0 bottom var(--s)/calc(2 * var(--s)) var(--s) repeat-x, conic-gradient(from -45deg at bottom, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left var(--s) bottom 0/calc(2 * var(--s)) var(--s) repeat-x;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
+  transition: 0.5s;
 }
 header .container .site-nav ul li a:hover,
 header .container .site-nav ul li a:focus {
-  color: #8f7a6a;
+  --_p: 100%;
+  color: var(--c);
 }
 
 header::after {
@@ -115,7 +128,8 @@ section {
   height: 30em;
   text-align: center;
   align-content: center;
-  box-shadow: rgba(0, 0, 0, 0.5) -5px 9px 25px -6px;
+  border: var(--border-weight) solid var(--dark-color);
+  border-radius: var(--border-radius);
 }
 .index .container .resumeCard h2 {
   font-family: "Noto Sans TC", sans-serif;
@@ -125,16 +139,15 @@ section {
   overflow: hidden;
   width: 15rem;
   height: 15rem;
-  border-radius: 50%;
   margin: 2rem auto;
   border-radius: 50%;
 }
 .index .container .resumeCard .pic img {
-  border-radius: 50%;
   transition: 0.2s ease-in-out;
+  filter: blur(3px);
 }
 .index .container .resumeCard img:hover {
-  transform: scale(1.2);
+  filter: none;
 }
 .index .container .resumeCard .btt {
   flex-direction: row;
@@ -390,11 +403,11 @@ section {
   background-color: rgb(213, 213, 213);
 }
 .projects .area {
-  margin: 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  margin: 1rem 1rem;
 }
 .projects .area .pro_card {
   padding: 0 1rem;
@@ -429,20 +442,20 @@ section {
   max-width: 100%;
 }
 
-section.pro .btn {
+.pro .btn {
   display: flex;
   margin: 1rem 1rem;
   justify-content: center;
 }
-section.pro .btn ul {
+.pro .btn ul {
   flex-wrap: wrap;
   display: flex;
   list-style: none;
 }
-section.pro .btn ul li {
+.pro .btn ul li {
   margin: 1rem 1rem;
 }
-section.pro .btn ul li a {
+.pro .btn ul li a {
   text-decoration: none;
   text-transform: uppercase;
   border: 1px solid rgb(133, 133, 133);
@@ -451,86 +464,168 @@ section.pro .btn ul li a {
   text-align: center;
   transition: all ease-in 150ms;
 }
-section.pro .btn ul li a:hover,
-section.pro .btn ul li a:focus {
+.pro .btn ul li a:hover,
+.pro .btn ul li a:focus {
   background-color: #8f7a6a;
   color: white;
 }
-section.pro .container {
+.pro .container {
   display: flex;
   margin: 1rem 1rem;
+  flex-wrap: wrap;
   max-width: 100%;
   justify-content: center;
 }
-section.pro .container .content {
+.pro .container .content {
   position: relative;
   margin: 1rem 1rem;
   max-width: 100%;
 }
-section.pro .container .content .content-overlay {
-  background: rgba(0, 0, 0, 0.6);
+.pro .container .content .content-overlay {
+  background: rgba(59, 25, 0, 0.823);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   opacity: 0;
   transition: all 0.4s ease-in-out 0s;
 }
-section.pro .container .content .content-image {
+.pro .container .content .content-image {
+  display: flex;
+  width: 20rem;
+}
+.pro .container .content .content-image img {
   max-width: 100%;
 }
-section.pro .container .content .content-details {
+.pro .container .content .content-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   text-align: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0 1rem;
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: all 0.3s ease-in-out 0s;
   color: white;
 }
-section.pro .container .content .content-details h3 {
+.pro .container .content .content-details h3 {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
 }
-section.pro .container .content .fadeIn-bottom {
+.pro .container .content .fadeIn-bottom {
   top: 80%;
 }
-section.pro .container .content .fadeIn-left {
+.pro .container .content .fadeIn-left {
   left: 20%;
+  bottom: -1rem;
 }
-section.pro .container .content:hover .content-overlay {
+.pro .container .content:hover .content-overlay {
   opacity: 1;
 }
-section.pro .container .content:hover .content-details {
-  top: 50%;
+.pro .container .content:hover .content-details {
+  bottom: -1rem;
   left: 50%;
   opacity: 1;
 }
-section.pro .gallery {
-  margin: 1rem 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  min-height: 80vh;
-  grid-gap: 0.5rem;
+.pro .container .project-card {
+  display: flex;
+  width: 25rem;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 0.5rem 0;
 }
-section.pro .gallery .img-container {
+.pro .container .project-card .project-img {
+  position: relative;
   overflow: hidden;
+  width: 100%;
 }
-section.pro .gallery .img-container img {
+.pro .container .project-card .project-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-section.pro .gallery .img-container img:hover {
+.pro .container .project-card .project-img img:hover {
   transform: scale(1.2);
 }
-section.pro .modal {
-  background: rgba(0, 0, 0, 0.8);
+.pro .container .project-card .project-img .content-overlay {
+  background: rgba(59, 25, 0, 0.823);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+.pro .container .project-card .project-img .content-overlay:hover {
+  opacity: 1;
+}
+.pro .container .project-card .project-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.pro .container .project-card .project-info .info-item {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px dashed gray;
+}
+.pro .container .project-card .project-info .info-item .info-label {
+  color: var(--dark-color);
+  padding: 1rem;
+}
+.pro .container .project-card .project-info .info-item .info-content {
+  padding: 1rem;
+  margin-left: 0.5rem;
+}
+.pro .container .project-card .table-line::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 10rem;
+  top: 0;
+  left: 4rem;
+  border-right: 1px solid var(--main-color);
+}
+.pro .gallery {
+  margin: 1rem 1rem;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-height: 80vh;
+  grid-gap: 0.15rem;
+}
+.pro .gallery .img-container {
+  overflow: hidden;
+  transition: 0.25s ease-in-out;
+}
+.pro .gallery .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.pro .gallery .img-container img:hover {
+  transform: scale(1.5);
+  filter: brightness(1.2);
+}
+.pro .gallery:hover > .img-container:not(:hover) img {
+  filter: brightness(0.6);
+}
+.pro .modal {
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   position: fixed;
   top: 0;
@@ -539,9 +634,9 @@ section.pro .modal {
   height: 100%;
   opacity: 0;
   pointer-events: none;
-  transition: 0.25s ease-out;
+  transition: 0.25s ease-in-out;
 }
-section.pro .modal .full-img {
+.pro .modal .full-img {
   position: absolute;
   max-width: 100%;
   max-height: 80%;
@@ -550,10 +645,10 @@ section.pro .modal .full-img {
   transform: translate(-50%, -45%) scale(0.5);
   transition: all 0.3s ease-out;
 }
-section.pro .modal .full-img.open {
+.pro .modal .full-img.open {
   transform: translate(-50%, -45%) scale(1);
 }
-section.pro .modal P {
+.pro .modal P {
   color: white;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.5rem;
@@ -563,7 +658,7 @@ section.pro .modal P {
   left: 50%;
   transform: translate(-50%, -5%);
 }
-section.pro .modal.open {
+.pro .modal.open {
   opacity: 1;
   pointer-events: all;
 }
@@ -743,4 +838,7 @@ footer .contacts p {
     opacity: 1;
     transform: rotateX(0);
   }
+}
+.blur-it {
+  filter: blur(4px);
 }/*# sourceMappingURL=pro_style.css.map */

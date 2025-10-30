@@ -1,7 +1,23 @@
 :root {
-  text-autospace:normal;
+  --main-color:#F9B360;
+  --dark-color:#0B1E1E;
+
+
+  --c: #1095c1; /* the color */
+  --s: 0.1em;
+
+  --border-weight: 0.15rem;
+  --border-radius: 0.5rem;
+
+
+
+
+  --text-autospace:normal;
   --typewriterSpeed: 4s;
   --typewriterChracters: 17;
+
+
+
 
 
 }
@@ -12,10 +28,12 @@
   box-sizing: border-box;
   // font-family: "Kaisei Decol", serif;
   font-family: "Roboto Mono", monospace;
+   font-family: "Noto Sans TC", sans-serif;
     
 
   P {
     text-align: justify;
+    font-weight: 400;
   }
 
 }
@@ -33,6 +51,24 @@ body {
   min-height: 100%;
 
   transition: all 0.5s ease-out;
+
+  // background-image:
+  //   linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px),
+  //   linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px),
+  //   linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),
+  //   linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px);
+  // background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  // background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+
+  //  --color: #ffffffcf;
+  // // background-color: #F3F3F3;
+  // background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+  //     linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  // background-size: 55px 55px;
+
+  
+
+  
 }
 
 header {
@@ -78,15 +114,31 @@ header {
         li {
 
           a {
-            color: black;
+            // color: black;
             padding: 1em 2em;
             text-transform: uppercase;
             text-decoration: none;
             transition: all ease-in 150ms;
+
+            line-height:1.1em;
+            padding-bottom: calc(2.1*var(--s));
+            background: 
+              conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+                left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+              conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+                left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+            -webkit-mask:
+              linear-gradient(#000 0 0) content-box,
+              linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+            transition: .5s;
+
+
           }
           a:hover,
           a:focus {
-            color: #8f7a6a;
+            // color: #8f7a6a;
+              --_p: 100%;
+              color: var(--c);
           }
         }
       }
@@ -113,6 +165,7 @@ section {
 
 .bg-active {
   background-color: #f3ede9;
+  // background-color: var(--main-color);
 }
 
 
@@ -145,7 +198,9 @@ section {
       height: 30em;
       text-align: center;
       align-content: center;
-      box-shadow: rgba(0, 0, 0, 0.5) -5px 9px 25px -6px;
+      border: var(--border-weight)  solid var(--dark-color);
+      border-radius: var(--border-radius);
+      
       h2 {
         font-family: "Noto Sans TC", sans-serif;
         font-weight: 100;
@@ -155,19 +210,23 @@ section {
         overflow: hidden;
         width: 15rem;
         height: 15rem;
-        border-radius: 50%;
-        // margin: 2rem 1rem 1rem 1rem;
+     
+       
         margin: 2rem auto;
         border-radius: 50%;
 
         img {
-          border-radius: 50%;
+          // border-radius: 50%;
           transition: 0.2s ease-in-out;
+           filter: blur(3px);
         }
       }
 
+
+
       img:hover {
-        transform: scale(1.2);
+      
+        filter: none;
       }
       .btt {
         flex-direction: row;
@@ -474,11 +533,11 @@ section {
   background-color: rgb(213, 213, 213);
 
   .area {
-    margin: 1rem 1rem;
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    margin: 1rem 1rem;
 
     // 舊版
     .pro_card {
@@ -522,7 +581,11 @@ section {
 
 //作品內部
 
-section.pro {
+.pro {
+  // color:var(--main-color);
+
+
+  
   .btn {
     display: flex;
     margin: 1rem 1rem;
@@ -553,93 +616,262 @@ section.pro {
     }
   }
 
+
+
+
+
+
   // 網站區
   .container {
     display: flex;
     margin: 1rem 1rem;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     max-width: 100%;
     justify-content: center;
+
+
     .content {
       position: relative;
       margin: 1rem 1rem;
       // width: 90%;
       max-width: 100%;
-      .content-overlay {
-        background: rgba(0, 0, 0, 0.6);
-        position: absolute;
-        height: 99%;
-        width: 100%;
 
+      .content-overlay {
+        background: rgba(59, 25, 0, 0.823);
+        background-image:
+          linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(255,255,255,.3) 2px, transparent 2px),
+          linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+        background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+        background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+       
+        // background: #f9b460;
+        position: absolute;
+        // bottom: 0;
+        height: 100%;
+        width: 100%;
         opacity: 0;
         -moz-transition: all 0.4s ease-in-out 0s;
         transition: all 0.4s ease-in-out 0s;
       }
       .content-image {
-        max-width: 100%;
+        display: flex;
+        width: 20rem;
+        img{
+
+          max-width: 100%;
+        }
       }
 
+
       .content-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: absolute;
         text-align: center;
-        padding-left: 1em;
-        padding-right: 1em;
+        padding: 0 1rem;
         opacity: 0;
         transform: translate(-50%, -50%);
         transition: all 0.3s ease-in-out 0s;
+        
+	     
+
+        
         color: white;
 
         h3 {
           font-family: "Noto Sans TC", sans-serif;
-          // font-family: "PT Sans", sans-serif;
           font-weight: 100;
-          text-transform: uppercase;
-          letter-spacing: 0.15rem;
+          // text-transform: uppercase;
+          // letter-spacing: 0.15rem;
         }
       }
 
       .fadeIn-bottom {
-        top: 80%;
+        top: 80%; 
       }
       .fadeIn-left {
         left: 20%;
+        bottom: -1rem;
       }
     }
     .content:hover .content-overlay {
       opacity: 1;
+      // filter: grayscale(80%);
+      // filter: contrast(200%) invert(20%);
+      
     }
     .content:hover .content-details {
-      top: 50%;
+      // top: 50%;
+      bottom: -1rem;
       left: 50%;
       opacity: 1;
+      
     }
+
+
+    
+    
+    
+    //card版
+  
+    .project-card{
+    // border: 2px solid red  ;
+    display: flex;
+    width: 25rem;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0.5rem 0;
+
+    .project-img{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      // height: 15rem;
+   
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    
+       
+        &:hover {
+          transform: scale(1.2);
+        
+        }
+      }
+
+      .content-overlay {
+        background: rgba(59, 25, 0, 0.823);
+        background-image:
+          linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(255,255,255,.3) 2px, transparent 2px),
+          linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+        background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+        background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+       
+ 
+        position: absolute;
+     
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+
+    .project-info{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem 0;
+      
+      .info-item{
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom:  1px dashed gray;
+        // padding: 1rem;
+
+        .info-label{
+          color:var(--dark-color);
+          padding: 1rem;
+       
+
+        }
+
+        .info-content{
+           padding: 1rem;
+           margin-left:0.5rem ;
+
+       
+        }
+      }
+    }
+
+    .table-line::after{
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 10rem;
+      top: 0;
+      left: 4rem;
+      border-right: 1px solid var(--main-color);
+
+
+    
+    
   }
+    
+  }
+
+}
+
 
   // 圖片區
 
   .gallery {
     margin: 1rem 1rem;
     display: grid;
+    position: relative;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     min-height: 80vh;
-    grid-gap: 0.5rem;
+    grid-gap: 0.15rem;
+    // background-color: var(--dark-color);
+    // border: var(--dark-color) var(--border-weight) solid;
+    
+
     .img-container {
       overflow: hidden;
+      transition: 0.25s ease-in-out;
+      // border-radius: var(--border-radius);
+      // border: var(--dark-color) var(--border-weight) solid;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all 0.3s ease-out;
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
+    
+       
+        &:hover {
+          transform: scale(1.5);
+          filter: brightness(1.2);
+          // filter: grayscale(80%);
+        }
       }
-      img:hover {
-        transform: scale(1.2);
-      }
+      
     }
+
+    &:hover{
+      > .img-container:not(:hover) img {
+        filter: brightness(0.6);    
+        
+
+    }
+    }
+ 
   }
 
+ 
+
+ 
+
   .modal {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     position: fixed;
     top: 0;
@@ -648,7 +880,8 @@ section.pro {
     height: 100%;
     opacity: 0;
     pointer-events: none;
-    transition: 0.25s ease-out;
+    transition: 0.25s ease-in-out;
+    
     .full-img {
       position: absolute;
       max-width: 100%;
@@ -660,6 +893,7 @@ section.pro {
     }
     .full-img.open {
       transform: translate(-50%, -45%) scale(1);
+      
     }
 
     P {
@@ -677,6 +911,7 @@ section.pro {
   .modal.open {
     opacity: 1;
     pointer-events: all;
+    
   }
 
 }
@@ -905,4 +1140,9 @@ footer {
     opacity: 1;
     transform: rotateX(0);
   }
+}
+
+
+.blur-it {
+  filter: blur(4px);
 }

@@ -17,7 +17,7 @@ section {
 }
 
 main {
-  background-image: url(../images/CDG/CDG_dessert_bg.png);
+  background-image: url(/projects/images/CDG/CDG_dessert_bg.png);
   background-repeat: repeat-y;
 }
 main .copy {
