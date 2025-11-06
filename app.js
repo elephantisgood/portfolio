@@ -93,3 +93,49 @@ images.forEach(image => {
 
 
 
+const zoom = document.querySelector('.zoom');
+const projectImgs = document.querySelectorAll('.project-img');
+const imgContainers = document.querySelectorAll('.img-ooo');
+const targets = [...projectImgs, ...imgContainers];
+
+
+targets.forEach(target => {
+  target.addEventListener('mouseenter', e => {
+    zoom.classList.add('show', 'loading');
+    positionZoom(e);
+    console.log('zoom should appear');
+  });
+
+  target.addEventListener('mousemove', e => {
+    positionZoom(e);
+  });
+
+  target.addEventListener('mouseleave', () => {
+    zoom.classList.remove('show', 'loading');
+  });
+
+  // 手機支援
+  target.addEventListener('touchstart', e => {
+    zoom.classList.add('show', 'loading');
+    positionZoom(e.touches[0]);
+  });
+
+  target.addEventListener('touchmove', e => {
+    positionZoom(e.touches[0]);
+  });
+
+  target.addEventListener('touchend', () => {
+    zoom.classList.remove('show', 'loading');
+  });
+});
+
+
+function positionZoom(e) {
+  const posX = e.clientX;
+  const posY = e.clientY;
+
+
+  zoom.style.left = `${posX - zoom.offsetWidth / 2}px`;
+  zoom.style.top = `${posY - zoom.offsetHeight / 1.5}px`; // 稍微往上
+
+}

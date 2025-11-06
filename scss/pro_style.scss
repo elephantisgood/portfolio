@@ -1,6 +1,8 @@
 :root {
-  --main-color:#F9B360;
-  --dark-color:#0B1E1E;
+  --color-main:#F9B360;
+  --color-dark:#0B1E1E;
+  --color-light:#F9F3EF;
+  --color-accent:#439DCA;
 
 
   --c: #1095c1; /* the color */
@@ -46,30 +48,22 @@ html {
 body {
   position: relative;
   // background-color: white;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   min-height: 100%;
 
-  transition: all 0.5s ease-out;
 
-  // background-image:
-  //   linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px),
-  //   linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px),
-  //   linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),
-  //   linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px);
-  // background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  // background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 
-  //  --color: #ffffffcf;
-  // // background-color: #F3F3F3;
-  // background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-  //     linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-  // background-size: 55px 55px;
-
-  
+ 
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 0.1s infinite;
+  opacity: .9;
 
   
 }
+
+
 
 header {
   background: #ffffff;
@@ -159,6 +153,8 @@ header::after {
 
 
 
+
+
 section {
   animation: transitionIn 0.75s;
 }
@@ -198,7 +194,7 @@ section {
       height: 30em;
       text-align: center;
       align-content: center;
-      border: var(--border-weight)  solid var(--dark-color);
+      border: var(--border-weight)  solid var(--color-dark);
       border-radius: var(--border-radius);
       
       h2 {
@@ -620,6 +616,80 @@ section {
 
 
 
+  .zoom {
+  position: absolute; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	width: 10rem;
+	height: 10rem;
+  background: #f9f3efe7 url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+
+  border: var(--border-weight) solid var(--color-main);
+	border-radius: 50%;
+	pointer-events: none;
+	transition: transform .25s ease, opacity 0s linear .25s, background .25s ease;
+	opacity: 1;
+	transform: scale(0);
+	transform-origin: 50% 50%;
+	overflow: hidden;
+  z-index: 999;
+  animation: bg-animation 0.3s infinite;
+
+
+  
+
+	
+	&:before {
+		content: '';
+		position: absolute;
+		margin: auto;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		// display: none;
+	}
+	
+	&.show {
+		transform: scale(1);
+		opacity: 1;
+		transition: transform .25s ease, opacity 0s linear;
+	}
+	
+	&.loading {
+		// background: transparent;
+    // filter: blur(1px);
+		
+		&:before {
+			display: block;
+			animation: loading .8s ease  alternate;
+		}
+		
+		@keyframes loading {
+			0% {
+				transform: scale(0.1);
+				box-shadow: inset 0 0 0 150px var(--color-main);
+			}
+			50% {
+				transform: scale(1);
+				box-shadow: inset 0 0 0 140px  var(--color-main);
+			}
+			100% {
+				box-shadow: inset 0 0 0 0  var(--color-main);
+			}
+		}
+		
+	
+	}
+	
+
+}
+
+
 
   // 網站區
   .container {
@@ -637,16 +707,19 @@ section {
       max-width: 100%;
 
       .content-overlay {
-        background: rgba(59, 25, 0, 0.823);
-        background-image:
-          linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px),
-          linear-gradient(90deg, rgba(255,255,255,.3) 2px, transparent 2px),
-          linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-        background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-        background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
-       
+        // background: rgba(59, 25, 0, 0.823);
+        // background-image:
+        //   linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px),
+        //   linear-gradient(90deg, rgba(255,255,255,.3) 2px, transparent 2px),
+        //   linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        //   linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+        // background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+        // background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+
+
         // background: #f9b460;
+
+    
         position: absolute;
         // bottom: 0;
         height: 100%;
@@ -719,6 +792,7 @@ section {
   
     .project-card{
     // border: 2px solid red  ;
+    position: relative;
     display: flex;
     width: 25rem;
     flex-direction: column;
@@ -747,30 +821,28 @@ section {
       }
 
       .content-overlay {
-        background: rgba(59, 25, 0, 0.823);
-        background-image:
-          linear-gradient(rgba(255,255,255,.3) 2px, transparent 2px),
-          linear-gradient(90deg, rgba(255,255,255,.3) 2px, transparent 2px),
-          linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-        background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-        background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
        
- 
         position: absolute;
      
         height: 100%;
         width: 100%;
         opacity: 0;
-        -moz-transition: all 0.4s ease-in-out 0s;
-        transition: all 0.4s ease-in-out 0s;
+        
+        // -moz-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+       
 
         &:hover {
           opacity: 1;
+         
         }
       }
 
     }
+
+  
+
+
 
     .project-info{
       position: relative;
@@ -787,7 +859,7 @@ section {
         // padding: 1rem;
 
         .info-label{
-          color:var(--dark-color);
+          color:var(--color-dark);
           padding: 1rem;
        
 
@@ -809,7 +881,7 @@ section {
       height: 10rem;
       top: 0;
       left: 4rem;
-      border-right: 1px solid var(--main-color);
+      border-right: 1px solid var(--color-main);
 
 
     
@@ -830,17 +902,18 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     min-height: 80vh;
     grid-gap: 0.15rem;
-    // background-color: var(--dark-color);
-    // border: var(--dark-color) var(--border-weight) solid;
+
     
 
     .img-container {
+      position: relative;
+      display: flex;
       overflow: hidden;
       transition: 0.25s ease-in-out;
-      // border-radius: var(--border-radius);
-      // border: var(--dark-color) var(--border-weight) solid;
+     
+     
       img {
-        width: 100%;
+        max-width: 100%;
         height: 100%;
         object-fit: cover;
         transition: all 0.3s ease-in-out;
@@ -1145,4 +1218,18 @@ footer {
 
 .blur-it {
   filter: blur(4px);
+}
+
+@keyframes bg-animation {
+  0%   { background-position: 0 0; }
+  10%  { background-position: -5% -5%; }
+  20%  { background-position: -10% 5%; }
+  30%  { background-position: 5% -10%; }
+  40%  { background-position: -5% 15%; }
+  50%  { background-position: -10% 5%; }
+  60%  { background-position: 15% 0; }
+  70%  { background-position: 0 10%; }
+  80%  { background-position: -15% 0; }
+  90%  { background-position: 10% 5%; }
+  100% { background-position: 5% 0; }
 }

@@ -1,6 +1,8 @@
 :root {
-  --main-color:#F9B360;
-  --dark-color:#0B1E1E;
+  --color-main:#F9B360;
+  --color-dark:#0B1E1E;
+  --color-light:#F9F3EF;
+  --color-accent:#439DCA;
   --c: #1095c1; /* the color */
   --s: 0.1em;
   --border-weight: 0.15rem;
@@ -29,10 +31,11 @@ html {
 
 body {
   position: relative;
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
-  transition: all 0.5s ease-out;
+  background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 0.1s infinite;
+  opacity: 0.9;
 }
 
 header {
@@ -128,7 +131,7 @@ section {
   height: 30em;
   text-align: center;
   align-content: center;
-  border: var(--border-weight) solid var(--dark-color);
+  border: var(--border-weight) solid var(--color-dark);
   border-radius: var(--border-radius);
 }
 .index .container .resumeCard h2 {
@@ -469,6 +472,59 @@ section {
   background-color: #8f7a6a;
   color: white;
 }
+.pro .zoom {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  background: rgba(249, 243, 239, 0.9058823529) url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  border: var(--border-weight) solid var(--color-main);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0s linear 0.25s, background 0.25s ease;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  z-index: 999;
+  animation: bg-animation 0.3s infinite;
+}
+.pro .zoom:before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pro .zoom.show {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.25s ease, opacity 0s linear;
+}
+.pro .zoom.loading:before {
+  display: block;
+  animation: loading 0.8s ease alternate;
+}
+@keyframes loading {
+  0% {
+    transform: scale(0.1);
+    box-shadow: inset 0 0 0 150px var(--color-main);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 140px var(--color-main);
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 var(--color-main);
+  }
+}
 .pro .container {
   display: flex;
   margin: 1rem 1rem;
@@ -482,10 +538,6 @@ section {
   max-width: 100%;
 }
 .pro .container .content .content-overlay {
-  background: rgba(59, 25, 0, 0.823);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -531,6 +583,7 @@ section {
   opacity: 1;
 }
 .pro .container .project-card {
+  position: relative;
   display: flex;
   width: 25rem;
   flex-direction: column;
@@ -554,15 +607,11 @@ section {
   transform: scale(1.2);
 }
 .pro .container .project-card .project-img .content-overlay {
-  background: rgba(59, 25, 0, 0.823);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   position: absolute;
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 .pro .container .project-card .project-img .content-overlay:hover {
   opacity: 1;
@@ -581,7 +630,7 @@ section {
   border-bottom: 1px dashed gray;
 }
 .pro .container .project-card .project-info .info-item .info-label {
-  color: var(--dark-color);
+  color: var(--color-dark);
   padding: 1rem;
 }
 .pro .container .project-card .project-info .info-item .info-content {
@@ -595,7 +644,7 @@ section {
   height: 10rem;
   top: 0;
   left: 4rem;
-  border-right: 1px solid var(--main-color);
+  border-right: 1px solid var(--color-main);
 }
 .pro .gallery {
   margin: 1rem 1rem;
@@ -606,11 +655,13 @@ section {
   grid-gap: 0.15rem;
 }
 .pro .gallery .img-container {
+  position: relative;
+  display: flex;
   overflow: hidden;
   transition: 0.25s ease-in-out;
 }
 .pro .gallery .img-container img {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -841,4 +892,40 @@ footer .contacts p {
 }
 .blur-it {
   filter: blur(4px);
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -5%;
+  }
+  20% {
+    background-position: -10% 5%;
+  }
+  30% {
+    background-position: 5% -10%;
+  }
+  40% {
+    background-position: -5% 15%;
+  }
+  50% {
+    background-position: -10% 5%;
+  }
+  60% {
+    background-position: 15% 0;
+  }
+  70% {
+    background-position: 0 10%;
+  }
+  80% {
+    background-position: -15% 0;
+  }
+  90% {
+    background-position: 10% 5%;
+  }
+  100% {
+    background-position: 5% 0;
+  }
 }/*# sourceMappingURL=pro_style.css.map */
