@@ -94,6 +94,7 @@ images.forEach(image => {
 
 
 const zoom = document.querySelector('.zoom');
+const zoomText = zoom.querySelector('p');
 const projectImgs = document.querySelectorAll('.project-img');
 const imgContainers = document.querySelectorAll('.img-container');
 const targets = [...projectImgs, ...imgContainers];
@@ -104,6 +105,13 @@ const targets = [...projectImgs, ...imgContainers];
 
 targets.forEach(target => {
   target.addEventListener('mouseenter', e => {
+
+     const zoomTextValue = target.getAttribute('data-zoom-text') 
+      || target.closest('[data-zoom-text]')?.getAttribute('data-zoom-text') 
+      || 'more';
+
+    zoomText.textContent = zoomTextValue;
+
     zoom.classList.add('show', 'loading');
     positionZoom(e);
    
@@ -119,6 +127,14 @@ targets.forEach(target => {
 
   // 手機支援
   target.addEventListener('touchstart', e => {
+
+    const zoomTextValue = target.getAttribute('data-zoom-text') 
+      || target.closest('[data-zoom-text]')?.getAttribute('data-zoom-text') 
+      || 'more';
+
+    zoomText.textContent = zoomTextValue;
+
+    
     zoom.classList.add('show', 'loading');
     positionZoom(e.touches[0]);
   });
@@ -134,8 +150,8 @@ targets.forEach(target => {
 
 
 function positionZoom(e) {
-  const posX = e.clientX;
-  const posY = e.clientY;
+  const posX = e.pageX;
+  const posY = e.pageY;
 
 
   zoom.style.left = `${posX - zoom.offsetWidth / 2}px`;
