@@ -21,7 +21,7 @@
 }
 * P {
   text-align: justify;
-  font-weight: 400;
+  color: var(--color-dark);
 }
 
 html {
@@ -477,10 +477,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 10rem;
-  background: rgba(249, 243, 239, 0.9058823529) url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
-  border: var(--border-weight) solid var(--color-main);
+  width: 8rem;
+  height: 8rem;
+  background: rgba(255, 248, 245, 0.874) url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  border: 2px solid var(--color-main);
   border-radius: 50%;
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0s linear 0.25s, background 0.25s ease;
@@ -512,18 +512,9 @@ section {
   display: block;
   animation: loading 0.8s ease alternate;
 }
-@keyframes loading {
-  0% {
-    transform: scale(0.1);
-    box-shadow: inset 0 0 0 150px var(--color-main);
-  }
-  50% {
-    transform: scale(1);
-    box-shadow: inset 0 0 0 140px var(--color-main);
-  }
-  100% {
-    box-shadow: inset 0 0 0 0 var(--color-main);
-  }
+.pro .zoom.loading p {
+  color: var(--color-dark);
+  font-size: 1.5rem;
 }
 .pro .container {
   display: flex;
@@ -600,11 +591,11 @@ section {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   cursor: pointer;
 }
 .pro .container .project-card .project-img img:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 .pro .container .project-card .project-img .content-overlay {
   position: absolute;
@@ -620,7 +611,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0.5rem 0;
+  margin: 0.5rem 1rem;
 }
 .pro .container .project-card .project-info .info-item {
   margin-bottom: 0.5rem;
@@ -631,7 +622,9 @@ section {
 }
 .pro .container .project-card .project-info .info-item .info-label {
   color: var(--color-dark);
-  padding: 1rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 .pro .container .project-card .project-info .info-item .info-content {
   padding: 1rem;
@@ -643,7 +636,7 @@ section {
   width: 2px;
   height: 10rem;
   top: 0;
-  left: 4rem;
+  left: 3.5rem;
   border-right: 1px solid var(--color-main);
 }
 .pro .gallery {
@@ -927,5 +920,18 @@ footer .contacts p {
   }
   100% {
     background-position: 5% 0;
+  }
+}
+@keyframes loading {
+  0% {
+    transform: scale(0.1);
+    box-shadow: inset 0 0 0 150px var(--color-main);
+  }
+  50% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 140px var(--color-main);
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 var(--color-main);
   }
 }/*# sourceMappingURL=pro_style.css.map */

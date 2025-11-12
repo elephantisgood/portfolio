@@ -95,15 +95,18 @@ images.forEach(image => {
 
 const zoom = document.querySelector('.zoom');
 const projectImgs = document.querySelectorAll('.project-img');
-const imgContainers = document.querySelectorAll('.img-ooo');
+const imgContainers = document.querySelectorAll('.img-container');
 const targets = [...projectImgs, ...imgContainers];
+
+
+
 
 
 targets.forEach(target => {
   target.addEventListener('mouseenter', e => {
     zoom.classList.add('show', 'loading');
     positionZoom(e);
-    console.log('zoom should appear');
+   
   });
 
   target.addEventListener('mousemove', e => {
