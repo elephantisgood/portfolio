@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ //wave
+ 
+.re-wave{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: url('../images/wave.svg');
+    transform: rotate(180deg);
+    background-size: 1600px 198px;
+    margin: -2px 0;
+   }
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: url('../images/wave.svg');
+    background-size: 1600px 198px;
+    bottom: 0;
+   }
+    .wave1 {
+    animation: animate-wave-1 4s linear infinite;
+    z-index: -1000;
+    opacity: 1;
+    animation-delay: 0s;
+
+   }
+   .wave2 {
+      animation: animate-wave-2 15s linear infinite;
+      z-index: -999;
+      opacity: 0.5;
+      filter: blur(5px);
+      animation-delay: -5s;
+
+   }
+   .wave3 {
+      animation: animate-wave-3 30s linear infinite;
+      z-index: -998;
+      opacity: 0.2;
+      animation-delay: -2s;
+     
+
+   }
+   .wave4 {
+      animation: animate-wave-4 5s linear infinite;
+      z-index: -997;
+      opacity: 0.7;
+      animation-delay: -5s;
+      
+
+   }
+
+
+   @keyframes animate-wave-1 {
+    0% {
+       background-position-x: 0;
+    }
+    100% {
+       background-position-x: 1600px;
+    }
+ }
+ @keyframes animate-wave-2 {
+   0% {
+      background-position-x: 0;
+   }
+   100% {
+      background-position-x: -1600px;
+   }
+}
+
+@keyframes animate-wave-3 {
+   0% {
+      background-position-x: 0;
+   }
+   100% {
+      background-position-x: 1600px;
+   }
+}
+
+@keyframes animate-wave-4 {
+   0% {
+      background-position-x: 0;
+   }
+   100% {
+      background-position-x: -1600px;
+   }
+}
+
+//round
+
+.round-BG{
+  width: 2000px;
+  height: 2000px;
+  position: absolute;
+  background: -moz-linear-gradient(left,  #f7e6f3 1%, #e3f4f9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #f7e6f3 1%,#e3f4f9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #f7e6f3 1%,#e3f4f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7e6f3', endColorstr='#e3f4f9',GradientType=1 ); /* IE6-9 */
+  top:10rem;
+  z-index: -5;
+  
+}
+
+.round-OB{
+   width: 30rem;
+   height: 30rem;
+   position: absolute;
+   filter:blur(3px);
+
+   background: #0c2663;
+   background: -moz-radial-gradient(center, ellipse cover,  #0c2663 0%, #0c2663 40%, #01c8f0 70%, #00b0d3 85%, #e17dac 100%);
+   background: -webkit-radial-gradient(center, ellipse cover,  #0c2663 0%,#0c2663 40%,#01c8f0 70%,#00b0d3 85%,#e17dac 100%);
+   background: radial-gradient(ellipse at center,  #0c2663 0%,#0c2663 40%,#01c8f0 70%,#00b0d3 85%,#e17dac 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c2663', endColorstr='#e17dac',GradientType=1 );
+
+
+   // top: -9rem;
+
+   // z-index: -1;
+}
+.round-OBpink{
+   width: 30rem;
+   height: 30rem;
+   position: absolute;
+   filter:blur(1px);
+ 
+   background: #26325e;
+   background: -moz-radial-gradient(center, ellipse cover,  #26325e 0%, #26325e 62%, #26325e 62%, #e17dac 84%, #0591c8 99%);
+   background: -webkit-radial-gradient(center, ellipse cover,  #26325e 0%,#26325e 62%,#26325e 62%,#e17dac 84%,#0591c8 99%);
+   background: radial-gradient(ellipse at center,  #26325e 0%,#26325e 62%,#26325e 62%,#e17dac 84%,#0591c8 99%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26325e', endColorstr='#0591c8',GradientType=1 );
+
+   
+   
+
+
+   // top: -9rem;
+
+   // z-index: -1;
+}
+
+
+
+.round1{
+   animation: around 10s linear infinite;
+   border-radius: 43%;
+   opacity: 0.7;
+   animation-delay: -5s;
+  
+}
+.round2{
+   animation: around 20s linear infinite;
+   border-radius: 39%;
+   opacity: 0.5;
+   animation-delay: -2s;
+
+
+
+}
+
+.filterHue{
+   filter: hue-rotate(180deg);
+
+}
+
+.filterGray{
+   filter: hue-rotate(70deg);
+ 
+}
+
+
+@keyframes around {
+   from { transform: rotate(0deg);}
+   from { transform: rotate(360deg);}
+ }
+
+ //float
+
+
+ .ob-float{
+   animation: floatOB 6s linear infinite;
+ }
+
+ @keyframes floatOB{
+   0%      {transform: translateY(0)}
+   25%     {transform: translateY(2rem) rotate(-6deg); transform-origin: 50% 50%;}
+   75%     {transform: translateY(-3rem) rotate(3deg); transform-origin: 50% 50%;}
+   100%    {transform: translateY(0)}
+ }
+
+
+
+

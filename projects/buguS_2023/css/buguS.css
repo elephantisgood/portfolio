@@ -1,0 +1,647 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+* body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+* body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+* h1, * h3, * h4 {
+  font-family: "Noto Serif TC", serif;
+}
+* hr {
+  margin: 2rem;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.forBG {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.time-change {
+  position: relative;
+  background-color: #2f3a79;
+}
+.time-change .sayhi-area {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin: 1rem auto;
+  padding: 1rem;
+  z-index: 1;
+  top: 30vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+.time-change .sayhi-area h2, .time-change .sayhi-area p {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+.time-change .sayhi-area h2 {
+  font-family: "Advent Pro", sans-serif;
+  margin: 1rem 0;
+  font-size: 8rem;
+  font-weight: 200;
+  letter-spacing: 1.5rem;
+}
+.time-change .sayhi-area p {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1rem;
+}
+.time-change .roompic {
+  position: relative;
+  display: flex;
+  margin-bottom: -5px;
+}
+.time-change .roompic img {
+  max-width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  z-index: 10;
+}
+.center img {
+  max-width: 100%;
+}
+
+.text-area {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.text-area .title {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.text-area .title img {
+  max-width: 100%;
+}
+.text-area .text {
+  color: #2b2b2b;
+  font-size: 1.2rem;
+  text-indent: 2em;
+  margin: 0 auto;
+  max-width: 960px;
+}
+.text-area .text p {
+  text-align: justify;
+  font-weight: 600;
+}
+.text-area .text p span {
+  font-weight: 700;
+  color: #6287c5;
+}
+
+.mobile_mode {
+  display: none;
+}
+
+.CV {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0E2563;
+  background: linear-gradient(180deg, rgb(14, 37, 99) 0%, rgb(47, 58, 121) 100%);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.CV .KOL-area {
+  display: flex;
+  justify-content: center;
+}
+.CV .KOL-area .KOL {
+  display: flex;
+}
+.CV .KOL-area .KOL img {
+  max-width: 100%;
+}
+.CV .KOL-area .CV-title {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.CV .KOL-area .CV-title img {
+  max-width: 100%;
+  z-index: 1;
+}
+.CV .benefit-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+.CV .benefit-area .benefit-content {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+.CV .benefit-area .benefit-content .text P {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.CV .benefit-area .benefit-content .text span {
+  color: #d9b1ff;
+  font-size: 1.2rem;
+}
+.CV .benefit-area .benefit-content .deco {
+  display: flex;
+  position: relative;
+  height: 7rem;
+}
+.CV .benefit-area .benefit-content .deco img {
+  max-width: 100%;
+}
+.CV .benefit-area .benefit-content .deco-01 {
+  top: -1rem;
+}
+
+.insomnia {
+  position: relative;
+}
+
+.intro {
+  position: relative;
+  margin: 1rem auto;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro .intro-area {
+  display: flex;
+  margin: 1rem auto;
+  padding: 1rem;
+  justify-content: center;
+  max-width: 960px;
+}
+.intro .intro-area .card-pic {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.intro .intro-area .title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 90%;
+}
+.intro .intro-area .title img {
+  max-width: 100%;
+}
+.intro .intro-area .title p {
+  line-height: 2rem;
+  margin: 1rem 0;
+}
+.intro .intro-area .title p span {
+  color: #6287c5;
+  font-weight: 800;
+}
+.intro .icon-area {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5rem auto;
+  max-width: 960px;
+}
+.intro .icon-area .icon {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.intro .icon-area .icon img {
+  max-width: 110%;
+}
+
+.clinical {
+  flex-direction: column;
+}
+.clinical .maru-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.clinical .maru-area .maru {
+  margin: 1rem;
+}
+.clinical .maru-area .maru .title {
+  text-align: center;
+  width: 20em;
+  padding: 1rem;
+}
+.clinical .maru-area .maru .title P {
+  padding-left: 1rem;
+  font-weight: 600;
+}
+.clinical .chart-area {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+.clinical .chart-area h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.clinical .chart-area .chart {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.clinical .chart-area .chart img {
+  max-width: 100%;
+}
+
+.lab {
+  display: flex;
+  max-width: 960px;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+}
+.lab .text-area {
+  width: 100%;
+}
+.lab .text-area .title {
+  width: 30em;
+  margin: 0 auto;
+}
+.lab .text-area .text p {
+  text-align: justify;
+  line-height: 2rem;
+}
+.lab .text-area .text p span {
+  font-weight: 700;
+  color: #6287c5;
+}
+
+.proudct {
+  flex-direction: column;
+  max-width: 960px;
+  margin: 1rem auto;
+  justify-content: center;
+}
+.proudct .center {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 auto;
+}
+
+.FQA {
+  flex-direction: column;
+  position: relative;
+}
+
+.QA {
+  margin: 0 auto;
+  margin-bottom: 3em;
+  padding: 1rem;
+  width: 50rem;
+  max-width: 100%;
+  background-color: none;
+}
+
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #2b2b2b;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em;
+  color: #2b2b2b;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #2b2b2b;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #2b2b2b;
+  border: 1px solid #2b2b2b;
+}
+.accordion button .accordion-title {
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.accordion button .accordion-title span {
+  color: #2b2b2b;
+  font-size: 1rem;
+  position: absolute;
+  left: -0.5rem;
+  top: 1.3rem;
+  -webkit-text-stroke: 1px #2b2b2b;
+  -webkit-text-fill-color: transparent;
+}
+.accordion button .icon {
+  display: inline-block;
+  display: none;
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0.65rem;
+  left: 0.45rem;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0.45rem;
+  left: 0.65rem;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #2f3a79;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  border-bottom: 1px solid #2b2b2b;
+  padding: 1rem;
+  opacity: 1;
+  max-height: 50em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0px;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content li {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.accordion .accordion-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.accordion .accordion-content span {
+  color: white;
+  background-color: #c35ba9;
+}
+.accordion .accordion-content a {
+  text-decoration: none;
+  margin: 1rem;
+}
+.accordion .accordion-content .push {
+  padding-left: 1rem;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  color: #2b2b2b;
+  font-size: 1.2rem;
+  background-color: #2f3a79;
+  align-items: center;
+}
+footer .left {
+  display: flex;
+  flex-direction: column;
+}
+footer .left .logo {
+  display: flex;
+}
+footer .left .logo img {
+  max-width: 100%;
+}
+footer .left .icon-area {
+  display: flex;
+  margin-left: 1rem;
+}
+footer .left .icon-area .icon {
+  padding: 0.5rem;
+  max-width: 4rem;
+}
+footer .left .icon-area .icon img {
+  max-width: 100%;
+}
+footer .contacts {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 1rem;
+}
+footer .contacts h5 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+footer .contacts p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 790px) {
+  .mobile_mode {
+    display: flex;
+  }
+  .pc_mode {
+    display: none;
+  }
+  .navbar .logo {
+    max-width: 60%;
+  }
+  .time-change {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .time-change .sayhi-area {
+    height: 30vh;
+  }
+  .time-change .sayhi-area h2 {
+    font-size: 3.5rem;
+    letter-spacing: 1.2rem;
+  }
+  .time-change .sayhi-area p {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+  }
+  .time-change .roompic {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .time-change .roompic img {
+    max-width: 350%;
+  }
+  .CV {
+    background-position: right;
+    padding: 0;
+  }
+  .CV .KOL-area {
+    flex-direction: column;
+  }
+  .CV .KOL-area .CV-title {
+    top: 0rem;
+  }
+  .CV .KOL-area .CV-title img {
+    max-width: 100%;
+  }
+  .CV .KOL-area .CV-title .round-OB, .CV .KOL-area .CV-title .round-OBpink {
+    display: none;
+  }
+  .CV .benefit-content {
+    flex-direction: column;
+  }
+  .intro {
+    display: flex;
+  }
+  .intro-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro-area .card-pic {
+    display: flex;
+    margin: 2rem;
+  }
+  .intro-area .card-pic img {
+    max-width: 100%;
+  }
+  .intro-area .title {
+    margin: 0;
+    padding: 0;
+  }
+  .intro-area .text {
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+  .intro-area .text P {
+    text-align: justify;
+  }
+  .icon-area, .maru-area, .chart, .center {
+    flex-wrap: wrap;
+  }
+  .clinical .title {
+    padding: 0;
+  }
+  .clinical .text {
+    padding: 1rem;
+  }
+  .lab {
+    flex-wrap: wrap;
+  }
+  .lab .text-area .title {
+    width: 100%;
+  }
+  .lab .text-area .title img {
+    max-width: 100%;
+  }
+  .lab .text-area .text {
+    margin: 1rem;
+  }
+  .lab .card-pic {
+    display: flex;
+  }
+  .lab .card-pic img {
+    max-width: 100%;
+  }
+  footer {
+    justify-content: flex-start;
+  }
+}
+.shopfloat {
+  position: fixed;
+  top: 35rem;
+  right: -1rem;
+  z-index: 99;
+}
+.shopfloat .shopbt {
+  width: 5rem;
+  height: 5rem;
+  padding: 4px;
+  margin-bottom: 8px;
+  display: block;
+  background: #6287c5;
+  font-size: 0.9rem;
+  text-align: left;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0px 0px 5px #666;
+  transition: all 0.3s ease-in-out;
+}
+.shopfloat .shopbt:hover {
+  transform: translateX(-1rem);
+  background-color: #c35ba9;
+}
+.shopfloat .shopbt:active {
+  color: #c35ba9;
+}
+.shopfloat .shopbt .onlineIcon {
+  width: 75%;
+  margin: 4px auto;
+  height: 0;
+  padding-bottom: 55%;
+  background: url(../images/cart.svg) no-repeat;
+  background-size: contain;
+}
+.shopfloat .shopbt .bagIcon {
+  width: 75%;
+  margin: 4px auto;
+  height: 0;
+  padding-bottom: 55%;
+  background: url(../images/location.svg) no-repeat;
+  background-size: contain;
+}/*# sourceMappingURL=buguS.css.map */
