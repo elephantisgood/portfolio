@@ -1,0 +1,545 @@
+@charset "UTF-8";
+
+
+$green: #436d51 ;
+$red:#942123;
+$hotpink:#ec2798;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &::before, &::after {
+      box-sizing: border-box;
+    }
+ 
+  
+    
+    
+}
+
+
+body{
+  background-color: #f5f6f0;
+ 
+
+}
+p{
+  font-size: 1.2rem;
+
+  font-weight: 300;
+  font-family: "Noto Sans TC", sans-serif;
+
+
+  span{
+    color: $hotpink;
+    font-weight: 600;
+  }
+}
+
+P::first-letter{
+  font-size: 2rem;
+}
+
+
+
+%animation-default {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+@mixin carousel($items, $animation: 'default') {
+  .carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    > input[type="radio"] {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      top: 0;
+
+      &:checked {
+        ~ .carousel__items .carousel__item,
+        ~ .carousel__prev > label,
+        ~ .carousel__next > label {
+          opacity: 0;
+        }
+      }
+
+      @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+          &:checked {
+            ~ .carousel__items .carousel__item {
+              @if $animation == 'default' {
+                &:nth-child(#{$i}) {
+                  opacity: 1;
+                }
+              }
+            }
+
+            ~ .carousel__prev {
+              > label {
+                @if $i == 1 {
+                  &:nth-child(#{$items}) {
+                    @extend %animation-default;
+                  }
+                } @else if $i == $items {
+                  &:nth-child(#{$items - 1}) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i - 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__next {
+              > label {
+                @if $i == $items {
+                  &:nth-child(1) {
+                    @extend %animation-default;
+                  }
+                } @else {
+                  &:nth-child(#{$i + 1}) {
+                    @extend %animation-default;
+                  }
+                }
+              }
+            }
+
+            ~ .carousel__nav {
+              > label {
+                &:nth-child(#{$i}) {
+                  background: #ccc;
+                  cursor: default;
+                  pointer-events: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__items {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      height: 30rem;
+      position: relative;
+    }
+
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: opacity 2s;
+      -webkit-transition: opacity 2s;
+
+      img {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    &__prev,
+    &__next {
+      > label {
+        border: 1px solid $hotpink;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        opacity: 0;
+        z-index: 2;
+
+        &:hover,
+        &:focus {
+          opacity: .5 !important;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: inherit;
+          height: inherit;
+        }
+
+        &:before {
+          background: linear-gradient(to top, $hotpink 0%, $hotpink 10%, rgba(51, 51, 51, 0) 10%),
+                      linear-gradient(to left, $hotpink 0%, $hotpink 10%, rgba(51, 51, 51, 0) 10%);
+          width: 60%;
+          height: 60%;
+          top: 20%;
+        }
+      }
+    }
+
+    &__prev {
+      > label {
+        left: 1%;
+
+        &:before {
+          left: 35%;
+          top: 20%;
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+    }
+
+    &__next {
+      > label {
+        right: 1%;
+
+        &:before {
+          left: 10%;
+          transform: rotate(315deg);
+          -webkit-transform: rotate(315deg);
+        }
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      bottom: 1%;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+
+      > label {
+        border: 1px solid $hotpink;
+        display: inline-block;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 .125%;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60rem;
+  // min-width: 900px;
+  margin: 1rem auto;
+
+}
+
+@include carousel(5);
+
+
+// 自建
+
+.full_pic{
+  img{
+    width: 100%;
+  }
+}
+
+.phone_mode{
+  display: none;
+}
+.grid{ 
+ background: url("/projects/tea/images/tea_BG_01.jpg") ;
+}
+
+.re{
+  flex-direction: row-reverse;
+}
+
+.top_area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img{
+    max-width: 100%;
+  }
+}
+
+
+.description{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 1rem;
+  max-width: 70rem;
+  margin: 0 auto;
+ 
+ 
+ 
+  .card{
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    // text-align: center;
+    align-items: center;
+    img{
+      max-width: 85%;
+    }
+   
+    
+
+    .tea_icon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 12rem;
+      img{
+        padding:0  0.5rem;
+        max-width: 85%;
+      }
+    }
+
+  }
+
+  .card_pic{
+    display: flex;
+    justify-content: center;
+  
+    img{
+      max-width: 85%;
+    }
+  }
+
+  .slider_img{
+
+    img{
+      max-width: 100%;
+    }
+
+  }
+}
+
+.only_pic{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  .title{
+    width: 30rem;
+    padding: 1rem;
+  }
+  .web_mode{
+    max-width: 80%;
+  }
+}
+
+.tea_block {
+  display: none;
+}
+
+.tea_block.active {
+  display: flex;
+}
+
+
+.btn_area{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  
+}
+
+.button-74 {
+    background-color: #fbeee0;
+    border: 2px solid $green;
+    border-radius: 30px;
+    box-shadow: $green 4px 4px 0 0;
+    color: $green;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 1.2rem 0.2rem;
+    transition: all 0.2s;
+  } 
+  .button-74:hover {
+    background-color: #fff;
+    box-shadow: 0.4rem 0.4rem 0 $green;
+    transform: translate(-0.4rem, -0.4rem);
+  }
+  
+  .button-74:active,
+  .button-74.active {
+    background-color: $hotpink;
+    box-shadow: $green 2px 2px 0 0;
+    border: 2px solid #fbeee0;
+    color: #fbeee0;
+    transform: translate(2px, 2px);
+  }
+
+
+
+
+
+
+
+
+
+
+// *******************
+// 品牌頁右側浮標
+// *******************
+
+
+.shopfloat {
+    position: fixed;
+    top: 35rem;
+    right: -1rem;
+    z-index: 99;
+  
+    .shopbt {
+      width: 5rem;
+      height: 5rem;
+      padding: 4px;
+      margin-bottom: 8px;
+      display: block;
+      background: $green;
+      font-size: 0.9rem;
+      text-align: left;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 6px 0 0 6px;
+      box-shadow: 0px 0px 5px #666;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        transform: translateX(-1rem);
+        background-color: $hotpink;
+      }
+  
+      &:active {
+        color: $hotpink;
+      }
+  
+      .onlineIcon {
+        width: 75%;
+        margin: 4px auto;
+        height: 0;
+        padding-bottom: 55%;
+        background: url(../images/cart.svg) no-repeat;
+        background-size: contain;
+      }
+  
+      .bagIcon {
+        width: 54%;
+        margin: 4px auto;
+        height: 0;
+        padding-bottom: 54%;
+        background: url(../images/shopping-bag.svg) no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+
+  @media (max-width:768px){
+
+    .description{
+      flex-wrap: wrap;
+    }
+
+   .container{
+    width: 25rem;
+    .carousel__items{
+      height: 16rem;
+    }
+   }
+
+   .title{
+    max-width: 80%;
+   }
+
+    .web_mode{
+      display: none;
+    }
+    .phone_mode{
+      display: flex;
+      max-width: 110%;
+    }
+  }
+
+
+  @keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+  
