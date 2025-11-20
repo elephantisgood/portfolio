@@ -1,16 +1,18 @@
 :root {
-  --color-main:#F9B360;
+  --color-main:#ffbe3b;
   --color-dark:#0B1E1E;
   --color-light:#F9F3EF;
   --color-accent:#439DCA;
 
+ 
 
   --c: #1095c1; /* the color */
   --s: 0.1em;
 
-  --border-weight: 0.15rem;
+  --border-weight: 2px;
   --border-radius: 0.5rem;
 
+ 
 
 
 
@@ -46,12 +48,13 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body  {
   position: relative;
   // background-color: white;
-  // display: flex;
-  // flex-direction: column;
-  min-height: 100%;
+  
+
+
+
 
   // --color: #ebebeb;
   // background-color: #F3F3F3;
@@ -61,14 +64,26 @@ body {
 
 
 
+
  
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.1s infinite;
   opacity: .9;
+  transition: background-color 0.75s ease, color 0.75s ease;
+  
+
 
   
 }
+main{
+  flex: 1;
+  position: relative;
+  padding-bottom: var(--footer-gap);
+  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+
 
 
 
@@ -175,33 +190,52 @@ section {
 // 首頁
 
 .index {
-  max-height: 900px;
+  // max-height: 900px;
   // background: black;
+  display: flex;
+  // flex: 1;
+  height: auto;
+  
   .half-bg {
     position: relative;
-    top: -30rem;
+    top: -60rem;
     background-color: rgb(213, 213, 213);
     width: 40vw;
-    height: 80vh;
+    height: 100%;
     z-index: -10;
     transition: all 0.5s ease-out;
   }
+
+
   .container {
+    border: 2px solid red;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    min-width: 100%;
     justify-content: center;
+
     align-items: center;
-    position: relative;
-    top: 10rem;
+
+
+
+  .card-sticky {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    align-self: start; 
+    top:15rem; 
+    width: 30rem ;
+  }
+
 
     .resumeCard {
+      position: relative;
       background-color: #f3ede9;
       width: 23rem;
       height: 30em;
       text-align: center;
       align-content: center;
-      border: var(--border-weight)  solid var(--color-dark);
+      border: 2px solid var(--color-dark);
       border-radius: var(--border-radius);
       
       h2 {
@@ -209,28 +243,51 @@ section {
         font-weight: 100;
       }
 
-      .pic {
+      .head-pic {
         overflow: hidden;
         width: 15rem;
         height: 15rem;
-     
-       
         margin: 2rem auto;
         border-radius: 50%;
+        position: relative;
+        border: 2px solid var(--color-dark);
 
         img {
-          // border-radius: 50%;
+          max-width: 100%;    
           transition: 0.2s ease-in-out;
-           filter: blur(3px);
+        }
+
+        .pic-top{
+          position: relative;
+          top:0;
+          left: 0;
+          pointer-events: none;
+        }
+
+
+        .pic-glass{
+          position: absolute;
+          top:-3px;
+          left: 0;
+          pointer-events: none;
+
+        }
+      
+
+        .pic-btn{
+          position: absolute;
+          top:1px;
+          left: 0;
         }
       }
 
-
-
-      img:hover {
+      .pic-btn:hover,.pic-btn:active {
       
-        filter: none;
+        opacity: 0;
       }
+
+
+
       .btt {
         flex-direction: row;
         display: flex;
@@ -268,13 +325,26 @@ section {
       color: white;
       border-color: transparent;
     }
+
+
+    .scroll-content{
+      position: relative;
+      width: 45vw;
+      // height: 100vh;
+      height: auto;
+
+      max-height: 100%;
+      // overflow-y: auto;
+     
+
+
+    }
     .CV {
-      margin: 2rem 2rem;
-      width: 30rem;
+      height: 90dvh;
       p {
         text-align: justify;
       }
-      .text {
+      .type-text {
         position: relative;
         color: rgb(133, 133, 133);
         font-size: 3.5rem;
@@ -282,8 +352,8 @@ section {
         width: max-content;
       }
 
-      .text::before,
-      .text::after {
+      .type-text::before,
+      .type-text::after {
         content: "";
         position: absolute;
         top: 0;
@@ -291,13 +361,13 @@ section {
         bottom: 0;
         left: 0;
       }
-      .text::before {
+      .type-text::before {
         background: #fff;
         animation: typewriter var(--typewriterSpeed)
           steps(var(--typewriterChracters)) 0.5s forwards;
       }
 
-      .text::after {
+      .type-text::after {
         width: 0.1em;
         background: rgb(133, 133, 133);
         animation: typewriter var(--typewriterSpeed)
@@ -311,25 +381,126 @@ section {
         animation: fadeInUp 1s ease-in-out calc(var(--typewriterSpeed) + 0.5s) forwards;
       }
 
-      @keyframes typewriter {
-        to {
-          left: 100%;
-        }
-      }
+      
+   
 
-      @keyframes blink {
-        to {
-          background: transparent;
-        }
-      }
 
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+
     }
+
+
+    .scroll-warp {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 2rem 2rem;
+      // margin-top: 5rem;
+     
+ 
+      
+
+      .scroll-title{
+        font-size: 3rem;
+        font-weight: 700;
+        color: #858585;
+      }
+
+
+
+      .exp-card{
+        display: flex;
+        flex-direction: column ;
+        margin: 1rem  0;
+
+        .exp-title{
+          display: flex;
+          justify-content: space-between;
+          align-items: end;
+          margin:0 .5rem ;
+          padding: .5rem;
+          border-bottom: 1px dashed gray;
+
+          .exp-left{
+            position: relative;
+            justify-content: center;
+            color: var(--color-dark);
+            font-weight: 300;
+
+
+            .exp-time{
+              font-size: 2rem;
+              font-style: italic;
+              
+            }
+
+          }
+
+          .exp-left::after{
+            content: "";
+            position: absolute;
+            width: 0.2rem;
+            height: 4.5rem;
+            background-color: var(--color-main);
+            bottom:-1rem;
+            left: -0.5rem;
+
+          }
+
+          .exp-pos{
+
+            font-size:1.5rem;
+            font-weight: 300;
+            color: var(--color-dark);
+            
+          }
+
+        }
+
+        .exp-content{
+          padding: 0.5rem;
+
+          .big-text{
+            font-size: 1.2rem;
+            // font-weight: 300;
+            color: var(--color-dark);
+            margin: 0.5rem ;
+            padding-top: 0.5rem;
+          }
+
+            ul{
+              padding: 0 1rem;
+              color: var(--color-dark);
+
+         
+            
+            }
+        }
+
+
+
+
+      }
+
+      
+
+
+    
+
+
+
+      
+      
+    }
+
+
+      
+
+
+
+  
+
+
+
   }
 }
 
@@ -581,6 +752,9 @@ section {
     }
   }
 }
+
+
+
 
 //作品內部
 
@@ -947,7 +1121,7 @@ section {
 footer {
   background-color: white;
   padding: 1rem;
-  position: relative;
+
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -967,6 +1141,102 @@ footer {
 }
 
 
+// button style
+
+.animated-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin: 1rem;
+        padding: 16px 36px;
+        width: 10rem;
+        border: 4px solid;
+        border-color: transparent;
+        font-size: 16px;
+        background-color: inherit;
+        border-radius: 100px;
+        font-weight: 600;
+        color: var(--color-main);
+        box-shadow: 0 0 0 2px var(--color-main);
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        svg {
+          position: absolute;
+          width: 24px;
+          fill: var(--color-main);
+          z-index: 9;
+          transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .arr-1 {
+          right: 16px;
+        }
+
+        .arr-2 {
+          left: -25%;
+        }
+
+        .circle {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 20px;
+          height: 20px;
+          background-color: var(--color-main);
+          border-radius: 50%;
+          opacity: 0;
+          transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .btn-text {
+          position: relative;
+          z-index: 1;
+          transform: translateX(-12px);
+          transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+
+      }
+
+      .animated-button:hover {
+        box-shadow: 0 0 0 12px transparent;
+        color:var(--color-dark);
+        border-radius: 12px;
+
+        .arr-1 {
+        right: -25%;
+        }
+        .arr-2 {
+          left: 16px;
+        }
+
+        .btn-text {
+          transform: translateX(12px);
+        }
+
+        svg {
+          fill: var(--color-dark);
+        }
+
+        .circle {
+          width: 220px;
+          height: 220px;
+          opacity: 1;
+        }
+      }
+
+      .animated-button:active {
+        scale: 0.95;
+        box-shadow: 0 0 0 4px #fd8a26;
+      }
+
+
+
+
 
 
 @media screen and (max-width: 790px) {
@@ -977,26 +1247,46 @@ footer {
       .halfbg {
         background-color: rgba(213, 213, 213, 0.8);
       }
-      .CV {
-        background: #fff;
-        // max-width: 90%;
-        padding: 1rem;
-        .text {
-          display: none;
-        }
-        .subtitle {
-          animation: fadeInUp 2s ease forwards;
-        }
-      }
-    }
 
-    .resume {
-      margin-top: 5rem;
-      .threecard {
-        flex-wrap: wrap;
-        justify-content: center;
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+
+        .card-sticky {
+          position: static;
+          margin: 1rem auto;
+          margin-top: 6rem;
+          top: auto;
+          width: auto;
+          .resumeCard{
+            justify-content: center;
+            width: 20rem;
+          }
+        }
+
+        .scroll-content {
+          width: 90vw;
+          margin-top: 2rem;
+
+          .scroll-warp{
+            margin: 0 auto;
+          }
+          
+          .text {
+            font-size: 2.5rem;
+            }
+
+        
+        
       }
+      
     }
+  }
+
+
+
+
   
 
   header {
@@ -1162,3 +1452,26 @@ footer {
 				box-shadow: inset 0 0 0 0  var(--color-main);
 			}
 }
+
+
+
+//typewriter effect
+
+  @keyframes typewriter {
+        to {
+          left: 100%;
+        }
+      }
+
+      @keyframes blink {
+        to {
+          background: transparent;
+        }
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }

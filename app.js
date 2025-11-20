@@ -155,6 +155,6 @@ function positionZoom(e) {
 
 
   zoom.style.left = `${posX - zoom.offsetWidth / 2}px`;
-  zoom.style.top = `${posY - zoom.offsetHeight / 1.5}px`; // 稍微往上
+  zoom.style.top = `${posY - zoom.offsetHeight / 0.7}px`; // 稍微往上
 
 }

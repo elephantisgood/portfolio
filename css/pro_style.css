@@ -1,11 +1,11 @@
 :root {
-  --color-main:#F9B360;
+  --color-main:#ffbe3b;
   --color-dark:#0B1E1E;
   --color-light:#F9F3EF;
   --color-accent:#439DCA;
   --c: #1095c1; /* the color */
   --s: 0.1em;
-  --border-weight: 0.15rem;
+  --border-weight: 2px;
   --border-radius: 0.5rem;
   --text-autospace:normal;
   --typewriterSpeed: 4s;
@@ -31,11 +31,18 @@ html {
 
 body {
   position: relative;
-  min-height: 100%;
   background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.1s infinite;
   opacity: 0.9;
+  transition: background-color 0.75s ease, color 0.75s ease;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  padding-bottom: var(--footer-gap);
+  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
 header {
@@ -105,52 +112,80 @@ section {
 }
 
 .index {
-  max-height: 900px;
+  display: flex;
+  height: auto;
 }
 .index .half-bg {
   position: relative;
-  top: -30rem;
+  top: -60rem;
   background-color: rgb(213, 213, 213);
   width: 40vw;
-  height: 80vh;
+  height: 100%;
   z-index: -10;
   transition: all 0.5s ease-out;
 }
 .index .container {
+  border: 2px solid red;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  min-width: 100%;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 10rem;
+}
+.index .container .card-sticky {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  align-self: start;
+  top: 15rem;
+  width: 30rem;
 }
 .index .container .resumeCard {
+  position: relative;
   background-color: #f3ede9;
   width: 23rem;
   height: 30em;
   text-align: center;
   align-content: center;
-  border: var(--border-weight) solid var(--color-dark);
+  border: 2px solid var(--color-dark);
   border-radius: var(--border-radius);
 }
 .index .container .resumeCard h2 {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 100;
 }
-.index .container .resumeCard .pic {
+.index .container .resumeCard .head-pic {
   overflow: hidden;
   width: 15rem;
   height: 15rem;
   margin: 2rem auto;
   border-radius: 50%;
+  position: relative;
+  border: 2px solid var(--color-dark);
 }
-.index .container .resumeCard .pic img {
+.index .container .resumeCard .head-pic img {
+  max-width: 100%;
   transition: 0.2s ease-in-out;
-  filter: blur(3px);
 }
-.index .container .resumeCard img:hover {
-  filter: none;
+.index .container .resumeCard .head-pic .pic-top {
+  position: relative;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.index .container .resumeCard .head-pic .pic-glass {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  pointer-events: none;
+}
+.index .container .resumeCard .head-pic .pic-btn {
+  position: absolute;
+  top: 1px;
+  left: 0;
+}
+.index .container .resumeCard .pic-btn:hover, .index .container .resumeCard .pic-btn:active {
+  opacity: 0;
 }
 .index .container .resumeCard .btt {
   flex-direction: row;
@@ -187,22 +222,27 @@ section {
   color: white;
   border-color: transparent;
 }
+.index .container .scroll-content {
+  position: relative;
+  width: 45vw;
+  height: auto;
+  max-height: 100%;
+}
 .index .container .CV {
-  margin: 2rem 2rem;
-  width: 30rem;
+  height: 90dvh;
 }
 .index .container .CV p {
   text-align: justify;
 }
-.index .container .CV .text {
+.index .container .CV .type-text {
   position: relative;
   color: rgb(133, 133, 133);
   font-size: 3.5rem;
   width: -moz-max-content;
   width: max-content;
 }
-.index .container .CV .text::before,
-.index .container .CV .text::after {
+.index .container .CV .type-text::before,
+.index .container .CV .type-text::after {
   content: "";
   position: absolute;
   top: 0;
@@ -210,11 +250,11 @@ section {
   bottom: 0;
   left: 0;
 }
-.index .container .CV .text::before {
+.index .container .CV .type-text::before {
   background: #fff;
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 0.5s forwards;
 }
-.index .container .CV .text::after {
+.index .container .CV .type-text::after {
   width: 0.1em;
   background: rgb(133, 133, 133);
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 0.5s forwards, blink 750ms steps(17) infinite;
@@ -224,21 +264,66 @@ section {
   transform: translateY(3rem);
   animation: fadeInUp 1s ease-in-out calc(var(--typewriterSpeed) + 0.5s) forwards;
 }
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
+.index .container .scroll-warp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 2rem;
 }
-@keyframes blink {
-  to {
-    background: transparent;
-  }
+.index .container .scroll-warp .scroll-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #858585;
 }
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.index .container .scroll-warp .exp-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.index .container .scroll-warp .exp-card .exp-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px dashed gray;
+}
+.index .container .scroll-warp .exp-card .exp-title .exp-left {
+  position: relative;
+  justify-content: center;
+  color: var(--color-dark);
+  font-weight: 300;
+}
+.index .container .scroll-warp .exp-card .exp-title .exp-left .exp-time {
+  font-size: 2rem;
+  font-style: italic;
+}
+.index .container .scroll-warp .exp-card .exp-title .exp-left::after {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 4.5rem;
+  background-color: var(--color-main);
+  bottom: -1rem;
+  left: -0.5rem;
+}
+.index .container .scroll-warp .exp-card .exp-title .exp-pos {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-dark);
+}
+.index .container .scroll-warp .exp-card .exp-content {
+  padding: 0.5rem;
+}
+.index .container .scroll-warp .exp-card .exp-content .big-text {
+  font-size: 1.2rem;
+  color: var(--color-dark);
+  margin: 0.5rem;
+  padding-top: 0.5rem;
+}
+.index .container .scroll-warp .exp-card .exp-content ul {
+  padding: 0 1rem;
+  color: var(--color-dark);
 }
 
 .resume {
@@ -692,7 +777,6 @@ section {
 footer {
   background-color: white;
   padding: 1rem;
-  position: relative;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -711,6 +795,86 @@ footer .contacts p {
   font-weight: 100;
 }
 
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 1rem;
+  padding: 16px 36px;
+  width: 10rem;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--color-main);
+  box-shadow: 0 0 0 2px var(--color-main);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: var(--color-main);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button .arr-1 {
+  right: 16px;
+}
+.animated-button .arr-2 {
+  left: -25%;
+}
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-main);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button .btn-text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--color-dark);
+  border-radius: 12px;
+}
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+.animated-button:hover .btn-text {
+  transform: translateX(12px);
+}
+.animated-button:hover svg {
+  fill: var(--color-dark);
+}
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #fd8a26;
+}
+
 @media screen and (max-width: 790px) {
   .index {
     min-height: 1200px;
@@ -719,22 +883,30 @@ footer .contacts p {
   .index .halfbg {
     background-color: rgba(213, 213, 213, 0.8);
   }
-  .index .CV {
-    background: #fff;
-    padding: 1rem;
+  .index .container {
+    flex-direction: column;
+    align-items: center;
   }
-  .index .CV .text {
-    display: none;
+  .index .container .card-sticky {
+    position: static;
+    margin: 1rem auto;
+    margin-top: 6rem;
+    top: auto;
+    width: auto;
   }
-  .index .CV .subtitle {
-    animation: fadeInUp 2s ease forwards;
-  }
-  .resume {
-    margin-top: 5rem;
-  }
-  .resume .threecard {
-    flex-wrap: wrap;
+  .index .container .card-sticky .resumeCard {
     justify-content: center;
+    width: 20rem;
+  }
+  .index .container .scroll-content {
+    width: 90vw;
+    margin-top: 2rem;
+  }
+  .index .container .scroll-content .scroll-warp {
+    margin: 0 auto;
+  }
+  .index .container .scroll-content .text {
+    font-size: 2.5rem;
   }
   header {
     padding: 1rem;
@@ -883,5 +1055,21 @@ footer .contacts p {
   }
   100% {
     box-shadow: inset 0 0 0 0 var(--color-main);
+  }
+}
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=pro_style.css.map */
