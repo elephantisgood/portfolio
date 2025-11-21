@@ -36,7 +36,7 @@
     
 
   P {
-    text-align: justify;
+    // text-align: justify;
     // font-weight: 400;
     color: var(--color-dark);
   }
@@ -230,11 +230,15 @@ section {
 
     .resumeCard {
       position: relative;
+      display: flex;
+      flex-direction: column;
       background-color: #f3ede9;
+      align-items: space-evenly;
+      justify-content: center;
       width: 23rem;
       height: 30em;
       text-align: center;
-      align-content: center;
+  
       border: 2px solid var(--color-dark);
       border-radius: var(--border-radius);
       
@@ -247,7 +251,7 @@ section {
         overflow: hidden;
         width: 15rem;
         height: 15rem;
-        margin: 2rem auto;
+        margin: 1rem auto;
         border-radius: 50%;
         position: relative;
         border: 2px solid var(--color-dark);
@@ -282,8 +286,18 @@ section {
       }
 
       .pic-btn:hover,.pic-btn:active {
-      
         opacity: 0;
+      }
+
+      .text-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0.5rem;
+        font-size: 1rem;
+        color: var(--color-dark);
+   
       }
 
 
@@ -310,13 +324,7 @@ section {
           }
         }
       }
-      p {
-        margin-top: 0.5rem;
-        padding: 1rem 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        text-align: center;
-      }
+     
     }
 
     .resumeCard a:hover,
