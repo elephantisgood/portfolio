@@ -27,6 +27,21 @@ if(this.scrollY > this.innerHeight / 1.5){
 window.addEventListener("scroll", bgChanger);
 
 
+  document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.querySelector('.text p');
+  
+  if (textElement) {
+    const circleType = new CircleType(textElement);
+    circleType.radius(40);
+    circleType.dir(1);
+    // circleType.forceHeight(true);
+  } else {
+    console.warn("找不到 .text p 元素，CircleType 未初始化。");
+  }
+});
+
+
+
 
  // ===== Greeting 模組 =====
 
@@ -69,33 +84,6 @@ window.addEventListener("scroll", bgChanger);
     console.warn('⚠️ 找不到 .say-hi 元素');
   }
 
-  //circle text
-
-   // 取得文字元素
-  const textElement = document.querySelector('.text p');
-
-  // 建立 CircleType 實例
-  const circleType = new CircleType(textElement);
-
-  // 設定半徑 (數字越大，圓越大)
-  circleType.radius(40);
-
-  // 設定方向 (1 = 順時針, -1 = 逆時針)
-  circleType.dir(1);
-  // circleType.forceHeight(true);
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const text = document.querySelector(".text");
-//   if (text) {
-//     text.innerHTML = text.innerText
-//       .split("")
-//       .map((char, i) => `<span style="transform:rotate(${i * 13}deg)">${char}</span>`)
-//       .join("");
-//   }
-//   });
-
-
 
 //pop up image
 const modal = document.querySelector(".modal");
@@ -124,6 +112,42 @@ modal.addEventListener("click",(e) => {
        
     }
 });
+
+
+
+
+
+
+
+  // //circle text
+
+  //  // 取得文字元素
+  // const textElement = document.querySelector('.text p');
+
+  // // 建立 CircleType 實例
+  // const circleType = new CircleType(textElement);
+
+  // // 設定半徑 (數字越大，圓越大)
+  // circleType.radius(40);
+
+  // // 設定方向 (1 = 順時針, -1 = 逆時針)
+  // circleType.dir(1);
+  // // circleType.forceHeight(true);
+
+
+
+
+// // document.addEventListener('DOMContentLoaded', () => {
+// //   const text = document.querySelector(".text");
+// //   if (text) {
+// //     text.innerHTML = text.innerText
+// //       .split("")
+// //       .map((char, i) => `<span style="transform:rotate(${i * 13}deg)">${char}</span>`)
+// //       .join("");
+// //   }
+// //   });
+
+
 
 
 

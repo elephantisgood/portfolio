@@ -138,10 +138,12 @@ header {
 
           a {
             // color: black;
-            padding: 1em 2em;
+            padding: 1em 0.5em;
+            margin: 0 1rem;
             text-transform: uppercase;
             text-decoration: none;
-            transition: all ease-in 150ms;
+            // transition: all ease-in 150ms;
+             transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
             line-height:1.1em;
             padding-bottom: calc(2.1*var(--s));
@@ -163,6 +165,10 @@ header {
               --_p: 100%;
               color: var(--c);
           }
+
+            a:visited{
+              color: #858585;
+            }
         }
       }
     }
@@ -1198,46 +1204,74 @@ section {
 
 }
 
-.scrolltop {
+.scroll-top {
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  bottom: 5rem;
+  right: 1rem;
   width: 50px;
   height: 50px;
-  display: block;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
 
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  i {
-    color: rgb(255, 255, 255);
-    margin: 0;
-    position: relative;
-    left: 16px;
-    top: 13px;
-    font-size: 20px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+
+  .svg-icon{
+    width: 12px;
+    transition-duration: 0.3s;
+
+    path {
+    fill: white;
+    }
+
+
   }
+
 }
-.scrolltop:hover {
-  background: rgba(129, 75, 0, 0.7);
+
+.scroll-top:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+
 }
-.scrolltop:hover i {
-  color: #fff;
-  top: 5px;
+
+.scroll-top:hover .svg-icon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
 }
+
+
+
+.scroll-top::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.scroll-top:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+
 
 footer {
   background-color: white;
@@ -1438,7 +1472,7 @@ footer {
         top: 100%;
         width: 100%;
         text-align: center;
-        background-color: #f3ede9;
+        background-color: var(--color-light);
         transition: all ease-out 0.3s;
         height: 0px;
         overflow: hidden;
@@ -1455,6 +1489,8 @@ footer {
             a{
               width: 100%;
               color: #858585;
+              margin: 0;
+              padding-bottom:1.5rem ;
    
               display: block;
               text-transform: uppercase;
@@ -1466,9 +1502,14 @@ footer {
             
              a:hover,
              a:focus {
-              background: #8f7a6a;
+              background: var(--color-accent);
               color: white;
             }
+
+           
+        
+
+
   
           }
   
