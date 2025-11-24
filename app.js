@@ -28,7 +28,8 @@ window.addEventListener("scroll", bgChanger);
 
 
 
-  // ===== Greeting 模組 =====
+ // ===== Greeting 模組 =====
+
   function getGreetingMessage() {
     const now = new Date();
     const hour = now.getHours();
@@ -61,15 +62,38 @@ window.addEventListener("scroll", bgChanger);
   const sayHi = document.querySelector('.say-hi');
   if (sayHi) {
     const message = getGreetingMessage();
-    console.log('Greeting message:', message);
+   
     sayHi.textContent = message;
-    sayHi.classList.add('loaded'); // 可搭配 CSS 動畫
+
   } else {
     console.warn('⚠️ 找不到 .say-hi 元素');
   }
 
+  //circle text
+
+   // 取得文字元素
+  const textElement = document.querySelector('.text p');
+
+  // 建立 CircleType 實例
+  const circleType = new CircleType(textElement);
+
+  // 設定半徑 (數字越大，圓越大)
+  circleType.radius(40);
+
+  // 設定方向 (1 = 順時針, -1 = 逆時針)
+  circleType.dir(1);
+  // circleType.forceHeight(true);
 
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   const text = document.querySelector(".text");
+//   if (text) {
+//     text.innerHTML = text.innerText
+//       .split("")
+//       .map((char, i) => `<span style="transform:rotate(${i * 13}deg)">${char}</span>`)
+//       .join("");
+//   }
+//   });
 
 
 
@@ -136,7 +160,7 @@ images.forEach(image => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
+
   // ===== Zoom 模組 =====
   const zoom = document.querySelector('.zoom');
   const zoomText = zoom ? zoom.querySelector('p') : null;
@@ -188,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('⚠️ 找不到 .zoom 或其內部 <p>，Zoom 功能未啟用');
   }
 
-});
+
 
 
 

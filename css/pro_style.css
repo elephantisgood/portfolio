@@ -1,8 +1,9 @@
+@charset "UTF-8";
 :root {
   --color-main:#ffbe3b;
   --color-dark:#0B1E1E;
   --color-light:#F9F3EF;
-  --color-accent:#439DCA;
+  --color-accent:#2a779e;
   --c: #1095c1; /* the color */
   --s: 0.1em;
   --border-weight: 2px;
@@ -21,6 +22,14 @@
 }
 * P {
   color: var(--color-dark);
+}
+* ::-moz-selection {
+  background: var(--color-main);
+  color: var(--color-accent);
+}
+* ::selection {
+  background: var(--color-main);
+  color: var(--color-accent);
 }
 
 html {
@@ -124,7 +133,6 @@ section {
   transition: all 0.5s ease-out;
 }
 .index .container {
-  border: 2px solid red;
   display: flex;
   flex-direction: row;
   min-width: 100%;
@@ -207,6 +215,7 @@ section {
 .index .container .resumeCard .btt .link {
   align-items: center;
   width: 8rem;
+  overflow: hidden;
 }
 .index .container .resumeCard .btt .link a {
   text-decoration: none;
@@ -217,8 +226,17 @@ section {
   text-transform: uppercase;
   transition: all ease-in 150ms;
 }
-.index .container .resumeCard .btt .link .short {
-  padding: 0.2rem 1.5rem;
+.index .container .resumeCard .btt .link:before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .index .container .resumeCard a:hover,
 .index .container .resumeCard a:focus {
@@ -228,19 +246,21 @@ section {
 }
 .index .container .scroll-content {
   position: relative;
-  width: 45vw;
+  width: 40vw;
   height: auto;
   max-height: 100%;
 }
 .index .container .CV {
   height: 90dvh;
+  display: flex;
+  align-items: flex-start;
 }
 .index .container .CV p {
   text-align: justify;
 }
 .index .container .CV .type-text {
   position: relative;
-  color: rgb(133, 133, 133);
+  color: var(--color-main);
   font-size: 3.5rem;
   width: -moz-max-content;
   width: max-content;
@@ -264,9 +284,79 @@ section {
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChracters)) 0.5s forwards, blink 750ms steps(17) infinite;
 }
 .index .container .CV .subtitle {
-  opacity: 0;
-  transform: translateY(3rem);
-  animation: fadeInUp 1s ease-in-out calc(var(--typewriterSpeed) + 0.5s) forwards;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+.index .container .CV .circle-btn {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.index .container .CV .circle-btn .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%); /* 把文字容器放到圓心 */
+  color: var(--color-dark);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 0.1rem;
+}
+.index .container .CV .circle-btn .text span {
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  font-size: 1em;
+  transform-origin: 0 3rem;
+  color: var(--color-dark);
+}
+.index .container .CV .circle-btn .button-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  color: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(135deg);
+}
+.index .container .CV .circle-btn .button-circle .button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+.index .container .CV .circle-btn:hover .button__icon {
+  color: var(--color-main);
+  transform: scale(2.5);
+}
+.index .container .CV .circle-btn:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+.index .container .CV .circle-btn:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+@keyframes textRotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .index .container .scroll-warp {
   display: flex;
@@ -911,6 +1001,15 @@ footer .contacts p {
   }
   .index .container .scroll-content .text {
     font-size: 2.5rem;
+  }
+  .index .container .scroll-content .CV {
+    height: 45dvh;
+  }
+  .index .container .scroll-content .CV .type-text {
+    font-size: 2.5rem;
+  }
+  .index .container .scroll-content .CV .subtitle {
+    font-size: 1.2rem;
   }
   header {
     padding: 1rem;
