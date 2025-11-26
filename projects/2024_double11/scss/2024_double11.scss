@@ -1,3 +1,13 @@
+@charset "UTF-8";
+
+// *******************
+//     公用基本css
+// *******************
+
+// *******************
+//     stylesheet
+// *******************
+
 // *******************
 // 專案內容css
 // *******************
@@ -14,6 +24,9 @@ $glitch_02:#ff00f7;
   --delay: 1s;
   --timing: 2s;
 
+  --circuit-color:rgba(208, 63, 237, 0.253);
+  --circuit-color2:rgba(242, 22, 235, 0.18);
+
 
     --card-height: 50rem;
     --card-width: calc(var(--card-height) / 1.5);
@@ -22,11 +35,77 @@ $glitch_02:#ff00f7;
 }
 
 
-.bigbg{
-  background-color:var(--background);
-
-  
+a,p, li{
+  font-family: "Noto Sans TC", sans-serif;
 }
+a{
+  text-decoration: none;
+}
+
+
+body{
+  // width: 100%;
+  // height: 100%;
+  // perspective: 1500px;
+  position: relative;
+  background-color: var(--background);
+  // overflow: hidden;
+}
+  
+
+
+
+
+
+.dark-circuit-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      var(--circuit-color)  19px,
+      var(--circuit-color) 20px,
+      transparent 20px,
+      transparent 39px,
+      var(--circuit-color) 39px,
+      var(--circuit-color) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      var(--circuit-color) 19px,
+      var(--circuit-color) 20px,
+      transparent 20px,
+      transparent 39px,
+      var(--circuit-color) 39px,
+      var(--circuit-color) 40px
+    ),
+    radial-gradient(
+      circle at 20px 20px,
+      var(--circuit-color2) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40px 40px,
+        var(--circuit-color2) 2px,
+      transparent 2px
+    );
+  background-size:
+    40px 40px,
+    40px 40px,
+    40px 40px,
+    40px 40px;
+}
+
+
+
 
 
 .kv {
@@ -43,7 +122,7 @@ $glitch_02:#ff00f7;
 }
 
 .psp_area {
-  background: url(../images/2023_double11/psp.png)no-repeat bottom /contain;
+  background: url(/projects/2024_double11/images/2023_double11/psp.png)no-repeat bottom /contain;
   position: relative;
   height: 210px; 
   width: 100%;
@@ -179,16 +258,6 @@ $glitch_02:#ff00f7;
             object-fit: cover;
           }
         }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1203,149 +1272,6 @@ $animationSpeed: 30s;
   }
 }
 
-
-.lightbox {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 999;
-
-  .content {
-    max-width: 600px;
-    margin: 30px auto 0;
-    padding: 12px;
-
-    .awards {
-      width: 100%;
-      position: relative;
-      background-image: url(../images/2023_double11/awardsBG.png);
-      background-repeat: no-repeat, no-repeat;
-      background-position: 50% 0, 50% 0;
-      background-size: 100%, contain;
-      padding-top: 16%;
-      padding-left: 12px;
-      padding-right: 12px;
-      text-align: center;
-      .awrds_title{
-        color: white;
-        margin-bottom: 95rem;
-      }
-
-      .gift {
-        width: 50%;
-        background: url(../images/2023_double11/frame.png) no-repeat;
-        background-size: contain;
-        padding: 4%;
-        margin: 0 auto;
-        
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      h3 {
-        position: relative;
-        display: inline-block;
-        padding: 0 50px;
-        color:white;
-        
-      }
-
-      h3:before,
-      h3:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        display: inline-block;
-        width: 40px;
-        height: 1px;
-        background-color: #01053b;
-      }
-
-      h3:before {
-        left: 0;
-      }
-
-      h3:after {
-        right: 0;
-      }
-
-      .form {
-        text-align: left;
-        display: flex;
-        margin-bottom: 9px;
-
-        p {
-          display: flex;
-          color: white;
-          font-size: 14px;
-          flex: 0 0 50px;
-          align-items: center;
-        }
-
-        .form-style {
-          flex: 1;
-          padding: 4px;
-        }
-      }
-    }
-
-    .win {
-      .title {
-        background: url(../images/2023_double11/WinTitle.png) no-repeat;
-        width: 90%;
-        height: 0;
-        padding-bottom: 90%;
-        background-size: cover;
-        margin: 0 auto;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    .lose {
-      // background-image: linear-gradient(#fdecce, #f9d9a8);
-
-      .title {
-        background: url(../images/2023_double11/loseTitle.png) no-repeat;
-        width: 90%;
-        height: 0;
-        padding-bottom: 90%;
-        background-size: cover;
-        margin: 0 auto;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    p {
-      color: black;
-      font-size: 16px;
-
-      em {
-        font-size: 20px;
-        line-height: 36px;
-      }
-    }
-  }
-}
-
-@media (min-width: 640px) {
-  .lightbox {
-    .content {
-      margin: 50px auto 0;
-    }
-  }
-}
 
 
 
