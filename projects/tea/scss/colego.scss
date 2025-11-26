@@ -38,9 +38,6 @@ p{
   }
 }
 
-P::first-letter{
-  font-size: 2rem;
-}
 
 
 
@@ -244,7 +241,7 @@ P::first-letter{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-.container {
+.container-caro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,6 +304,10 @@ P::first-letter{
     img{
       max-width: 85%;
     }
+    p::first-letter{
+      font-size: 2rem;
+    }
+
    
     
 

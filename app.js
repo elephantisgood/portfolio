@@ -27,6 +27,15 @@ if(this.scrollY > this.innerHeight / 1.5){
 window.addEventListener("scroll", bgChanger);
 
 
+
+
+
+
+
+
+
+
+
   document.addEventListener("DOMContentLoaded", () => {
   const textElement = document.querySelector('.text p');
   

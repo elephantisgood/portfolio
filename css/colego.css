@@ -21,10 +21,6 @@ p span {
   font-weight: 600;
 }
 
-P::first-letter {
-  font-size: 2rem;
-}
-
 .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
   opacity: 1 !important;
   z-index: 3;
@@ -38,7 +34,7 @@ P::first-letter {
   -moz-box-sizing: border-box;
 }
 
-.container {
+.container-caro {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,6 +229,9 @@ P::first-letter {
 }
 .description .card img {
   max-width: 85%;
+}
+.description .card p::first-letter {
+  font-size: 2rem;
 }
 .description .card .tea_icon {
   display: flex;
