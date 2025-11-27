@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --background: #01053b;
   --card-height: 100%;
@@ -31,7 +30,6 @@ body {
   bottom: 0;
   left: 0;
   z-index: 0;
-  pointer-events: none;
   background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, var(--circuit-color) 19px, var(--circuit-color) 20px, transparent 20px, transparent 39px, var(--circuit-color) 39px, var(--circuit-color) 40px), repeating-linear-gradient(90deg, transparent, transparent 19px, var(--circuit-color) 19px, var(--circuit-color) 20px, transparent 20px, transparent 39px, var(--circuit-color) 39px, var(--circuit-color) 40px), radial-gradient(circle at 20px 20px, var(--circuit-color2) 2px, transparent 2px), radial-gradient(circle at 40px 40px, var(--circuit-color2) 2px, transparent 2px);
   background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
 }
@@ -44,7 +42,7 @@ body {
   background-color: #3b024d;
 }
 .kv img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .psp_area {
@@ -572,7 +570,6 @@ body {
   display: flex;
   -webkit-backdrop-filter: brightness(60%);
           backdrop-filter: brightness(60%);
-  background-color: #000000;
   padding: 1rem;
   margin: 0.5rem;
   border: 0.1rem solid rgb(39, 255, 251);
@@ -604,7 +601,8 @@ body {
   margin-bottom: 1rem;
 }
 .btn_content button {
-  padding: 0.5rem 1rem 0.1rem 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   text-transform: uppercase;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -666,232 +664,6 @@ body {
     top: 0em;
   }
 }
-.game_BG {
-  margin: 1rem 0;
-}
-
-.gameStart {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  justify-content: center;
-  background: url(../images/2023_double11/gameB.jpg) no-repeat;
-  background-size: cover;
-  background-position: top center;
-  width: min(100%, 1920px);
-}
-.gameStart p {
-  text-align: center;
-  color: #00ffd9;
-  margin: 0.2rem 0;
-  font-size: 2rem;
-}
-.gameStart .gameTitle {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem auto;
-  width: min(60%, 600px);
-}
-.gameStart .gameTitle img {
-  max-width: 100%;
-}
-.gameStart .game_area {
-  background: url(../images/2023_double11/game.gif);
-  background-size: contain;
-  background-position: center;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  margin: 1rem auto;
-}
-.gameStart .game_area ul {
-  width: min(50vw, 1280px);
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem 3%;
-}
-.gameStart .game_area li {
-  height: 0;
-  padding-bottom: 90%;
-  flex: 0 0 33%;
-  position: relative;
-  cursor: pointer;
-}
-.gameStart .game_area li .finger {
-  position: absolute;
-  top: -5%;
-  right: -20%;
-  width: 60%;
-  height: 0;
-  padding-bottom: 90%;
-  background: url(../images/2023_double11/stick.gif) no-repeat;
-  background-size: cover;
-  transition: all 0.15s ease-out 0.15s;
-  opacity: 0;
-}
-.gameStart .game_area li:hover .finger {
-  position: absolute;
-  top: 20%;
-  right: 20%;
-  width: 60%;
-  height: 0;
-  padding-bottom: 90%;
-  background: url(../images/2023_double11/stick.gif) no-repeat;
-  background-size: cover;
-  opacity: 1;
-}
-.gameStart .game_area li:active .finger {
-  position: absolute;
-  top: 20%;
-  right: 20%;
-  width: 60%;
-  height: 0;
-  padding-bottom: 90%;
-  background: url(../images/2023_double11/stick.gif) no-repeat;
-  background-size: cover;
-  opacity: 1;
-}
-
-@media (max-width: 640px) {
-  .gameStart p {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-}
-@keyframes FpsRwd {
-  0% {
-    background-position: left top;
-  }
-  100% {
-    /*----background-position 的結束位置為 100% + (100 ÷(N - 1))% ----*/
-    background-position: 200% top;
-  }
-}
-.gameClose {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  justify-content: center;
-  background-size: cover;
-  background-position: top center;
-  width: min(100%, 1920px);
-}
-.gameClose img {
-  max-width: 100%;
-}
-.gameClose p {
-  text-align: center;
-  color: #00ffd9;
-  margin-bottom: 910%;
-  z-index: 2;
-  font-size: 2rem;
-}
-.gameClose .gameTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.gameClose .gameTitle img {
-  max-width: 100%;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-}
-
-@media (max-width: 640px) {
-  .gameTitle img {
-    max-width: 80%;
-  }
-  #abgne_marquee ul li a {
-    display: block;
-    overflow: hidden;
-    /* 超出範圍的部份要隱藏 */
-    height: 30px;
-    line-height: 30px;
-    text-decoration: none;
-    font-size: 28px;
-    color: #fff;
-  }
-}
-#abgne_marquee {
-  position: relative;
-  overflow: hidden;
-  /* 超出範圍的部份要隱藏 */
-  width: 76%;
-  height: 30px;
-  margin: 0px auto;
-}
-
-#abgne_marquee ul,
-#abgne_marquee li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#abgne_marquee ul {
-  position: absolute;
-  bottom: 9;
-}
-
-#abgne_marquee ul li a {
-  display: block;
-  overflow: hidden;
-  /* 超出範圍的部份要隱藏 */
-  height: 30px;
-  line-height: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  color: #fff;
-}
-
-@media (min-width: 640px) {
-  .message .led {
-    padding-top: 8%;
-  }
-  #abgne_marquee ul li a {
-    display: block;
-    overflow: hidden;
-    /* 超出範圍的部份要隱藏 */
-    height: 30px;
-    line-height: 30px;
-    text-decoration: none;
-    font-size: 28px;
-    color: #fff;
-  }
-}
-.eyecatch {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.alert {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 999;
-}
-.alert .content {
-  max-width: 450px;
-  margin: 30px auto 0;
-  padding: 12px;
-  position: relative;
-}
-.alert .content .message {
-  padding: 12px;
-  color: white;
-  background-image: url(../images/2023_double11/awardsBG.png);
-  border-radius: 10px;
-  text-align: center;
-  height: auto;
-}
-
 .saleTitle {
   display: flex;
   justify-content: center;

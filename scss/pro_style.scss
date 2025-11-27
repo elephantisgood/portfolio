@@ -163,7 +163,7 @@ section {
       border: 2px solid var(--color-dark);
       border-radius: var(--border-radius);
 
-      animation: floatOB 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
+     
       
       h2 {
         font-family: "Noto Sans TC", sans-serif;
@@ -178,6 +178,7 @@ section {
         border-radius: 50%;
         position: relative;
         border: 2px solid var(--color-dark);
+        animation: floatOB 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
 
         img {
           max-width: 100%;    
@@ -1361,8 +1362,8 @@ section {
 
  @keyframes floatOB{
    0%      {transform: translateY(0)}
-   25%     {transform: translateY(1rem) ; transform-origin: 50% 50%;}
-   75%     {transform: translateY(-2rem)  ; transform-origin: 50% 50%;}
+   25%     {transform: translateY(0.5rem)rotate3d(0, 1, 0, -20deg) ; transform-origin: 50% 50%;}
+   75%     {transform: translateY(-1rem)  rotate3d(0, 1, 0, 20deg) ; transform-origin: 50% 50%;}
    100%    {transform: translateY(0)} 
  }      
 
