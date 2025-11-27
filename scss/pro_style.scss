@@ -358,46 +358,47 @@ section {
 
         .text {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -55%); /* 把文字容器放到圓心 */
+      
           color: var(--color-dark);
           font-size: 0.7rem;
           font-weight: 500;
           text-transform: uppercase;
-            // font-family: "Roboto Mono", monospace;
           font-family: "Noto Sans TC", sans-serif;
-            letter-spacing: 0.1rem;
+          letter-spacing: 0.1rem;
+          animation: textRotation 10s linear infinite;
+          transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 
           span {
             position: absolute;
-            left: 50%;
-            top:7%;
+
             font-size: 1em;
-            transform-origin: 0 3rem;
              color: var(--color-dark);
           }
         }
 
         .button-circle {
             position: relative;
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             overflow: hidden;
-            // background: var(--color-main);
-            color: var(--color-dark);
+          
+            
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: rotate(135deg);
-            // transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-          
-            
+           
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+
+          svg path{
+          stroke:var(--color-dark);
+        }
+
+
 
           .button__icon--copy {
               position: absolute;
-              transform: translate(-150%, 150%);
+              transform: translateY(-150%);
             }
       
           }  
@@ -405,33 +406,55 @@ section {
       }
 
       
+      .circle-btn:hover{
+
+        .button-circle{
+            background: var(--color-main);
+        }
 
 
-      .circle-btn:hover .button__icon {
+        .text{
+          font-size: 0.8rem;
+          span{
+            color:gray;
+            
+          }
+        }
+
+        // svg path{
+        //   stroke:var(--color-light);
+        // }
+
+
+        .button__icon {
           color: var(--color-main); 
-          transform: scale(2.5);
+          transform: scale(1.5);
           
         }
 
-      .circle-btn:hover .button__icon:first-child {
+        .button__icon:first-child {
           transition: transform 0.3s ease-in-out;
-          transform: translate(150%, -150%);
+          transform: translateY( 150%);
           // transform: scale(1.5);
-      }
+        }
 
-      .circle-btn:hover .button__icon--copy {
+        .button__icon--copy {
           transition: transform 0.3s ease-in-out 0.1s;
           transform: translate(0);
         
+        }
+
+
+
       }
 
 
       @keyframes textRotation {
          from {
-            transform: translate(-50%, -50%) rotate(0deg);
+            transform: rotate(0deg);
           }
           to {
-            transform: translate(-50%, -50%) rotate(360deg);
+            transform: rotate(360deg);
           }
       }
 

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --color-main:#ffbe3b;
   --color-dark:#0B1E1E;
@@ -247,47 +246,54 @@ section {
 }
 .index .container .CV .circle-btn .text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%); /* 把文字容器放到圓心 */
   color: var(--color-dark);
   font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
   font-family: "Noto Sans TC", sans-serif;
   letter-spacing: 0.1rem;
+  animation: textRotation 10s linear infinite;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .index .container .CV .circle-btn .text span {
   position: absolute;
-  left: 50%;
-  top: 7%;
   font-size: 1em;
-  transform-origin: 0 3rem;
   color: var(--color-dark);
 }
 .index .container .CV .circle-btn .button-circle {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   overflow: hidden;
-  color: var(--color-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(135deg);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.index .container .CV .circle-btn .button-circle svg path {
+  stroke: var(--color-dark);
 }
 .index .container .CV .circle-btn .button-circle .button__icon--copy {
   position: absolute;
-  transform: translate(-150%, 150%);
+  transform: translateY(-150%);
+}
+.index .container .CV .circle-btn:hover .button-circle {
+  background: var(--color-main);
+}
+.index .container .CV .circle-btn:hover .text {
+  font-size: 0.8rem;
+}
+.index .container .CV .circle-btn:hover .text span {
+  color: gray;
 }
 .index .container .CV .circle-btn:hover .button__icon {
   color: var(--color-main);
-  transform: scale(2.5);
+  transform: scale(1.5);
 }
 .index .container .CV .circle-btn:hover .button__icon:first-child {
   transition: transform 0.3s ease-in-out;
-  transform: translate(150%, -150%);
+  transform: translateY(150%);
 }
 .index .container .CV .circle-btn:hover .button__icon--copy {
   transition: transform 0.3s ease-in-out 0.1s;
@@ -295,10 +301,10 @@ section {
 }
 @keyframes textRotation {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .index .container .scroll-warp {
