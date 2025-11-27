@@ -29,21 +29,46 @@ window.addEventListener("scroll", function() {
 
 //bgcolor changer
 
-function bgChanger(){ 
-if(this.scrollY > this.innerHeight / 1.5){
-    document.body.classList.add("bg-active");
+// function bgChanger(){ 
+// if(this.scrollY > this.innerHeight / 1.5){
+//     document.body.classList.add("bg-active");
    
-}else{
-    document.body.classList.remove("bg-active");
+// }else{
+//     document.body.classList.remove("bg-active");
   
+// }
+// }
+// window.addEventListener("scroll", bgChanger);
+
+
+function bgChanger(scrollY, winHeight) {
+  if (scrollY > winHeight / 1.5) {
+    document.body.classList.add("bg-active");
+  } else {
+    document.body.classList.remove("bg-active");
+  }
 }
+
+function toggleScrollTop(scrollY, winHeight, docHeight, scrollBtn) {
+  if (scrollY > (docHeight - winHeight) / 2) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
 }
-window.addEventListener("scroll", bgChanger);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.querySelector(".scroll-top");
 
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const winHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
 
-
-
+    bgChanger(scrollY, winHeight);
+    toggleScrollTop(scrollY, winHeight, docHeight, scrollBtn);
+  });
+});
 
 
 

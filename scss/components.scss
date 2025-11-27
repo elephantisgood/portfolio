@@ -204,15 +204,16 @@ header::after {
   position: fixed;
   bottom: 5rem;
   right: 1rem;
-  width: 50px;
-  height: 50px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background-color: var(--color-dark);
   // border: none;
   font-weight: 600;
+  transform: translateX(200%) scale(0);
   // box-shadow: 0px 0px 0px 4px rgba(135, 255, 253, 0.476);
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition: transform 0.3s ease-in-out;
   overflow: hidden;
 
 
@@ -245,7 +246,7 @@ header::after {
 .scroll-top:hover .svg-icon {
   /* width: 20px; */
   transition-duration: 0.3s;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 
 
@@ -265,6 +266,14 @@ header::after {
   bottom: unset;
   /* transform: translateY(-30px); */
   transition-duration: 0.3s;
+}
+
+.show {
+  display: flex; /* 顯示 */
+  // right: 1rem;
+  // width: 50px;
+  opacity: 1;
+  transform: translateX(10%) scale(1);
 }
 
 

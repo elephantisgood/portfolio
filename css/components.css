@@ -144,13 +144,14 @@ header::after {
   position: fixed;
   bottom: 5rem;
   right: 1rem;
-  width: 50px;
-  height: 50px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background-color: var(--color-dark);
   font-weight: 600;
+  transform: translateX(200%) scale(0);
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition: transform 0.3s ease-in-out;
   overflow: hidden;
 }
 .scroll-top .svg-icon {
@@ -172,7 +173,7 @@ header::after {
 .scroll-top:hover .svg-icon {
   /* width: 20px; */
   transition-duration: 0.3s;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 
 .scroll-top::before {
@@ -190,6 +191,12 @@ header::after {
   bottom: unset;
   /* transform: translateY(-30px); */
   transition-duration: 0.3s;
+}
+
+.show {
+  display: flex; /* 顯示 */
+  opacity: 1;
+  transform: translateX(10%) scale(1);
 }
 
 footer {
