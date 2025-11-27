@@ -1,7 +1,5 @@
 //navbar
 
-
-
 let burgur = document.querySelector(".menu");
 let lines = document.querySelector(".line");
 let navlinks = document.querySelector(".site-nav");
@@ -10,6 +8,22 @@ let links = document.querySelectorAll(".site-nav li");
 burgur.addEventListener("click", () =>{
     navlinks.classList.toggle("open");
     lines.classList.toggle("trans");
+});
+
+
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", function() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > 200) {
+  header.classList.remove("hide");
+} else {
+  header.classList.add("hide");
+}
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 避免負值
 });
 
 

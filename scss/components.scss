@@ -31,6 +31,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   z-index: 9999;
+  transition: transform 0.3s ease-in-out;
 
   .container {
     width: 95%;
@@ -188,6 +189,10 @@ header::after {
   content: "";
   clear: both;
   display: block;
+}
+
+.hide {
+  transform: translateY(-100%); /* 往上移出畫面 */
 }
 
 
