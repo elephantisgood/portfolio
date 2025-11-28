@@ -269,14 +269,18 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: rotate(180deg);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.index .container .CV .circle-btn .button-circle svg {
+  width: 1rem;
 }
 .index .container .CV .circle-btn .button-circle svg path {
   stroke: var(--color-dark);
 }
 .index .container .CV .circle-btn .button-circle .button__icon--copy {
   position: absolute;
-  transform: translateY(-150%);
+  transform: translateY(150%);
 }
 .index .container .CV .circle-btn:hover .button-circle {
   background: var(--color-main);
@@ -289,11 +293,10 @@ section {
 }
 .index .container .CV .circle-btn:hover .button__icon {
   color: var(--color-main);
-  transform: scale(1.5);
 }
 .index .container .CV .circle-btn:hover .button__icon:first-child {
   transition: transform 0.3s ease-in-out;
-  transform: translateY(150%);
+  transform: translateY(-150%);
 }
 .index .container .CV .circle-btn:hover .button__icon--copy {
   transition: transform 0.3s ease-in-out 0.1s;
@@ -995,11 +998,11 @@ section {
     transform: translateY(0);
   }
   25% {
-    transform: translateY(0.5rem) rotate3d(0, 1, 0, -20deg);
+    transform: translateY(0.5rem);
     transform-origin: 50% 50%;
   }
   75% {
-    transform: translateY(-1rem) rotate3d(0, 1, 0, 20deg);
+    transform: translateY(-1rem);
     transform-origin: 50% 50%;
   }
   100% {

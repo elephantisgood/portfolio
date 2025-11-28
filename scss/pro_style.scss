@@ -355,6 +355,7 @@ section {
         margin: 0 auto;
         margin-top: 2rem;
         // animation: textRotation 10s linear infinite;
+        // animation: floatOB 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
 
         .text {
           position: absolute;
@@ -381,24 +382,29 @@ section {
             width: 2.5rem;
             height: 2.5rem;
             overflow: hidden;
-          
-            
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-           
+            transform: rotate(180deg); 
             transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            
 
-          svg path{
-          stroke:var(--color-dark);
-        }
+          svg{
+            width: 1rem;
 
+            path{
+              stroke:var(--color-dark);
+              
+              
+            }
+            
+          }
 
 
           .button__icon--copy {
               position: absolute;
-              transform: translateY(-150%);
+              transform: translateY(150%);
             }
       
           }  
@@ -428,13 +434,13 @@ section {
 
         .button__icon {
           color: var(--color-main); 
-          transform: scale(1.5);
+          // transform: scale(1.5);
           
         }
 
         .button__icon:first-child {
           transition: transform 0.3s ease-in-out;
-          transform: translateY( 150%);
+          transform: translateY( -150%);
           // transform: scale(1.5);
         }
 
@@ -1385,8 +1391,8 @@ section {
 
  @keyframes floatOB{
    0%      {transform: translateY(0)}
-   25%     {transform: translateY(0.5rem)rotate3d(0, 1, 0, -20deg) ; transform-origin: 50% 50%;}
-   75%     {transform: translateY(-1rem)  rotate3d(0, 1, 0, 20deg) ; transform-origin: 50% 50%;}
+   25%     {transform: translateY(0.5rem) ; transform-origin: 50% 50%;}
+   75%     {transform: translateY(-1rem) ; transform-origin: 50% 50%;}
    100%    {transform: translateY(0)} 
  }      
 
