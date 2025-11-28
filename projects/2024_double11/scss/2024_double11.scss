@@ -26,6 +26,8 @@ $glitch_02:#ff00f7;
 
 a,p, li{
   font-family: "Noto Sans TC", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 a{
   text-decoration: none;
@@ -35,6 +37,7 @@ a{
 body{
   position: relative;
   background-color: var(--background);
+  margin: 0;
 
 }
   
@@ -91,7 +94,6 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   background-color: #3b024d;
 
   img {
@@ -112,7 +114,7 @@ body{
   .rock_content {
     position: absolute;
     transform-origin: center center;
-    opacity: 0;
+    // opacity: 0;
     width: 25%;
     position: absolute;
     backface-visibility: hidden;
@@ -635,10 +637,10 @@ $animationSpeed: 30s;
 }
 
 
-.inputStyle {
-  width: 20px;
-  height: 20px;
-}
+// .inputStyle {
+//   width: 20px;
+//   height: 20px;
+// }
 
 
 //中間的部份
