@@ -11,20 +11,20 @@ burgur.addEventListener("click", () =>{
 });
 
 
-let lastScrollTop = 0;
-const header = document.querySelector("header");
+// let lastScrollTop = 0;
+// const header = document.querySelector("header");
 
-window.addEventListener("scroll", function() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// window.addEventListener("scroll", function() {
+//   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > 200) {
-  header.classList.remove("hide");
-} else {
-  header.classList.add("hide");
-}
+//   if (scrollTop > 200) {
+//   header.classList.remove("hide");
+// } else {
+//   header.classList.add("hide");
+// }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 避免負值
-});
+//   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // 避免負值
+// });
 
 
 //bgcolor changer

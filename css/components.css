@@ -24,6 +24,7 @@ header {
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   z-index: 9999;
   transition: transform 0.3s ease-in-out;
@@ -31,17 +32,28 @@ header {
 header .container {
   width: 95%;
   margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
 }
-header .container .logo {
+header .container a {
+  text-decoration: none;
+}
+header .container a .logo {
   float: left;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: "Pacifico", cursive;
+  transition: all ease-in-out 0.5s;
+}
+header .container a .logo span {
+  font-weight: 400;
+  font-size: 1.2rem;
   text-transform: uppercase;
 }
-header .container .logo span {
-  font-weight: 200;
-  font-size: 1rem;
+header .container a .logo:hover {
+  color: var(--color-main);
 }
 header .container .back-btn {
   position: relative;
@@ -73,12 +85,25 @@ header .container .back-btn .arr-2 {
 header .container .back-btn .text {
   position: relative;
   z-index: 1;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 0.05em;
   color: var(--color-dark);
   transform: translateX(12px);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+header .container .back-btn .text::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  display: flex;
+  border-radius: 50px;
+  width: 0.7rem;
+  height: 0.7rem;
+  transition: all 0.3s ease;
+  z-index: -1;
 }
 header .container .back-btn:hover {
   border-radius: 12px;
@@ -89,12 +114,12 @@ header .container .back-btn:hover .arr-1 {
 header .container .back-btn:hover .arr-2 {
   left: -25%;
 }
-header .container .back-btn:hover svg {
-  fill: var(--color-accent);
-}
 header .container .back-btn:hover .text {
   transform: translateX(-12px);
-  color: var(--color-accent);
+}
+header .container .back-btn:hover .text::before {
+  width: 100%;
+  background: var(--color-main);
 }
 header .container .site-nav {
   position: absolute;
@@ -106,24 +131,33 @@ header .container .site-nav ul {
   list-style: none;
 }
 header .container .site-nav ul li a {
+  display: flex;
+  position: relative;
+  color: var(--color-dark);
   padding: 1em 0.5em;
   margin: 0 1rem;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  line-height: 1.1em;
-  padding-bottom: calc(2.1 * var(--s));
-  background: conic-gradient(from 135deg at top, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left 0 bottom var(--s)/calc(2 * var(--s)) var(--s) repeat-x, conic-gradient(from -45deg at bottom, var(--c) 90deg, rgba(0, 0, 0, 0) 0) left var(--s) bottom 0/calc(2 * var(--s)) var(--s) repeat-x;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
-  transition: 0.5s;
+  letter-spacing: normal;
+  transition: all 0.5s ease;
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
 }
-header .container .site-nav ul li a:hover,
-header .container .site-nav ul li a:focus {
-  --_p: 100%;
-  color: var(--c);
+header .container .site-nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  display: flex;
+  border-radius: 50px;
+  width: 0.7rem;
+  height: 0.7rem;
+  transition: all 0.3s ease;
+  z-index: -1;
 }
-header .container .site-nav ul li a:visited {
-  color: #858585;
+header .container .site-nav ul li a:hover::before {
+  width: 100%;
+  background: var(--color-main);
 }
 
 header::after {
@@ -224,11 +258,15 @@ footer .contacts p {
   header {
     padding: 1rem;
   }
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   header .container .logo {
     float: left;
     font-size: 1rem;
     margin: 0;
-    text-transform: uppercase;
   }
   header .container .site-nav {
     top: 100%;
@@ -246,21 +284,19 @@ footer .contacts p {
     padding-top: 5rem;
   }
   header .container .site-nav ul li a {
-    width: 100%;
+    width: 50%;
     color: #858585;
-    margin: 0;
+    margin: 0 auto;
     padding-bottom: 1.5rem;
     display: block;
     text-transform: uppercase;
     transition: all ease-in 150ms;
-    font-family: "PT Sans", sans-serif;
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 300;
   }
   header .container .site-nav ul li a:hover,
   header .container .site-nav ul li a:focus {
-    background: var(--color-accent);
-    color: white;
+    transition: all ease-out 0.3s;
   }
   header .container .site-nav ul li:last-child {
     border-bottom: none;
@@ -288,9 +324,7 @@ footer .contacts p {
   }
   header .container .menu {
     padding: 1em;
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
+    position: relative;
     cursor: pointer;
   }
   header .container .menu .line,
