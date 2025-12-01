@@ -319,7 +319,7 @@ section {
 .index .container .scroll-warp .scroll-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #858585;
+  color: var(--color-main);
 }
 .index .container .scroll-warp .exp-card {
   display: flex;
@@ -646,6 +646,18 @@ section {
 .pro .zoom.loading p {
   color: var(--color-dark);
   font-size: 1.5rem;
+}
+.pro .sort-title {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  font-family: "Pacifico", cursive;
+  margin: 2rem 1rem;
+  color: var(--color-dark);
+  border-bottom: 0.5rem solid var(--color-main);
+}
+.pro .sort-title:first-letter {
+  font-size: 4rem;
+  letter-spacing: -0.1rem;
 }
 .pro .container {
   display: flex;
