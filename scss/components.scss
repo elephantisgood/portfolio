@@ -48,12 +48,12 @@ header {
 
       .logo {
         float: left;
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin: 0;
         font-weight: 400;
         // text-transform: uppercase;
         font-family: "Pacifico", cursive;
-        transition: all ease-in-out 0.5s;
+        transition: all ease-in-out 0.3s;
         span {
           font-weight: 400;
           font-size: 1.2rem;
@@ -62,6 +62,7 @@ header {
       }
       .logo:hover {
         color: var(--color-main);
+        text-shadow: 2px 2px  var(--color-dark);
       }
     }
 
@@ -183,15 +184,14 @@ header {
           a {
             display: flex;
             position: relative;
-            color: var(--color-dark);
+            color: var(--color-gray);
             padding: 1em 0.5em;
             margin: 0 1rem;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: normal;
             transition: all 0.5s ease;
-            letter-spacing: 0.05em;
-
+            // letter-spacing: 0.05em;
             font-size: 1.2rem;
 
 
@@ -215,6 +215,12 @@ header {
           a:hover::before {
             width: 100%;
             background: var(--color-main);
+            
+          }
+          a:hover{
+            letter-spacing: 0.05em;
+            // font-style: italic;
+            color: var(--color-dark);
           }
        
           

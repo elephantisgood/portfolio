@@ -41,11 +41,11 @@ header .container a {
 }
 header .container a .logo {
   float: left;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0;
   font-weight: 400;
   font-family: "Pacifico", cursive;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 }
 header .container a .logo span {
   font-weight: 400;
@@ -54,6 +54,7 @@ header .container a .logo span {
 }
 header .container a .logo:hover {
   color: var(--color-main);
+  text-shadow: 2px 2px var(--color-dark);
 }
 header .container .back-btn {
   position: relative;
@@ -133,14 +134,13 @@ header .container .site-nav ul {
 header .container .site-nav ul li a {
   display: flex;
   position: relative;
-  color: var(--color-dark);
+  color: var(--color-gray);
   padding: 1em 0.5em;
   margin: 0 1rem;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: normal;
   transition: all 0.5s ease;
-  letter-spacing: 0.05em;
   font-size: 1.2rem;
 }
 header .container .site-nav ul li a::before {
@@ -158,6 +158,10 @@ header .container .site-nav ul li a::before {
 header .container .site-nav ul li a:hover::before {
   width: 100%;
   background: var(--color-main);
+}
+header .container .site-nav ul li a:hover {
+  letter-spacing: 0.05em;
+  color: var(--color-dark);
 }
 
 header::after {
