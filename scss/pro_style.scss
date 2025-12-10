@@ -22,7 +22,7 @@
 
   --text-autospace:normal;
   --typewriterSpeed: 4s;
-  --typewriterChracters: 17;
+  --typewriterChracters: 18;
 
 
 
@@ -289,8 +289,6 @@ section {
       max-height: 100%;
       // overflow-y: auto;
       
-     
-
 
     }
     .CV {
@@ -304,6 +302,7 @@ section {
         position: relative;
         color:var(--color-main);
         font-size: 3.5rem;
+        padding: 0 0.1rem;
         width: max-content;
         text-shadow: 4px 4px  var(--color-dark);
         span{
@@ -510,6 +509,18 @@ section {
 
 
 
+      
+
+
+
+
+
+
+
+
+
+
+
       .exp-card{
         display: flex;
         flex-direction: column ;
@@ -591,202 +602,7 @@ section {
 }
 
 
-// 履歷
 
-
-.resume {
-  // background-color: #f3ede9;
-  padding-top: 7rem;
-  .container {
-    // margin-top: 9rem;
-    // padding: 1rem;
-    // flex-wrap: wrap;
-    justify-items: center;
-    display: flex;
-    flex-direction: column;
-    h2 {
-      position: absolute;
-      left: -1rem;
-
-      font-family: "PT Sans", sans-serif;
-      text-transform: uppercase;
-      text-align: center;
-      max-width: 100%;
-      font-size: 10rem;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      color: rgba(255, 255, 255, 0.5);
-      z-index: -1;
-    }
-
-    .Btitle {
-      display: none;
-      position: relative;
-      padding: 1rem;
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: space-evenly;
-      color: rgb(133, 133, 133);
-
-      h3 {
-        font-family: "PT Sans", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 100;
-      }
-    }
-    .link {
-      display: flex;
-      justify-content: flex-end;
-      width: 80%;
-      // margin: 0 auto;
-      a {
-        text-decoration: none;
-
-        // color: #f3ede9;
-        text-align: center;
-        border-radius: 2rem;
-        border: 1px solid rgb(133, 133, 133);
-
-        padding: 0.2rem 1rem;
-        text-transform: uppercase;
-        transition: all ease-in 150ms;
-      }
-      a:hover,
-      a:focus {
-        background-color: #8f7a6a;
-        color: white;
-      }
-    }
-
-    .skill {
-      margin: 0 auto;
-
-      .threecard {
-        display: flex;
-        margin: 1rem;
-
-        .skillcard {
-          background: #ffffff;
-          margin: 1rem;
-          padding: 1rem 2rem;
-          width: 80%;
-          // height: 25rem;
-          max-width: 100%;
-
-          h4 {
-            font-family: "PT Sans", sans-serif;
-            color: #81807e;
-            text-transform: uppercase;
-            text-align: center;
-          }
-
-          ul {
-            // color: #81807e;
-            list-style: square;
-            line-height: 1.5rem;
-            justify-content: center;
-          }
-          div {
-            font-size: 1rem;
-            margin: 1rem;
-            // padding-bottom: 1rem;
-            text-align: center;
-            color: #8f7a6a;
-          }
-        }
-      }
-    }
-
-    .exp {
-      width: 100%;
-      margin: 1rem auto;
-      height: 80vh;
-      overflow-y: scroll;
-
-      ul {
-        margin: 1rem 0;
-        // margin-bottom: 10rem;
-        padding: 1rem;
-        list-style-type: none;
-        position: relative;
-        transition: all 0.5s linear;
-        color: black;
-
-        li {
-          margin: 1rem auto;
-          position: relative;
-          padding: 0.5rem 1rem;
-          background: white;
-          line-height: 20px;
-          width: 50%;
-          box-shadow: rgba(0, 0, 0, 0.3) -5px 9px 25px -6px;
-        }
-
-        // 時間線線
-        li > span {
-          content: "";
-          display: block;
-          height: 100%;
-          border: 1px solid #8f7a6a;
-          position: absolute;
-          top: 0;
-          left: -25px;
-        }
-        // 時間點點
-        li > span::before,
-        li > span::after {
-          content: "";
-          display: block;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: #8f7a6a;
-          border: 2px solid #f3ede9;
-          position: absolute;
-          left: -0.4rem;
-        }
-        li > span::before {
-          top: -0.7rem;
-        }
-        li > span::after {
-          top: 100%;
-        }
-        .title {
-          // text-transform: uppercase;
-          font-weight: 700;
-          margin-bottom: 1.5rem;
-          color: rgb(133, 133, 133);
-        }
-
-        .name {
-          margin-top: 10px;
-          text-align: right;
-          // margin-right: 20px;
-          font-weight: 700;
-          color: rgb(133, 133, 133);
-        }
-
-        // 時間數字左右
-        .time span {
-          position: absolute;
-          left: -1rem;
-          color: #8f7a6a;
-          font-size: 80%;
-          font-weight: bold;
-        }
-
-        // 時間數字上下
-        .time span:first-child {
-          top: -2rem;
-          // bottom: -10rem;
-        }
-        .time span:last-child {
-          top: 105%;
-        }
-      }
-    }
-  }
-}
 
 // 作品
 
@@ -1448,7 +1264,7 @@ section {
       }
 
 
-       .ob-float{
+  .ob-float{
    animation: floatOB 6s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
  }
 

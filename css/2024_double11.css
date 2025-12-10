@@ -20,6 +20,12 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   position: relative;
   background-color: var(--background);
@@ -143,6 +149,7 @@ body {
 }
 .gallery_content .gallery_row .item_content .item_info {
   text-align: center;
+  margin: 0 auto;
 }
 .gallery_content .gallery_row .item_content .item_info .slogan {
   display: grid;

@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Noto Sans TC", sans-serif;
+}
+* P {
+  font-family: "Cactus Classical Serif", serif;
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #59505e;
+}
+
+section {
+  animation: transitionIn 0.75s;
+}
+
+main {
+  background-image: url(/projects/images/CDG/CDG_dessert_bg.png);
+  background-repeat: repeat-y;
+}
+main .copy {
+  margin: 1rem;
+}
+main .copy p {
+  text-align: center;
+  color: tan;
+}
+main section .container .headed {
+  display: flex;
+  justify-content: center;
+}
+main section .container .headed img {
+  z-index: 1;
+  max-width: 100%;
+}
+main section .container .headed .wave {
+  position: absolute;
+  width: 100vw;
+}
+main section .container .fullImg {
+  width: 100%;
+}
+main section .container .fruit {
+  min-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+main section .container .fruit .fruit-pic {
+  display: flex;
+  margin: 1rem;
+}
+main section .container .fruit .fruit-pic img {
+  max-width: 100%;
+}
+main section .container .fruit .word {
+  width: 30rem;
+  margin: 1rem;
+}
+
+.re {
+  flex-direction: row-reverse;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.row .product_pic {
+  display: flex;
+  padding: 0.5rem;
+  width: 40rem;
+}
+.row .product_pic img {
+  max-width: 100%;
+}
+.row .title_box {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.row .title_box .title_pic {
+  display: flex;
+}
+.row .title_box .title_pic img {
+  max-width: 100%;
+}
+
+.tree {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.tree .push {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tree .push .cube {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  padding: 1rem 0;
+}
+.tree .push .cube img {
+  max-width: 100%;
+}
+.tree .push .cube p {
+  margin: 0 1rem;
+}
+
+@media screen and (max-width: 790px) {
+  .tree {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .tree .push {
+    padding: 1rem 0;
+    max-width: 100%;
+  }
+}
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}/*# sourceMappingURL=dessert.css.map */
