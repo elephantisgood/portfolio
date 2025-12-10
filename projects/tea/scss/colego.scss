@@ -476,9 +476,17 @@ p{
 
     .description{
       flex-wrap: wrap;
+
+      .card{
+
+        .tea_icon{
+          width: 10rem;
+        }
+      }
+
     }
 
-   .container{
+   .container-caro{
     width: 25rem;
     .carousel__items{
       height: 16rem;

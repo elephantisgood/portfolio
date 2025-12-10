@@ -369,10 +369,10 @@ $paper-line: #94ACD4;
 
 
   .memory-game {
-    width: 640px;
-    height: 640px;
-    max-width: 90%;
-    max-height: 40%;
+    width: 50rem;
+    height: 50rem;
+    // max-width: 90%;
+    // max-height: 40%;
     margin: 2rem auto;
     padding: 1rem;
     border: 2px solid black;
@@ -511,7 +511,7 @@ $paper-line: #94ACD4;
     display: none;
   }
 
-  .show {
+  .show-modal {
     display: block;
   }
 
@@ -558,6 +558,7 @@ $paper-line: #94ACD4;
     }
 
     .memory-game{
+      width: 25rem;
       height: 25rem;
       padding: 0.5rem;
     }

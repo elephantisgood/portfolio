@@ -4,13 +4,15 @@
   --card-width: 100%;
   --delay: 1s;
   --timing: 2s;
-  --circuit-color:rgba(208, 63, 237, 0.253);
-  --circuit-color2:rgba(242, 22, 235, 0.18);
+  --circuit-color: rgba(208, 63, 237, 0.253);
+  --circuit-color2: rgba(242, 22, 235, 0.18);
   --card-height: 50rem;
   --card-width: calc(var(--card-height) / 1.5);
 }
 
-a, p, li {
+a,
+p,
+li {
   font-family: "Noto Sans TC", sans-serif;
   padding: 0;
   margin: 0;
@@ -165,7 +167,7 @@ body {
   --stack-height: calc(100% / var(--stacks) - 1px);
   --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
   --clip-top: calc(var(--stack-height) * var(--index));
-  --clip-bottom: 9alc(var(--stack-height) * var(--inverse-index));
+  --clip-bottom: 9alc (var(--stack-height) * var(--inverse-index));
   clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
   animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
 }
@@ -392,7 +394,7 @@ body {
     padding: 0 0.5rem;
   }
   .kv .psp_area .rock_content {
-    bottom: 35%;
+    bottom: 45%;
   }
   .gallery_content {
     padding: 0.5rem;
@@ -460,7 +462,8 @@ body {
   max-width: 100%;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
-.gift_content .tag_set .tag_content:hover, .gift_content .tag_set :focus {
+.gift_content .tag_set .tag_content:hover,
+.gift_content .tag_set :focus {
   transform: scale(0.9);
 }
 .gift_content .sign_BG {
@@ -482,7 +485,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 1rem auto;
-  width: 90vw;
+  width: 100vw;
   position: relative;
 }
 .gift_content .click_area .click_content .bar {
@@ -620,14 +623,16 @@ body {
      -moz-user-select: none;
           user-select: none;
 }
-.btn_content #btn_sign:hover, .btn_content :focus {
+.btn_content #btn_sign:hover,
+.btn_content :focus {
   color: #214296;
   background: #00ffd8;
   border: 1px solid #00ffd8;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
   box-shadow: 0 0 5px #00ffd8, 0 0 20px #00ffd8, 0 0 50px #008cff, 0 0 100px #008cff;
 }
-.btn_content #btn_share:hover, .btn_content :focus {
+.btn_content #btn_share:hover,
+.btn_content :focus {
   color: #ab2f61;
   background: #ff5acb;
   border: 1px solid #ff5acb;
@@ -677,7 +682,7 @@ body {
 
 .directions {
   background-color: white;
-  color: #36395A;
+  color: #36395a;
   list-style-position: inside;
   margin: 20px;
   padding: 1rem;

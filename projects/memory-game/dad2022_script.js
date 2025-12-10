@@ -122,13 +122,13 @@ function checkFail() {
 function showWinModal() {
  
   document.querySelector(".win-game-modal").classList.remove("hide");
-  document.querySelector(".win-game-modal").classList.add("show");
+  document.querySelector(".win-game-modal").classList.add("show-modal");
 }
 
 
 function showFailModal() {
   failModal.classList.remove("hide");
-  failModal.classList.add("show");
+  failModal.classList.add("show-modal");
 }
 
 // ➤ 洗牌
@@ -153,10 +153,10 @@ function restartGame() {
 
  // 把 modal 隱藏起來
 document.querySelector(".win-game-modal").classList.add("hide");
-document.querySelector(".win-game-modal").classList.remove("show");
+document.querySelector(".win-game-modal").classList.remove("show-modal");
 
 document.querySelector(".fail-game-modal").classList.add("hide");
-document.querySelector(".fail-game-modal").classList.remove("show");
+document.querySelector(".fail-game-modal").classList.remove("show-modal");
 
 
    // ➤ 顯示「開始遊戲」畫面，隱藏遊戲畫面

@@ -368,10 +368,13 @@ p span {
   .description {
     flex-wrap: wrap;
   }
-  .container {
+  .description .card .tea_icon {
+    width: 10rem;
+  }
+  .container-caro {
     width: 25rem;
   }
-  .container .carousel__items {
+  .container-caro .carousel__items {
     height: 16rem;
   }
   .title {
