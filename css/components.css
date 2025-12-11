@@ -1,15 +1,15 @@
 @charset "UTF-8";
 :root {
-  --color-main:#ffbe3b;
-  --color-dark:#0B1E1E;
-  --color-light:#F9F3EF;
-  --color-accent:#2a779e;
-  --color-gray:#858585;
+  --color-main: #ffbe3b;
+  --color-dark: #0b1e1e;
+  --color-light: #f9f3ef;
+  --color-accent: #2a779e;
+  --color-gray: #858585;
   --c: #1095c1; /* the color */
   --s: 0.1em;
   --border-weight: 2px;
   --border-radius: 0.5rem;
-  --text-autospace:normal;
+  --text-autospace: normal;
   --typewriterSpeed: 4s;
   --typewriterChracters: 17;
 }
@@ -206,6 +206,7 @@ header::after {
   background-color: var(--color-main);
   box-shadow: 0px 0px 0px 6px rgba(255, 199, 135, 0.476);
   align-items: center;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .scroll-top:hover .svg-icon {
