@@ -72,9 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
   document.addEventListener("DOMContentLoaded", () => {
   const textElement = document.querySelector('.text p');
   
@@ -87,6 +84,59 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("找不到 .text p 元素，CircleType 未初始化。");
   }
 });
+
+
+const galleries = document.querySelectorAll(".gird-gallery");
+
+if (galleries.length > 0) {
+  galleries.forEach((section) => {
+    const slides = section.querySelectorAll(".gird-content");
+
+    let index = 0;
+    const pattern = [
+      [4, 4, 3, 2, 0, 0],
+      [4, 5, 3, 2, 0, 0],
+      [0, 3, 2, 3, 0, 0],
+      [0, 2, 1, 2, 1, 0],
+      [0, 0, 2, 4, 3, 2],
+      [0, 0, 0, 1, 1, 1],
+    ];
+
+    let timeout;
+
+    const nextSlide = () => {
+      index = (index + 1) % pattern.length;
+
+      // 防護：避免 slides 數量和 pattern 不一致
+      if (slides.length !== pattern[index].length) {
+        console.warn("⚠️ slides 數量和 pattern 不一致 in one gallery");
+        return;
+      }
+
+      section.style.gridTemplateColumns = pattern[index]
+        .map((p) => `${p}fr`)
+        .join(" ");
+
+      slides.forEach((slide, slideIndex) => {
+        if (pattern[index][slideIndex] === 0) {
+          slide.classList.add("hide");
+        } else {
+          slide.classList.remove("hide");
+        }
+      });
+
+      clearTimeout(timeout);
+      timeout = setTimeout(nextSlide, 3000);
+    };
+
+    section.addEventListener("click", nextSlide);
+    timeout = setTimeout(nextSlide, 3000);
+  });
+} else {
+  console.info("ℹ️ 本頁沒有 .gird-gallery，動畫未執行");
+}
+
+
 
 
 
@@ -133,6 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
+
+
+
+
 //pop up image
 const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img");
@@ -164,36 +219,6 @@ modal.addEventListener("click",(e) => {
 
 
 
-
-
-
-  // //circle text
-
-  //  // 取得文字元素
-  // const textElement = document.querySelector('.text p');
-
-  // // 建立 CircleType 實例
-  // const circleType = new CircleType(textElement);
-
-  // // 設定半徑 (數字越大，圓越大)
-  // circleType.radius(40);
-
-  // // 設定方向 (1 = 順時針, -1 = 逆時針)
-  // circleType.dir(1);
-  // // circleType.forceHeight(true);
-
-
-
-
-// // document.addEventListener('DOMContentLoaded', () => {
-// //   const text = document.querySelector(".text");
-// //   if (text) {
-// //     text.innerHTML = text.innerText
-// //       .split("")
-// //       .map((char, i) => `<span style="transform:rotate(${i * 13}deg)">${char}</span>`)
-// //       .join("");
-// //   }
-// //   });
 
 
 
@@ -229,6 +254,10 @@ const imgObserver = new IntersectionObserver((entries,imgObserver) => {
 images.forEach(image => {
     imgObserver.observe(image);
 });
+
+
+
+
 
 
 
@@ -283,7 +312,6 @@ images.forEach(image => {
   } else {
     console.warn('⚠️ 找不到 .zoom 或其內部 <p>，Zoom 功能未啟用');
   }
-
 
 
 
