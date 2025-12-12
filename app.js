@@ -10,6 +10,13 @@ burgur.addEventListener("click", () =>{
     lines.classList.toggle("trans");
 });
 
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    lines.classList.remove("trans");
+  });
+});
+
 
 // let lastScrollTop = 0;
 // const header = document.querySelector("header");
