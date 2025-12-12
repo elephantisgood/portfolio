@@ -56,6 +56,11 @@ header .container a .logo:hover {
   color: var(--color-main);
   text-shadow: 2px 2px var(--color-dark);
 }
+header .container a .logo:visited,
+header .container a .logo:active,
+header .container a .logo {
+  color: var(--color-dark);
+}
 header .container .back-btn {
   position: relative;
   display: flex;

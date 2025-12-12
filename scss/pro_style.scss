@@ -306,7 +306,7 @@ section {
         border: none;
         background-color: transparent;
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 1rem;
         // animation: textRotation 10s linear infinite;
         // animation: floatOB 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
 
@@ -427,6 +427,13 @@ section {
         border-radius: 50px;
         bottom: 10%;
         z-index: -1;
+      }
+
+      .work-highlight {
+        margin: 1rem 0;
+        height: 70vh;
+        // font-size: 1.2rem;
+        // color: var(--color-dark);
       }
 
       .gird-gallery {
@@ -606,6 +613,10 @@ section {
         height: 10rem;
       }
 
+      .about-content {
+        height: 50vh;
+      }
+
       .exp-card {
         display: flex;
         flex-direction: column;
@@ -663,59 +674,6 @@ section {
             padding: 0 1rem;
             color: var(--color-dark);
           }
-        }
-      }
-    }
-  }
-}
-
-// 作品
-
-.projects {
-  padding: 1rem 0;
-  background-color: rgb(213, 213, 213);
-
-  .area {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 1rem 1rem;
-
-    // 舊版
-    .pro_card {
-      padding: 0 1rem;
-
-      .typeCard {
-        background-color: whitesmoke;
-        padding: 0 0 1rem 0;
-        margin-bottom: 1rem;
-
-        h3 {
-          text-transform: uppercase;
-          font-weight: 200;
-          padding: 1rem 1rem;
-        }
-        h3::after {
-          content: "";
-          position: relative;
-          top: 0.5rem;
-          display: block;
-          background: #0c0c06;
-          height: 3px;
-          width: 2rem;
-        }
-        p {
-          padding: 0 1rem;
-        }
-      }
-      .rsPic {
-        margin: 0;
-        background-color: whitesmoke;
-        img {
-          max-width: 100%;
-          // width: 300px;
-          // height: 400px;
         }
       }
     }
@@ -1134,13 +1092,19 @@ section {
         width: auto;
         .resumeCard {
           justify-content: center;
-          width: 20rem;
+          width: 17rem;
+          height: 24rem;
+
+          .head-pic {
+            width: 12rem;
+            height: 12rem;
+          }
         }
       }
 
       .scroll-content {
         width: 90vw;
-        margin-top: 2rem;
+        // margin-top: 2rem;
 
         .scroll-warp {
           margin: 0 auto;
@@ -1151,7 +1115,7 @@ section {
         }
 
         .CV {
-          height: 45dvh;
+          height: 40dvh;
           .type-text {
             font-size: 2.5rem;
           }
