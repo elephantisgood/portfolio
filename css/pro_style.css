@@ -1,11 +1,16 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --color-main: #ffbe3b;
   --color-dark: #0b1e1e;
   --color-light: #f9f3ef;
   --color-accent: #2a779e;
   --color-gray: #858585;
-  --c: #1095c1; /* the color */
-  --s: 0.1em;
+  --color-gray_C: #85858560;
+  --white: #fff;
+  --black: #262626;
+  --gsap_beige: #fffce1;
+  --base-width: 50px;
   --border-weight: 2px;
   --border-radius: 0.5rem;
   --text-autospace: normal;
@@ -66,6 +71,10 @@ section {
   -webkit-text-stroke-color: var(--color-main);
   -moz-text-stroke-color: var(--color-main);
   border-radius: 10px;
+}
+
+.re {
+  flex-direction: row-reverse;
 }
 
 .index {
@@ -340,8 +349,8 @@ section {
   font-style: italic;
   color: var(--color-main);
   text-shadow: 4px 4px var(--color-dark);
-  margin-top: 5rem;
-  scroll-margin-top: 150px;
+  margin-top: 2rem;
+  scroll-margin-top: 10rem;
 }
 .index .container .scroll-warp .scroll-title::before {
   content: "";
@@ -355,7 +364,7 @@ section {
 }
 .index .container .scroll-warp .work-highlight {
   margin: 1rem 0;
-  height: 70vh;
+  height: 70%;
 }
 .index .container .scroll-warp .gird-gallery {
   overflow: hidden;
@@ -521,7 +530,7 @@ section {
   height: 10rem;
 }
 .index .container .scroll-warp .about-content {
-  height: 50vh;
+  height: 50%;
 }
 .index .container .scroll-warp .exp-card {
   display: flex;
@@ -670,6 +679,194 @@ section {
   bottom: 10%;
   z-index: -1;
 }
+.pro .uiux-card .open-modal {
+  position: relative;
+  display: block;
+  font-weight: bold;
+  z-index: 1;
+}
+.pro .uiux-card .next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--base-width);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.pro .modal {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+}
+.pro .modal,
+.pro .modal .close-modal {
+  top: 5rem;
+  color: var(--white);
+}
+.pro .modal .close-modal {
+  position: absolute;
+  z-index: 5;
+  right: 50%;
+  top: 90%;
+  font-size: 2rem;
+  background: var(--color-dark);
+  border-radius: 50px;
+  border: none;
+  padding: 0 0.6rem;
+}
+.pro .modal .modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.pro .modal .modal-dialog {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  overflow: auto;
+}
+.pro .modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  background-color: #f3ede9;
+  transform: scale(0.5); /* 初始縮小 */
+}
+.pro .modal .modal-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  margin: 1rem;
+}
+.pro .modal .ov {
+  font-size: clamp(2.5rem, 2vw, 3.5rem);
+  color: var(--color-gray_C);
+  text-align: center;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.2rem;
+}
+.pro .modal .mod-row {
+  display: flex;
+  margin: 0.5rem auto;
+  justify-content: center;
+  align-items: center;
+}
+.pro .modal .mod-row .ov-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: clamp(20rem, 25vw, 30rem);
+  color: var(--color-dark);
+}
+.pro .modal .mod-row .ov-content .ov-title {
+  position: relative;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.pro .modal .mod-row .ov-content .ov-title p:after {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 4rem;
+  color: var(--color-gray_C);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.2rem;
+  z-index: -1;
+}
+.pro .modal .mod-row .ov-content .ov-title.is-01 p::after {
+  content: "01";
+}
+.pro .modal .mod-row .ov-content .ov-title.is-02 p::after {
+  content: "02";
+}
+.pro .modal .mod-row .ov-content .ov-title.is-03 p::after {
+  content: "03";
+}
+.pro .modal .mod-row .ov-table {
+  flex-direction: column;
+  position: relative;
+}
+.pro .modal .mod-row .ov-table .ov-info-item {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px dashed gray;
+}
+.pro .modal .mod-row .ov-table .ov-info-item .ov-info-label {
+  color: var(--color-dark);
+  padding: 0.5rem;
+  text-transform: uppercase;
+  width: clamp(7rem, 7vw, 10rem);
+}
+.pro .modal .mod-row .ov-table .ov-info-item .ov-info-content {
+  padding: 0.2rem;
+  margin-left: 0.2rem;
+  width: 19rem;
+}
+.pro .modal .mod-row .ov-table::before {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 12rem;
+  top: 0;
+  border-right: 1.5px solid var(--color-main);
+}
+.pro .modal .mod-row .mod-img {
+  display: flex;
+  width: 20rem;
+  justify-content: center;
+  margin: 1rem;
+}
+.pro .modal .mod-row .mod-img img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0.5rem;
+}
+.pro .modal .mod-row .mod-area {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.pro .modal .mod-row .mod-area .mix-title {
+  position: relative;
+  color: var(--color-dark);
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  text-shadow: 2px 2px #f3ede9;
+}
+.pro .modal .mod-row .mod-area .mix-title span {
+  position: absolute;
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.2rem;
+  color: var(--color-gray_C);
+  z-index: -1;
+  bottom: 0.2rem;
+  text-shadow: none;
+}
+.pro .modal .mod-row .mod-area ul {
+  margin: 0.5rem 1rem;
+  color: var(--color-dark);
+}
 .pro .container {
   display: flex;
   margin: 1rem 1rem;
@@ -772,7 +969,7 @@ section {
 .pro .gallery:hover > .img-container:not(:hover) img {
   filter: brightness(0.6);
 }
-.pro .modal {
+.pro .img-modal {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   position: fixed;
@@ -784,7 +981,7 @@ section {
   pointer-events: none;
   transition: 0.25s ease-in-out;
 }
-.pro .modal .full-img {
+.pro .img-modal .full-img {
   position: absolute;
   max-width: 100%;
   max-height: 80%;
@@ -793,10 +990,10 @@ section {
   transform: translate(-50%, -45%) scale(0.5);
   transition: all 0.3s ease-out;
 }
-.pro .modal .full-img.open {
+.pro .img-modal .full-img.open {
   transform: translate(-50%, -45%) scale(1);
 }
-.pro .modal P {
+.pro .img-modal P {
   color: white;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 1.5rem;
@@ -806,7 +1003,7 @@ section {
   left: 50%;
   transform: translate(-50%, -5%);
 }
-.pro .modal.open {
+.pro .img-modal.open {
   opacity: 1;
   pointer-events: all;
 }
@@ -936,6 +1133,12 @@ section {
   }
   .index .container .scroll-content .CV .subtitle {
     font-size: 1.2rem;
+  }
+  .mod-row {
+    flex-direction: column;
+  }
+  .mod-row .mod-img {
+    flex-direction: column;
   }
 }
 @keyframes transitionIn {

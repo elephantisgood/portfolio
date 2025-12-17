@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Winnie / Portfolio</title>
-    <link rel="stylesheet" href="./css/components.min.css">
-    <link rel="stylesheet" href="./css/pro_style.min.css">
+    <link rel="stylesheet" href="./css/components.min.css" />
+    <link rel="stylesheet" href="./css/pro_style.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/index.html">
+          <h1 class="logo">Winnie<span> </span></h1>
+        </a>
+        <nav class="site-nav">
+          <ul>
+            <li><a class="" href="/index.html">Home</a></li>
+            <li><a class="active" href="#">Work</a></li>
+            <li><a class="" href="/index.html#about">About</a></li>
+            <!-- <li><a class="" href="contact.html">CONTACT</a></li>         -->
+          </ul>
+        </nav>
 
-</head>
-<body>   
-<header>
-  <div class="container">
-    <a href="/index.html">
-    <h1 class="logo">Winnie<span> </span></h1>
-    </a>
-    <nav class="site-nav">
-      <ul>
-        <li><a class="" href="/index.html">Home</a></li>
-        <li><a class="active" href="#">Work</a></li>
-        <li><a class="" href="/index.html#resume">About</a></li>
-        <!-- <li><a class="" href="contact.html">CONTACT</a></li>         -->
-      </ul> 
-   </nav>
-   
-   <div class="menu">
-     <div class="line"></div>
-   </div>
+        <div class="menu">
+          <div class="line"></div>
+        </div>
+      </div>
+    </header>
 
-   
+    <main>
+      <section class="pro">
+        <!-- 分類按鈕 -->
 
-  </div>
-  
-</header>
-
-<main>    
-  <section class="pro">
-
-    <!-- 分類按鈕 -->
-
-    <!-- <div class="btn">
+        <!-- <div class="btn">
       <ul>
         <li><a href="">Web</a></li>
         <li><a href="#graphic">graphic</a></li>
@@ -51,346 +48,490 @@
       </ul>
     </div> -->
 
-
-
-    <!-- 網頁區 -->
-    <div class="zoom">
-      <p>more</p>
-    </div>
-
-    <h2 class="sort-title stroke shadow">Web design</h2>
-    <div class="container"  data-zoom-text="more">
-
- 
-      <div class="project-card">
-        <a href="./projects/memory-game/dad2022.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_dad.jpg">
-          </div>
-          
-        </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">父親節活動頁</div>
-          </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">內含翻牌小遊戲的父親節活動頁</div>
-          </div>
-      
+        <!-- 網頁區 -->
+        <div class="zoom">
+          <p>more</p>
         </div>
-      </div>
 
-      <div class="project-card">
-        <a href="./projects/CDG_dessert.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_dessert.jpg">
+        <h2 class="sort-title stroke shadow">UI/UX design</h2>
+
+        <div class="container" data-zoom-text="more">
+          <div class="project-card uiux-card">
+            <div class="project-img open-modal">
+              <img loading="lazy" src="./images/preview_UI_01.jpg" />
+            </div>
+
+            <div class="modal">
+              <div class="modal-dialog">
+                <button
+                  class="close-modal"
+                  aria-label="close modal"
+                  title="close modal"
+                >
+                  ✕
+                </button>
+                <section class="modal-content">
+                  <h3 class="modal-title">購物車多店鋪結帳流程改版</h3>
+
+                  <div class="modal-ov">
+                    <h3 class="ov">Overview</h3>
+
+                    <div class="mod-row re">
+                      <div class="ov-content ov-table">
+                        <div class="ov-info-item">
+                          <div class="ov-info-label">專案類型</div>
+                          <div class="ov-info-content">
+                            Web | 購物車多店鋪結帳流程改版
+                          </div>
+                        </div>
+
+                        <div class="ov-info-item">
+                          <div class="ov-info-label">負責腳色</div>
+                          <div class="ov-info-content">UI / UX Designer</div>
+                        </div>
+
+                        <div class="ov-info-item">
+                          <div class="ov-info-label">負責範圍</div>
+                          <div class="ov-info-content">
+                            主要負責結帳流程的規劃與前端畫面設計，包含購物車結構調整與訂單資訊呈現。
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="ov-content">
+                        <div class="ov-title is-01">
+                          <p>專案概述</p>
+                        </div>
+                        <div class="ov-text">
+                          <p>
+                            原本的購物網站僅支援廠商與倉庫出貨，購物車結構相對單純。隨著未來規劃新增藥局端出貨，既有流程已無法因應多店鋪同時結帳，以及不同出貨來源在優惠、運費與退貨上的差異。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mod-row">
+                      <div class="ov-content">
+                        <div class="ov-title is-02">
+                          <p>專案目標</p>
+                        </div>
+                        <div class="ov-text">
+                          <p>
+                            在不影響原有使用流程的前提下，重新設計購物車與結帳體驗，讓系統能支援多店鋪、多優惠與多出貨來源，並保留後續擴充的彈性。
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="ov-content">
+                        <div class="ov-title is-03">
+                          <p>最終成果</p>
+                        </div>
+                        <div class="ov-text">
+                          <p>
+                            完成一套以「店鋪為單位」的購物車與結帳流程設計，讓不同優惠、運費與訂單資訊能被清楚整理與呈現，同時維持既有廠商與倉庫出貨流程的順暢度。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mod-row">
+                      <div class="mod-img">
+                        <img src="./images/full/oldchart_01.jpg" alt="" />
+                        <img src="./images/full/oldchart_02.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mod-row">
+                    <div class="mod-area">
+                      <h3 class="mix-title">
+                        設計方向<span>Constraints</span>
+                      </h3>
+                      <div class="modal-description">
+                        <p>
+                          在這次改版中，我的設計重點不是新增更多功能，而是重新整理結帳流程的結構，讓系統在變得更複雜的同時，使用者仍然能清楚理解自己在做什麼。
+                          整體設計方向包含：
+                        </p>
+                        <ul>
+                          <li>以「店鋪」作為購物車的主要結構單位</li>
+                          <li>
+                            將優惠、寄送方式與金額資訊集中在同一區塊中完成選擇
+                          </li>
+                          <li>
+                            確保未來即使加入新的出貨來源，也不會影響既有廠商與倉庫的操作流程
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mod-row">
+                    <div class="mod-area">
+                      <h3 class="mix-title">專案挑戰<span>Challenges</span></h3>
+                      <div class="modal-description">
+                        <p>
+                          在這次購物車改版中，最大的挑戰不在畫面本身，而是如何在既有架構下，因應更複雜的出貨與優惠規則。
+                        </p>
+                        <ul>
+                          <li>
+                            流程需擴充，但不能影響既有體驗
+                            新增藥局端出貨的同時，仍需維持原有廠商與倉庫出貨流程的順暢度。
+                          </li>
+                          <li>
+                            多店鋪、多規則的資訊整理
+                            不同店鋪各自擁有優惠、運費與寄送方式，需讓使用者在結帳時清楚理解。
+                          </li>
+                          <li>
+                            兼顧當下需求與未來彈性
+                            藥局端尚未上線，但流程設計需預留擴充空間，避免未來再次重構。
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mod-row">
+                    <div class="mod-area">
+                      <h3 class="mix-title">解決方案<span>Solution</span></h3>
+                      <div class="modal-description">
+                        <p>購物車流程改版</p>
+                        <ul>
+                          <li>
+                            原本的購物車只有清單，本次改版後，購物車改以「店鋪分區顯示」的方式呈現。
+                          </li>
+                          <li>
+                            每間店鋪可獨立完成商品、免運券、寄送方式與小計確認
+                          </li>
+                          <li>操作流程更直覺，不怕多店鋪、多規則搞混</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mod-row">
+                    <div class="mod-img">
+                      <img src="./images/full/newchat_step01.jpg" alt="" />
+                      <img src="./images/full/newchat_step02.jpg" alt="" />
+                      <img src="./images/full/newchat_step03.jpg" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="mod-row">
+                    <div class="mod-area">
+                      <div class="modal-description">
+                        <p>結帳後體驗設計</p>
+                        <ul>
+                          <li>付款與退款狀態</li>
+                          <li>出貨進度</li>
+                          <li>分別的退貨方式</li>
+                        </ul>
+                        <p>
+                          即使未來加入藥局端出貨，也能在相同結構下呈現，不需要再額外調整使用流程。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mod-row">
+                    <div class="mod-img">
+                      <img src="./images/full/oder_detail01.jpg" alt="" />
+                      <img src="./images/full/oder_detail02.jpg" alt="" />
+                      <img src="./images/full/oder_detail03.jpg" alt="" />
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案類型</div>
+                <div class="info-content">購物車多店鋪結帳流程改版</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">負責腳色</div>
+                <div class="info-content">UI / UX Designer</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">負責範圍</div>
+                <div class="info-content">
+                  主要負責結帳流程的規劃與前端畫面設計，包含購物車結構調整與訂單資訊呈現。
+                </div>
+              </div>
+            </div>
           </div>
-          
-        </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">法式甜點介紹</div>
-          </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">介紹各種經典法式甜點</div>
-          </div>
-      
         </div>
-      </div>
 
-      <div class="project-card">
-        <a href="./projects/CDG_info.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_info.jpg">
+        <h2 class="sort-title stroke shadow">Web design</h2>
+        <div class="container" data-zoom-text="more">
+          <div class="project-card">
+            <a href="./index.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_portfolio.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">winnie的作品集網站</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">目前正在瀏覽的網站，內含各種作品</div>
+              </div>
+            </div>
           </div>
-          
-        </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">法國餐廳介紹</div>
+
+          <div class="project-card">
+            <a href="./projects/buguS_2023/bugus.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_bugus.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">睡眠產品介紹頁</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">主要是切版及網頁動態製作</div>
+              </div>
+            </div>
           </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">介紹法國有名的餐廳及咖啡廳</div>
+
+          <div class="project-card">
+            <a href="./projects/CDG_dessert.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_dessert.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">法式甜點介紹</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">介紹各種經典法式甜點</div>
+              </div>
+            </div>
           </div>
-      
+
+          <div class="project-card">
+            <a href="./projects/CDG_info.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_info.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">法國餐廳介紹</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">介紹法國有名的餐廳及咖啡廳</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <a href="./projects/tea/tea.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_tea.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">茶類產品介紹頁</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">介紹兩種香港茶類</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <a href="./projects/2024_double11/2024_double11.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_double11.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">雙11促銷活動頁</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">2024雙11活動促銷</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <a href="./projects/memory-game/dad2022.html">
+              <div class="project-img">
+                <img loading="lazy" src="./images/preview_dad.jpg" />
+              </div>
+            </a>
+            <div class="project-info table-line">
+              <div class="info-item">
+                <div class="info-label">專案</div>
+                <div class="info-content">父親節活動頁</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">內容</div>
+                <div class="info-content">內含翻牌小遊戲的父親節活動頁</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <a href="./projects/tea/tea.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_tea.jpg">
+        <!-- 圖片區 -->
+
+        <p class="sort-title stroke">Graphic</p>
+
+        <div id="graphic" class="gallery" data-zoom-text="放大">
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/cthisEX_2000.jpg" alt="" />
           </div>
-          
-        </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">茶類產品介紹頁</div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/cthis_2000.jpg" alt="" />
           </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">介紹兩種香港茶類</div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/38_1920.jpg" alt="" />
           </div>
-      
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/Q10BN_2000.jpg" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/buguS_2000.jpg" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line_1017.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/FBbanner.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/191013.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/191003.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/191107.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/191227.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/200218.jpg" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/200106.jpg" alt="" />
+          </div>
+          <div class="img-container">
+            <img
+              loading="lazy"
+              src="/images/full/line/200308_MLE2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/line/200224.jpg" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/candy_post.png" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/choco_post.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/Croissant_post.png" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/midmoonDM_post.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/minmoon_post.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/momDM_post.png" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/mompink_post.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/momyellow_post.png" alt="" />
+          </div>
+
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/thank_post.png" alt="" />
+          </div>
+          <div class="img-container">
+            <img loading="lazy" src="/images/full/thankw_post.png" alt="" />
+            <!-- <p>sdfgasegfw</p> -->
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <a href="./projects/2024_double11/2024_double11.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_double11.jpg">
+        <div class="img-modal">
+          <img loading="lazy" class="full-img" />
+          <!-- <p>sdfgasegfw</p> -->
+
+          <div class="close-container">
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
+            <label class="close">close</label>
           </div>
-          
-        </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">雙11促銷活動頁</div>
-          </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">2024雙11活動促銷</div>
-          </div>
-      
         </div>
-      </div>
 
-
-      <div class="project-card">
-        <a href="./projects/buguS_2023/bugus.html" >
-        
-          <div class="project-img">
-            <img  loading="lazy" src="./images/preview_bugus.jpg">
+        <a href="#" role="button">
+          <div class="scroll-top">
+            <svg class="svg-icon" viewBox="0 0 384 512">
+              <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+              ></path>
+            </svg>
           </div>
-          
         </a>
-        <div class="project-info table-line">
-          <div class="info-item">
-            <div class="info-label">專案</div>
-            <div class="info-content">睡眠產品介紹頁</div>
-          </div>
-      
-          <div class="info-item">
-            <div class="info-label">內容</div>
-            <div class="info-content">主要是切版及網頁動態製作</div>
-          </div>
-      
-        </div>
-      </div>
+      </section>
 
-     
+      <!-- 到底了 -->
+    </main>
+    <footer>
+      <div class="copyright">
+        <p>© 2021-2025 by Winnin Su</p>
+      </div>
+      <div class="contacts">
+        <h５>Email </h５>
+        <p>　selephant@gmail.com</p>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script loading="lazy" src="./app.js"></script>
 
-    
-
-
-
-    </div>
-
-
-
-    <!-- 圖片區 -->
-
-    <P class="sort-title stroke">Graphic</P>
-
-    <div id="graphic" class="gallery"  data-zoom-text="放大">
-
-    
-      <div class="img-container"  >
-        <img  loading="lazy" src="/images/full/cthisEX_2000.jpg" alt=""
-         />
-      </div>
-
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/cthis_2000.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/38_1920.jpg" alt=""
-         />
-      </div>
-
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/Q10BN_2000.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/buguS_2000.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line_1017.jpg" alt=""
-         />
-      </div>
-
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/FBbanner.jpg" alt=""
-         />
-      </div>
-
-      
-  
-     
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/191013.jpg" alt=""
-         />
-      </div>
-     
-   
-      
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/191003.png" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/191107.jpg" alt=""
-         />
-      </div>
-   
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/191227.jpg" alt=""
-         />
-      </div>
-     
-   
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/200218.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/200106.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/200308_MLE2.jpg" alt=""
-         />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/line/200224.jpg" alt=""
-         />
-      </div>
-    
-  
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/candy_post.png" alt=""
-         />
-      </div>
-    
-    
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/choco_post.png" alt=""
-        />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/Croissant_post.png" alt=""
-        />
-      </div>
-    
-     
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/midmoonDM_post.png" alt=""
-        />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/minmoon_post.png" alt=""
-        />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/momDM_post.png" alt=""
-        />
-      </div>
-    
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/mompink_post.png" alt=""
-        />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/momyellow_post.png" alt=""
-        />
-      </div>
-    
-   
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/thank_post.png" alt=""
-        />
-      </div>
-      <div class="img-container">
-        <img loading="lazy" src="/images/full/thankw_post.png" alt=""
-        />
-        <!-- <p>sdfgasegfw</p> -->
-      </div>
- 
-
-    </div>
-
-    <div class="modal">
-       <img loading="lazy" src="" alt="" class="full-img"/>
-       <!-- <p>sdfgasegfw</p> -->
-
-      <div class="close-container">
-        <div class="leftright"></div>
-        <div class="rightleft"></div>
-        <label class="close">close</label>
-      </div>
-
-      
-    </div>
-    
-
-
-    <a href="#" role="button" >
-    <div class="scroll-top">
-        <svg class="svg-icon" viewBox="0 0 384 512">
-          <path
-            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-          ></path>
-        </svg>
-      </div>
-    </a>
-      
-  </section>
-
-  
-    
-    
-    
-    
-    
-    <!-- 到底了 -->
-</main>
-<footer>
-  
-  <div class="copyright">
-    <p>© 2021-2025 by Winnin Su</p>
-  </div>
-  <div class="contacts">
-    <h５>Email </h５>
-    <p>　selephant@gmail.com</p>
-  </div>
-
-</footer>
-
-
-
-  
-  
-</body> 
-<script loading="lazy" src="./app.js"></script>
-<!-- <script loading="lazy" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
+  <!-- <script loading="lazy" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
 </html>

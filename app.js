@@ -144,6 +144,42 @@ if (galleries.length > 0) {
 }
 
 
+//modal
+
+// 找出所有 open-modal 按鈕
+const openModals = document.querySelectorAll(".open-modal");
+const IS_VISIBLE_CLASS = "is-visible";
+
+openModals.forEach(openModal => {
+  const modal = openModal.closest(".project-card").querySelector(".modal");
+  const modalContent = modal ? modal.querySelector(".modal-content") : null;
+  const closeModal = modal ? modal.querySelector(".close-modal") : null;
+
+  // 防呆：確認必要元素存在
+  if (!modal || !modalContent || !closeModal) return;
+
+  // 建立 timeline
+  let tl = gsap.timeline({
+    paused: true,
+    onComplete: () => modal.classList.add(IS_VISIBLE_CLASS),
+    onReverseComplete: () => modal.classList.remove(IS_VISIBLE_CLASS)
+  });
+
+  // 初始動畫流程
+  tl.to(modal, { autoAlpha: 1, duration: 0.3 })
+    .to(modalContent, { scale: 1, duration: 0.4, ease: "power3.out" }, "-=0.2");
+
+  // 綁定事件
+  openModal.addEventListener("click", () => tl.play());
+  closeModal.addEventListener("click", () => tl.reverse());
+
+  // ESC 鍵關閉
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "Escape" && modal.classList.contains(IS_VISIBLE_CLASS)) {
+      tl.reverse();
+    }
+  });
+});
 
 
 
@@ -196,28 +232,28 @@ if (galleries.length > 0) {
 
 
 //pop up image
-const modal = document.querySelector(".modal");
+const imgModal = document.querySelector(".img-modal");
 const previews = document.querySelectorAll(".gallery img");
 const original = document.querySelector(".full-img");
-const caption = document.querySelector(".caption");
+// const caption = document.querySelector(".caption");
 
 
 previews.forEach(preview =>{
     preview.addEventListener("click" ,() =>{
-        modal.classList.add("open");
+        imgModal.classList.add("open");
         original.classList.add("open");
         //Dynamic change text and imge
         
 
         original.src =  preview.src;
         const altText = preview.alt;
-        caption.textContent = altText;
+        // caption.textContent = altText;
     });
 });
 
-modal.addEventListener("click",(e) => {
-    if(e.target.classList.contains("modal")){
-        modal.classList.remove("open");
+imgModal.addEventListener("click",(e) => {
+    if(e.target.classList.contains("img-modal")){
+        imgModal.classList.remove("open");
         original.classList.remove("open");
        
     }
