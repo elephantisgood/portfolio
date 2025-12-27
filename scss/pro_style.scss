@@ -909,7 +909,7 @@ section {
     .mod-row {
       display: flex;
       // flex-direction: column;
-      margin: 0.5rem auto;
+      // margin: 0.5rem auto;
       justify-content: center;
       align-items: center;
 
@@ -994,9 +994,10 @@ section {
 
       .mod-img {
         display: flex;
-        width: 20rem;
+        // width: 20rem;
+        width: clamp(20rem, 25vw, 20rem);
         justify-content: center;
-        margin: 1rem;
+        // margin: 1rem;
         img {
           max-width: 100%;
           height: auto;
@@ -1004,15 +1005,20 @@ section {
           padding: 0.5rem;
         }
       }
+      .full {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
       .mod-area {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        max-width: 100%;
         .mix-title {
           position: relative;
           color: var(--color-dark);
-          font-size: 2rem;
+          font-size: clamp(1.2rem, 2rem, 3rem);
           font-weight: 600;
           display: flex;
           justify-content: center;
@@ -1021,7 +1027,7 @@ section {
 
           span {
             position: absolute;
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 2.8rem, 3.5rem);
             font-weight: 900;
             font-style: italic;
             letter-spacing: -0.2rem;
@@ -1029,6 +1035,18 @@ section {
             z-index: -1;
             bottom: 0.2rem;
             text-shadow: none;
+          }
+        }
+
+        .modal-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .context1-2 {
+            display: flex;
+            max-width: 25rem;
           }
         }
 
@@ -1364,8 +1382,18 @@ section {
 
   .mod-row {
     flex-direction: column;
+
+    .mod-area {
+      .modal-description {
+        .context1-2 {
+          flex-direction: column;
+          // width: 100%;
+        }
+      }
+    }
     .mod-img {
-      flex-direction: column;
+      // flex-direction: column;
+      flex-wrap: wrap;
     }
   }
 }

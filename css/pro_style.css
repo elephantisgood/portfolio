@@ -758,7 +758,6 @@ section {
 }
 .pro .modal .mod-row {
   display: flex;
-  margin: 0.5rem auto;
   justify-content: center;
   align-items: center;
 }
@@ -826,9 +825,8 @@ section {
 }
 .pro .modal .mod-row .mod-img {
   display: flex;
-  width: 20rem;
+  width: clamp(20rem, 25vw, 20rem);
   justify-content: center;
-  margin: 1rem;
 }
 .pro .modal .mod-row .mod-img img {
   max-width: 100%;
@@ -837,10 +835,15 @@ section {
      object-fit: cover;
   padding: 0.5rem;
 }
+.pro .modal .mod-row .full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 .pro .modal .mod-row .mod-area {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  max-width: 100%;
 }
 .pro .modal .mod-row .mod-area .mix-title {
   position: relative;
@@ -854,7 +857,7 @@ section {
 }
 .pro .modal .mod-row .mod-area .mix-title span {
   position: absolute;
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 900;
   font-style: italic;
   letter-spacing: -0.2rem;
@@ -862,6 +865,16 @@ section {
   z-index: -1;
   bottom: 0.2rem;
   text-shadow: none;
+}
+.pro .modal .mod-row .mod-area .modal-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pro .modal .mod-row .mod-area .modal-description .context1-2 {
+  display: flex;
+  max-width: 25rem;
 }
 .pro .modal .mod-row .mod-area ul {
   margin: 0.5rem 1rem;
@@ -1137,8 +1150,11 @@ section {
   .mod-row {
     flex-direction: column;
   }
-  .mod-row .mod-img {
+  .mod-row .mod-area .modal-description .context1-2 {
     flex-direction: column;
+  }
+  .mod-row .mod-img {
+    flex-wrap: wrap;
   }
 }
 @keyframes transitionIn {
