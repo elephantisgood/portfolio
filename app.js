@@ -57,7 +57,7 @@ function bgChanger(scrollY, winHeight) {
 }
 
 function toggleScrollTop(scrollY, winHeight, docHeight, scrollBtn) {
-  if (scrollY > (docHeight - winHeight) / 2) {
+  if (scrollY > (docHeight - winHeight) / 5) {
     scrollBtn.classList.add("show");
   } else {
     scrollBtn.classList.remove("show");

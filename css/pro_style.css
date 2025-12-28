@@ -53,7 +53,6 @@ body {
 main {
   flex: 1;
   position: relative;
-  padding-bottom: var(--footer-gap);
   transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
@@ -399,128 +398,6 @@ section {
 .index .container .scroll-warp .gird-gallery .hide {
   opacity: 0;
 }
-.index .container .scroll-warp .type--C {
-  --line_color: var(--color-dark);
-  --back_color: #ffbe3b;
-}
-.index .container .scroll-warp .button {
-  position: relative;
-  z-index: 0;
-  width: 15rem;
-  height: 3.5rem;
-  text-decoration: none;
-  font-size: 1rem;
-  color: var(--line_color);
-  transition: all 0.3s ease;
-  border: solid 2px var(--line_color);
-  border-radius: 50px;
-}
-.index .container .scroll-warp .button .button__text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.index .container .scroll-warp .button__drow1,
-.index .container .scroll-warp .button__drow2 {
-  position: absolute;
-  z-index: -1;
-  border-radius: 16px;
-  transform-origin: 16px 16px;
-}
-.index .container .scroll-warp .button__drow1 {
-  top: -16px;
-  left: 40px;
-  width: 32px;
-  height: 0;
-  transform: rotate(30deg);
-}
-.index .container .scroll-warp .button__drow2 {
-  top: 44px;
-  left: 77px;
-  width: 32px;
-  height: 0;
-  transform: rotate(-127deg);
-}
-.index .container .scroll-warp .button__drow1::before,
-.index .container .scroll-warp .button__drow1::after,
-.index .container .scroll-warp .button__drow2::before,
-.index .container .scroll-warp .button__drow2::after {
-  content: "";
-  position: absolute;
-}
-.index .container .scroll-warp .button__drow1::before {
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 32px;
-  border-radius: 16px;
-  transform-origin: 16px 16px;
-  transform: rotate(-60deg);
-}
-.index .container .scroll-warp .button__drow1::after {
-  top: -10px;
-  left: 45px;
-  width: 0;
-  height: 32px;
-  border-radius: 16px;
-  transform-origin: 16px 16px;
-  transform: rotate(69deg);
-}
-.index .container .scroll-warp .button__drow2::before {
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 32px;
-  border-radius: 16px;
-  transform-origin: 16px 16px;
-  transform: rotate(-146deg);
-}
-.index .container .scroll-warp .button__drow2::after {
-  bottom: 26px;
-  left: -40px;
-  width: 0;
-  height: 32px;
-  border-radius: 16px;
-  transform-origin: 16px 16px;
-  transform: rotate(-262deg);
-}
-.index .container .scroll-warp .button__drow1,
-.index .container .scroll-warp .button__drow1::before,
-.index .container .scroll-warp .button__drow1::after,
-.index .container .scroll-warp .button__drow2,
-.index .container .scroll-warp .button__drow2::before,
-.index .container .scroll-warp .button__drow2::after {
-  background: var(--back_color);
-}
-.index .container .scroll-warp .button:hover {
-  letter-spacing: 0.2rem;
-}
-.index .container .scroll-warp .button:hover .button__drow1 {
-  animation: drow1 ease-in 0.06s;
-  animation-fill-mode: forwards;
-}
-.index .container .scroll-warp .button:hover .button__drow1::before {
-  animation: drow2 linear 0.08s 0.06s;
-  animation-fill-mode: forwards;
-}
-.index .container .scroll-warp .button:hover .button__drow1::after {
-  animation: drow3 linear 0.03s 0.14s;
-  animation-fill-mode: forwards;
-}
-.index .container .scroll-warp .button:hover .button__drow2 {
-  animation: drow4 linear 0.06s 0.2s;
-  animation-fill-mode: forwards;
-}
-.index .container .scroll-warp .button:hover .button__drow2::before {
-  animation: drow3 linear 0.03s 0.26s;
-  animation-fill-mode: forwards;
-}
-.index .container .scroll-warp .button:hover .button__drow2::after {
-  animation: drow5 linear 0.06s 0.32s;
-  animation-fill-mode: forwards;
-}
 .index .container .scroll-warp .go-work {
   display: flex;
   flex-direction: column;
@@ -583,32 +460,17 @@ section {
   color: var(--color-dark);
 }
 
-.pro .btn {
+.pro .work-btn {
   display: flex;
   margin: 1rem 1rem;
+  justify-content: flex-start;
+}
+.pro .work-btn .work-type {
+  display: flex;
   justify-content: center;
-}
-.pro .btn ul {
-  flex-wrap: wrap;
-  display: flex;
-  list-style: none;
-}
-.pro .btn ul li {
-  margin: 1rem 1rem;
-}
-.pro .btn ul li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid rgb(133, 133, 133);
-  border-radius: 2rem;
-  padding: 0.2rem 1rem;
-  text-align: center;
-  transition: all ease-in 150ms;
-}
-.pro .btn ul li a:hover,
-.pro .btn ul li a:focus {
-  background-color: #8f7a6a;
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
 }
 .pro .zoom {
   position: absolute;
@@ -664,6 +526,7 @@ section {
   margin: 2rem 1rem;
   color: var(--color-main);
   text-shadow: 4px 4px var(--color-dark);
+  scroll-margin-top: 5rem;
 }
 .pro .sort-title:first-letter {
   font-size: 4rem;
@@ -714,13 +577,29 @@ section {
 .pro .modal .close-modal {
   position: absolute;
   z-index: 5;
-  right: 50%;
+  right: 48dvw;
   top: 90%;
   font-size: 2rem;
   background: var(--color-dark);
   border-radius: 50px;
   border: none;
   padding: 0 0.6rem;
+  width: 3rem;
+}
+.pro .modal .close-modal svg path {
+  stroke: var(--color-light);
+}
+.pro .modal .close-modal:hover {
+  border-radius: 50px;
+  transition-duration: 0.5s;
+  background-color: var(--color-main);
+  box-shadow: 0px 0px 0px 0.2rem rgba(255, 199, 135, 0.476);
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform: scale(1.4);
+}
+.pro .modal .close-modal:hover svg path {
+  stroke: var(--color-dark);
 }
 .pro .modal .modal.is-visible {
   visibility: visible;
@@ -871,6 +750,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: clamp(20rem, 60vw, 70rem);
 }
 .pro .modal .mod-row .mod-area .modal-description .context1-2 {
   display: flex;
@@ -1101,6 +981,146 @@ section {
   box-shadow: 0 0 0 4px #fd8a26;
 }
 
+.type--C {
+  --line_color: var(--color-dark);
+  --back_color: #ffbe3b;
+}
+
+.button {
+  position: relative;
+  z-index: 0;
+  width: 15rem;
+  height: 3.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--line_color);
+  transition: all 0.3s ease;
+  border: solid 2px var(--line_color);
+  border-radius: 50px;
+}
+.button .button__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.button__drow1,
+.button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+
+.button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+
+.button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+  content: "";
+  position: absolute;
+}
+
+.button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+
+.button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+
+.button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+
+.button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after {
+  background: var(--back_color);
+}
+
+.button:hover {
+  letter-spacing: 0.2rem;
+}
+
+.button:hover .button__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+
+.button:hover .button__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+
 @media screen and (max-width: 790px) {
   .index {
     min-height: 1200px;
@@ -1146,6 +1166,9 @@ section {
   }
   .index .container .scroll-content .CV .subtitle {
     font-size: 1.2rem;
+  }
+  .work-btn {
+    flex-direction: column;
   }
   .mod-row {
     flex-direction: column;
