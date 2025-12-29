@@ -21,7 +21,7 @@
 header {
   background: #ffffff;
   color: #30281d;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   // max-height: 3rem;
   position: relative;
   position: sticky;
@@ -321,7 +321,7 @@ footer {
 
 @media screen and (max-width: 790px) {
   header {
-    padding: 1rem;
+    padding: 0.5rem;
 
     .container {
       display: flex;

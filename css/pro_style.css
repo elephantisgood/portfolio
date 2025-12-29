@@ -266,8 +266,7 @@ section {
   justify-content: center;
   border: none;
   background-color: transparent;
-  margin: 0 auto;
-  margin-top: 1rem;
+  margin: 1.5rem auto;
 }
 .index .container .CV .circle-btn .text {
   position: absolute;
@@ -462,7 +461,8 @@ section {
 
 .pro .work-btn {
   display: flex;
-  margin: 1rem 1rem;
+  margin: 1rem;
+  padding: 1rem;
   justify-content: flex-start;
 }
 .pro .work-btn .work-type {
@@ -819,6 +819,7 @@ section {
   padding: 0.5rem;
   text-transform: uppercase;
   font-size: 1.2rem;
+  white-space: nowrap;
 }
 .pro .container .project-card .project-info .info-item .info-content {
   padding: 1rem;
@@ -1143,7 +1144,7 @@ section {
   .index .container .card-sticky .resumeCard {
     justify-content: center;
     width: 17rem;
-    height: 24rem;
+    height: 23rem;
   }
   .index .container .card-sticky .resumeCard .head-pic {
     width: 12rem;
