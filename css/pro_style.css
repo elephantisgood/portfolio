@@ -577,7 +577,8 @@ section {
 .pro .modal .close-modal {
   position: absolute;
   z-index: 5;
-  right: 48dvw;
+  left: 50%;
+  transform: translateX(-50%);
   top: 90%;
   font-size: 2rem;
   background: var(--color-dark);
@@ -614,7 +615,7 @@ section {
 .pro .modal .modal-content {
   display: flex;
   flex-direction: column;
-  max-width: 85%;
+  max-width: 90%;
   padding: 1rem;
   padding-bottom: 2rem;
   margin: auto;
@@ -643,8 +644,9 @@ section {
 .pro .modal .mod-row .ov-content {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-  width: clamp(20rem, 25vw, 30rem);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: clamp(18rem, 25vw, 30rem);
   color: var(--color-dark);
 }
 .pro .modal .mod-row .ov-content .ov-title {
@@ -687,6 +689,7 @@ section {
   color: var(--color-dark);
   padding: 0.5rem;
   text-transform: uppercase;
+  white-space: nowrap;
   width: clamp(7rem, 7vw, 10rem);
 }
 .pro .modal .mod-row .ov-table .ov-info-item .ov-info-content {
@@ -698,7 +701,7 @@ section {
   content: "";
   position: absolute;
   width: 5rem;
-  height: 12rem;
+  height: 13rem;
   top: 0;
   border-right: 1.5px solid var(--color-main);
 }
@@ -750,7 +753,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: clamp(20rem, 60vw, 70rem);
+  width: clamp(18rem, 60vw, 70rem);
+  padding: 0.5rem;
 }
 .pro .modal .mod-row .mod-area .modal-description .context1-2 {
   display: flex;
@@ -1173,6 +1177,9 @@ section {
   }
   .mod-row {
     flex-direction: column;
+  }
+  .mod-row .mod-area .modal-description {
+    padding: 1rem;
   }
   .mod-row .mod-area .modal-description .context1-2 {
     flex-direction: column;
