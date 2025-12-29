@@ -307,54 +307,52 @@ images.forEach(image => {
 
   // ===== Zoom 模組 =====
   const zoom = document.querySelector('.zoom');
-  const zoomText = zoom ? zoom.querySelector('p') : null;
-  const projectImgs = document.querySelectorAll('.project-img');
-  const imgContainers = document.querySelectorAll('.img-container');
-  const targets = [...projectImgs, ...imgContainers];
+const zoomText = zoom ? zoom.querySelector('p') : null;
+const projectImgs = document.querySelectorAll('.project-img');
+const imgContainers = document.querySelectorAll('.img-container');
+const targets = [...projectImgs, ...imgContainers];
 
-  function positionZoom(e) {
-    const posX = e.pageX;
-    const posY = e.pageY;
-    if (zoom) {
-      zoom.style.left = `${posX - zoom.offsetWidth / 2}px`;
-      zoom.style.top = `${posY - zoom.offsetHeight / 0.7}px`; // 稍微往上
-    }
+function positionZoom(e) {
+  const posX = e.pageX;
+  const posY = e.pageY;
+  if (zoom) {
+    zoom.style.left = `${posX - zoom.offsetWidth / 2}px`;
+    zoom.style.top = `${posY - zoom.offsetHeight / 0.7}px`; // 稍微往上
   }
+}
 
-  if (zoom && zoomText) {
-    targets.forEach(target => {
-      target.addEventListener('mouseenter', e => {
-        const zoomTextValue =
-          target.getAttribute('data-zoom-text') ||
-          target.closest('[data-zoom-text]')?.getAttribute('data-zoom-text') ||
-          'more';
+function showZoom(e, target) {
+  const zoomTextValue =
+    target.getAttribute('data-zoom-text') ||
+    target.closest('[data-zoom-text]')?.getAttribute('data-zoom-text') ||
+    'more';
 
-        zoomText.textContent = zoomTextValue;
-        zoom.classList.add('show', 'loading');
-        positionZoom(e);
-      });
+  zoomText.textContent = zoomTextValue;
+  zoom.classList.add('show', 'loading');
+  positionZoom(e);
+}
 
-      target.addEventListener('mousemove', e => positionZoom(e));
-      target.addEventListener('mouseleave', () => zoom.classList.remove('show', 'loading'));
+function hideZoom() {
+  zoom?.classList.remove('show', 'loading');
+}
 
-      // 手機支援
-      target.addEventListener('touchstart', e => {
-        const zoomTextValue =
-          target.getAttribute('data-zoom-text') ||
-          target.closest('[data-zoom-text]')?.getAttribute('data-zoom-text') ||
-          'more';
+if (zoom && zoomText) {
+  targets.forEach(target => {
+    target.addEventListener('pointerenter', e => showZoom(e, target));
+    target.addEventListener('pointermove', e => positionZoom(e));
+    target.addEventListener('pointerleave', hideZoom);
 
-        zoomText.textContent = zoomTextValue;
-        zoom.classList.add('show', 'loading');
-        positionZoom(e.touches[0]);
-      });
+    target.addEventListener('pointerdown', e => showZoom(e, target));
+    target.addEventListener('pointerup', hideZoom);
+  });
 
-      target.addEventListener('touchmove', e => positionZoom(e.touches[0]));
-      target.addEventListener('touchend', () => zoom.classList.remove('show', 'loading'));
-    });
-  } else {
-    console.warn('⚠️ 找不到 .zoom 或其內部 <p>，Zoom 功能未啟用');
-  }
+  // 保險：在 modal 開啟時強制隱藏 zoom
+  document.querySelectorAll('.modal-trigger').forEach(btn => {
+    btn.addEventListener('click', hideZoom);
+  });
+} else {
+  console.warn('⚠️ 找不到 .zoom 或其內部 <p>，Zoom 功能未啟用');
+}
 
 
 
