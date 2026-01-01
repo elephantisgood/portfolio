@@ -224,7 +224,7 @@ section {
   position: relative;
   color: var(--color-main);
   font-size: 3.5rem;
-  padding: 0 0.1rem;
+  padding: 0.1rem;
   width: -moz-max-content;
   width: max-content;
   text-shadow: 4px 4px var(--color-dark);
@@ -407,6 +407,9 @@ section {
 }
 .index .container .scroll-warp .about-content {
   height: 50%;
+}
+.index .container .scroll-warp .about-content P {
+  margin: 0.5rem;
 }
 .index .container .scroll-warp .exp-card {
   display: flex;
@@ -1167,7 +1170,7 @@ section {
     height: 40dvh;
   }
   .index .container .scroll-content .CV .type-text {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   .index .container .scroll-content .CV .subtitle {
     font-size: 1.2rem;
